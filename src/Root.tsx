@@ -9,6 +9,7 @@ import {
 } from "remotion";
 const Film: React.FC = () => {
   const frame = useCurrentFrame();
+  const initialFrame = useRef(frame);
   const canvas = useRef<HTMLCanvasElement>(null);
   const renderer = useRef<{ seek: (t: number) => void } | null>(null);
   const [handle] = useState(() => delayRender("Loading Forma assets"));
@@ -22,7 +23,7 @@ const Film: React.FC = () => {
       const assets = await engine.loadAssets(staticFile("assets/"));
       if (active && canvas.current) {
         renderer.current = engine.createRenderer(canvas.current, assets);
-        renderer.current!.seek(frame / 60);
+        renderer.current!.seek(initialFrame.current / 60);
         setLoaded(true);
         continueRender(handle);
       }

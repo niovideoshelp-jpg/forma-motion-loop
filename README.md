@@ -4,6 +4,10 @@ A continuous 22-second motion study for a fictional creative product. A Generate
 
 **1440 × 1440 · 60 fps · 1320 frames · 2D canvas · Remotion 4.0.531**
 
+[Download the finished MP4](docs/forma-loop-1440-60.mp4)
+
+Export verified: 22.000 seconds, 1320 frames, H.264/AAC, −14.0 LUFS integrated loudness. The frame scan found no isolated jump candidates; first and last source-frame hashes match. See [frame scan](docs/frame-scan.json) and [loudness report](docs/loudness.txt).
+
 ![Six-frame storyboard](docs/storyboard.png)
 
 ## Run

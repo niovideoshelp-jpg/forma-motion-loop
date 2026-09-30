@@ -129,7 +129,7 @@ ff([
   "-i",
   "raw/mix.f32",
   "-af",
-  `loudnorm=I=-14:TP=-1:LRA=9:measured_I=${measured.input_i}:measured_TP=${measured.input_tp}:measured_LRA=${measured.input_lra}:measured_thresh=${measured.input_thresh}:offset=${measured.target_offset}:linear=true`,
+  `loudnorm=I=-14:TP=-1:LRA=9:measured_I=${measured.input_i}:measured_TP=${measured.input_tp}:measured_LRA=${measured.input_lra}:measured_thresh=${measured.input_thresh}:offset=${measured.target_offset}:linear=true,volume=0.8dB`,
   "-ar",
   "48000",
   "-ac",
