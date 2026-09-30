@@ -1,0 +1,39 @@
+{
+  "name": "forma-loop",
+  "version": "1.0.0",
+  "description": "Forma — continuous 22-second 2D motion study",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/niovideoshelp-jpg/forma-motion-loop.git"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@remotion/cli": "4.0.531",
+    "@remotion/shapes": "4.0.531",
+    "@remotion/transitions": "4.0.531",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.531"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.531",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.39.5",
+    "playwright": "^1.63.0",
+    "prettier": "3.8.1",
+    "sharp": "^0.35.5",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc",
+    "preview": "node scripts/server.cjs",
+    "stills": "node scripts/stills.cjs",
+    "render": "node scripts/render.cjs"
+  }
+}

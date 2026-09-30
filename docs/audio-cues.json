@@ -1,0 +1,162 @@
+{
+  "source": "Head Bang — Arulo / Mixkit 357",
+  "sourcePulseInterpretation": "148 BPM double-time (74 BPM half-time), edit retimed to 110 BPM",
+  "rate": 0.7432432432432432,
+  "offset": 8.940756756756755,
+  "sourceAttack": 13.809,
+  "drop": 6.55,
+  "measured": {
+    "input_i": "-24.47",
+    "input_tp": "-4.62",
+    "input_lra": "11.80",
+    "input_thresh": "-35.07",
+    "output_i": "-14.18",
+    "output_tp": "-1.00",
+    "output_lra": "2.00",
+    "output_thresh": "-24.18",
+    "normalization_type": "dynamic",
+    "target_offset": "0.18"
+  },
+  "events": [
+    {
+      "name": "generate",
+      "time": 0.55,
+      "type": "click",
+      "measuredPeakSeconds": 0.19454166666666667,
+      "sourceStartOnTimeline": 0.3554583333333333
+    },
+    {
+      "name": "check",
+      "time": 1.35,
+      "type": "click",
+      "measuredPeakSeconds": 0.19454166666666667,
+      "sourceStartOnTimeline": 1.1554583333333333
+    },
+    {
+      "name": "goo",
+      "time": 2.15,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 1.4352291666666666
+    },
+    {
+      "name": "question",
+      "time": 2.95,
+      "type": "click",
+      "measuredPeakSeconds": 0.19454166666666667,
+      "sourceStartOnTimeline": 2.7554583333333333
+    },
+    {
+      "name": "reply",
+      "time": 3.75,
+      "type": "click",
+      "measuredPeakSeconds": 0.19454166666666667,
+      "sourceStartOnTimeline": 3.555458333333333
+    },
+    {
+      "name": "merge",
+      "time": 4.8,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 4.085229166666666
+    },
+    {
+      "name": "triangle",
+      "time": 5.6,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 4.885229166666667
+    },
+    {
+      "name": "drop",
+      "time": 6.55,
+      "type": "click",
+      "measuredPeakSeconds": 0.19454166666666667,
+      "sourceStartOnTimeline": 6.355458333333333
+    },
+    {
+      "name": "like",
+      "time": 7.6,
+      "type": "click",
+      "measuredPeakSeconds": 0.19454166666666667,
+      "sourceStartOnTimeline": 7.405458333333334
+    },
+    {
+      "name": "swipe",
+      "time": 8.85,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 8.135229166666667
+    },
+    {
+      "name": "volume",
+      "time": 10.8,
+      "type": "click",
+      "measuredPeakSeconds": 0.19454166666666667,
+      "sourceStartOnTimeline": 10.605458333333333
+    },
+    {
+      "name": "stretch",
+      "time": 11.6,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 10.885229166666667
+    },
+    {
+      "name": "pan",
+      "time": 12.4,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 11.685229166666666
+    },
+    {
+      "name": "chart",
+      "time": 13.2,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 12.485229166666667
+    },
+    {
+      "name": "dive",
+      "time": 15.6,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 14.885229166666667
+    },
+    {
+      "name": "ask",
+      "time": 16.4,
+      "type": "click",
+      "measuredPeakSeconds": 0.19454166666666667,
+      "sourceStartOnTimeline": 16.205458333333333
+    },
+    {
+      "name": "line",
+      "time": 17.4,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 16.685229166666666
+    },
+    {
+      "name": "logo",
+      "time": 18.2,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 17.485229166666667
+    },
+    {
+      "name": "fold",
+      "time": 19.6,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 18.885229166666665
+    },
+    {
+      "name": "generate-return",
+      "time": 20.4,
+      "type": "whoosh",
+      "measuredPeakSeconds": 0.7147708333333334,
+      "sourceStartOnTimeline": 19.685229166666666
+    }
+  ]
+}
