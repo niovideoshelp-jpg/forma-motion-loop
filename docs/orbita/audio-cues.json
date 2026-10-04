@@ -1,83 +1,182 @@
 {
   "source": "Head Bang — Arulo / Mixkit",
+  "duration": 22,
+  "sampleRate": 48000,
+  "samples": 1056000,
   "drop": 3.9,
   "rate": 0.7432432432432432,
   "offset": 10.910351351351352,
+  "preroll": 1,
   "normalization": {
-    "input_i": "-23.96",
-    "input_tp": "-4.95",
-    "input_lra": "7.10",
-    "input_thresh": "-34.22",
-    "output_i": "-12.82",
-    "output_tp": "-1.00",
-    "output_lra": "1.90",
-    "output_thresh": "-22.88",
-    "normalization_type": "dynamic",
-    "target_offset": "-1.18"
+    "measured": {
+      "input_i": "-21.15",
+      "input_tp": "-2.20",
+      "input_lra": "6.70",
+      "input_thresh": "-31.36",
+      "output_i": "-12.96",
+      "output_tp": "-1.30",
+      "output_lra": "1.80",
+      "output_thresh": "-23.02",
+      "normalization_type": "dynamic",
+      "target_offset": "-1.04"
+    },
+    "method": "Middle cycle of three repeated loops",
+    "final": {
+      "input_i": "-14.26",
+      "input_tp": "-1.29",
+      "input_lra": "4.10",
+      "input_thresh": "-24.36",
+      "output_i": "-12.75",
+      "output_tp": "-1.30",
+      "output_lra": "1.60",
+      "output_thresh": "-22.81",
+      "normalization_type": "dynamic",
+      "target_offset": "-1.25"
+    }
   },
+  "seam": {
+    "method": "True pre-roll continuation",
+    "crossfadeSeconds": 0.42,
+    "boundaryStep": 0.000706033781170845,
+    "sourceAdjacentStep": 0.0007060331664979458,
+    "normalizedBoundaryStep": 0.001846659928560257,
+    "rawPeak": 0.7763277292251587
+  },
+  "strongAttacks": [
+    {
+      "time": 3.9,
+      "strength": 0.20921480627963365
+    },
+    {
+      "time": 6.075,
+      "strength": 0.20591202699285815
+    },
+    {
+      "time": 8.255,
+      "strength": 0.22648190321389977
+    },
+    {
+      "time": 10.44,
+      "strength": 0.23986607893240203
+    },
+    {
+      "time": 12.625,
+      "strength": 0.22329441128783684
+    },
+    {
+      "time": 14.805,
+      "strength": 0.2132509172418833
+    },
+    {
+      "time": 16.99,
+      "strength": 0.1848984440334942
+    },
+    {
+      "time": 19.18,
+      "strength": 0.2650546301436372
+    },
+    {
+      "time": 20.22,
+      "strength": 0.29051517356497
+    },
+    {
+      "time": 20.4,
+      "strength": 0.26403153766442233
+    },
+    {
+      "time": 21.085,
+      "strength": 0.43603292542528305
+    },
+    {
+      "time": 21.49,
+      "strength": 0.1558075291393516
+    },
+    {
+      "time": 21.77,
+      "strength": 0.18053905241152438
+    }
+  ],
   "events": [
     {
       "name": "search",
       "time": 0.5,
       "source": "click",
       "peak": 0.19454166666666667,
-      "start": 0.30545833333333333
+      "start": 0.30545833333333333,
+      "end": 0.656
     },
     {
       "name": "reveal",
       "time": 1.15,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 0.43522916666666667
+      "start": 0.77,
+      "end": 1.79
     },
     {
       "name": "map",
       "time": 3.9,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 3.185229166666667
+      "start": 3.52,
+      "end": 4.54
     },
     {
       "name": "route",
-      "time": 5.05,
+      "time": 5,
       "source": "click",
       "peak": 0.19454166666666667,
-      "start": 4.855458333333333
+      "start": 4.805458333333333,
+      "end": 5.156
     },
     {
       "name": "ticket",
-      "time": 7.05,
+      "time": 7.1,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 6.335229166666666
+      "start": 6.72,
+      "end": 7.74
+    },
+    {
+      "name": "ticket-confirm",
+      "time": 9.422,
+      "source": "click",
+      "peak": 0.19454166666666667,
+      "start": 9.227458333333333,
+      "end": 9.578
     },
     {
       "name": "wallet",
-      "time": 10.65,
+      "time": 10.44,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 9.935229166666666
+      "start": 10.06,
+      "end": 11.08
     },
     {
       "name": "confirm",
-      "time": 14.15,
+      "time": 14.33,
       "source": "click",
       "peak": 0.19454166666666667,
-      "start": 13.955458333333333
+      "start": 14.135458333333334,
+      "end": 14.486
     },
     {
       "name": "compass",
-      "time": 15.05,
+      "time": 14.805,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 14.335229166666666
+      "start": 14.425,
+      "end": 15.445
     },
     {
       "name": "return",
-      "time": 19.45,
+      "time": 19.18,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 18.735229166666667
+      "start": 18.8,
+      "end": 19.82
     }
-  ]
+  ],
+  "output": "public/assets/orbita-mix.wav"
 }

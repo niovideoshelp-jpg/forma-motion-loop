@@ -2,9 +2,9 @@
 
 ## New edition: Órbita
 
-**[Órbita — seu próximo destino](ORBITA.md)** is the second film, now redesigned with faster transitions, Lucide SVG icons, a D3 geographic map, a detailed boarding pass, an itinerary and a Flubber compass morph. Four motion-blur samples per frame preserve detail, with twelve during the fastest camera moves. The original Forma video remains below.
+**[Órbita — seu próximo destino](ORBITA.md)** now includes original vector travel illustrations, a staged boarding-pass confirmation, an opaque photo-to-map reveal and a compass that becomes the search field. The latest refinement uses measured musical attacks and contributions from GPT-6 Astra. The original Forma video remains below.
 
-[Download Órbita — dynamic edition MP4](docs/orbita/orbita-dynamic-1440-60.mp4) · 22 seconds · 1440 × 1440 · 60 fps · −14.1 LUFS.
+[Download Órbita — refined edition MP4](docs/orbita/orbita-refined-1440-60.mp4) · 22 seconds · 1440 × 1440 · 60 fps.
 
 ![Órbita storyboard](docs/orbita/storyboard.png)
 

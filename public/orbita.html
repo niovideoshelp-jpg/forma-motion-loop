@@ -71,6 +71,7 @@
       base = 0,
       start = 0;
     const audio = new Audio("./assets/orbita-mix.wav");
+    audio.loop = true;
     document.querySelector("#play").onclick = () => {
       playing = !playing;
       document.querySelector("#play").textContent = playing ? "Pause" : "Play";

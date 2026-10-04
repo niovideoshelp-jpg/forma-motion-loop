@@ -37,4 +37,6 @@ The Mixkit audio sources and standalone mixed WAV are excluded from version cont
 
 ## Mark
 
+The refined Órbita edition adds original canvas vector illustrations in `public/orbita-illustrations.js`: mountain, volcanic pools and a ceramic plate. These were authored in code with GPT-6 Astra and do not embed third-party illustrations.
+
 Forma is a fictional product. Its radial ending mark is constructed in canvas from six rounded strokes. It is inspired by the radial mark direction in the supplied brief and is not a claim of affiliation with another product.

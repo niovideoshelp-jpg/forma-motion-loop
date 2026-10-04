@@ -117,7 +117,7 @@ fs.mkdirSync(folder, { recursive: true });
     await browser.close();
     return;
   }
-  const output = `${folder}/orbita-dynamic-1440-60.mp4`,
+  const output = `${folder}/orbita-refined-1440-60.mp4`,
     ff = spawn("ffmpeg", [
       "-hide_banner",
       "-y",
@@ -163,7 +163,7 @@ fs.mkdirSync(folder, { recursive: true });
     lastHash;
   for (let f = 0; f < 1320; f++) {
     const r = await page.evaluate((f) => {
-      const count = (f >= 234 && f < 285) || (f >= 639 && f < 687) ? 12 : 4;
+      const count = (f >= 234 && f < 285) || (f >= 626 && f < 674) || (f >= 860 && f < 903) ? 12 : 4;
       ac.clearRect(0, 0, 1440, 1440);
       for (let i = 0; i < count; i++) {
         const time =
