@@ -1,0 +1,44 @@
+{
+  "composition": "LumeRefined",
+  "frame": 510,
+  "time": 8.5,
+  "resolution": [
+    1440,
+    1440
+  ],
+  "source": "http://127.0.0.1:4187/lume-refined.html",
+  "engineImage": "engine-player-current.png",
+  "remotionImage": "remotion-player.png",
+  "equal": true,
+  "changedPixels": 0,
+  "totalPixels": 2073600,
+  "maxChannelDifference": 0,
+  "meanChannelDifference": 0,
+  "engineRgbaSha256": "5db8446e0e731cea3994e6e02e8ae49ff82295d6b65cbce956a1050c51cc64ed",
+  "remotionRgbaSha256": "5db8446e0e731cea3994e6e02e8ae49ff82295d6b65cbce956a1050c51cc64ed",
+  "sourceSha256": "0386c84103e24febb42600f4d9984637bc04748e551e2207b81e90ca71490ba9",
+  "pageErrors": [],
+  "fonts": [
+    {
+      "family": "Geist",
+      "status": "loaded",
+      "weight": "100 900"
+    }
+  ],
+  "geistLoaded": true,
+  "contextAttributes": {
+    "alpha": false,
+    "colorSpace": "srgb",
+    "colorType": "unorm8",
+    "desynchronized": false,
+    "toneMapping": {
+      "mode": "standard"
+    },
+    "willReadFrequently": true
+  },
+  "visualInspection": {
+    "playerReviewed": true,
+    "fontAppearance": "Geist typography remains consistent and readable; no visible fallback font substitution.",
+    "canvasBackend": "alpha false and willReadFrequently true confirmed before comparison"
+  }
+}

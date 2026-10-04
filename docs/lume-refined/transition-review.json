@@ -1,0 +1,67 @@
+{
+  "reviewer": "astra_art_review",
+  "scope": "Continuidade visual player -> progresso após revelação de headline em 9.44/.12 e contador em 9.56/.12",
+  "engine": "public/lume-refined.js",
+  "verdict": "approved",
+  "exportApproved": true,
+  "resolution": [
+    1440,
+    1440
+  ],
+  "framesReviewed": {
+    "first": 555,
+    "last": 590,
+    "count": 36,
+    "fps": 60,
+    "timeFrom": 9.25,
+    "timeTo": 9.833333333333334
+  },
+  "fullResolutionFocusFrames": [
+    565,
+    570,
+    575,
+    580
+  ],
+  "checks": {
+    "frame558NoJump": true,
+    "frame558NoPrematureProgressHeading": true,
+    "progressHeadingDoesNotIntersectTimeline": true,
+    "counterAndLabelDoNotIntersectTimeline": true,
+    "noDuplicatePlayerAndProgressTitles": true,
+    "artworkPreservesPresenceDuringReveal": true,
+    "singularOneDayCorrect": true
+  },
+  "boundaryEvidence": {
+    "meanAbsoluteChannelDelta556To557": 0.003673804012345679,
+    "meanAbsoluteChannelDelta557To558": 0.003716242283950617,
+    "assessment": "A fronteira 9.3s mantém a ordem de variação do frame anterior. Não há salto visível."
+  },
+  "findings": [],
+  "resolvedFindings": [
+    {
+      "previousFrames": [
+        564
+      ],
+      "description": "Headline cruzava a linha azul. Resolvido: ela começa a aparecer acima da linha."
+    },
+    {
+      "previousFrames": [
+        568,
+        569,
+        570
+      ],
+      "description": "Contador e rótulo cruzavam a linha. Resolvido: a revelação começa após seus limites ultrapassarem a linha."
+    }
+  ],
+  "visualAssessment": "Os 36 frames mantêm continuidade. A superfície opaca substitui a aula progressivamente, a linha azul permanece reconhecível e os textos surgem separados dela. A arte anterior ocupa a região superior durante a entrada, evitando retorno ao painel vazio.",
+  "evidenceFiles": [
+    "out/lume-refined/transition-review/window-555-590.png",
+    "out/lume-refined/transition-review/frame-565.png",
+    "out/lume-refined/transition-review/frame-570.png",
+    "out/lume-refined/transition-review/frame-575.png",
+    "out/lume-refined/transition-review/frame-580.png",
+    "out/lume-refined/transition-review/frame-differences.json"
+  ],
+  "supersedes": "Revisão anterior dos frames 555–570, que identificava cruzamento do texto com a timeline.",
+  "engineModifiedByReviewer": false
+}

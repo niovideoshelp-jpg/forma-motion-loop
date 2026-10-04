@@ -1,6 +1,16 @@
 # Forma — every frame
 
-## New edition: Lume+
+## Latest edition: Lume+ with GSAP
+
+**[Lume+ — refined edition](LUME-REFINED.md)** improves the continuous transitions with an opaque title carrier, a developing lesson illustration, a traveling progress mask and a chart that resolves into the shared brand symbol. Four reviewers covered motion, continuity, drawing and typography, and rhythm.
+
+[Watch or download the refined film](docs/lume-refined/lume-refined-1440-60.mp4) · 22 seconds · 1440 × 1440 · 60 fps.
+
+Built with official GSAP CustomEase, MotionPath and MorphSVG, pinned from GitHub. Reproduction, visual comparisons and source/encoded validation reports are in [LUME-REFINED.md](LUME-REFINED.md).
+
+![Refined storyboard](docs/lume-refined/storyboard.png)
+
+## Previous edition: Lume+
 
 **[Lume+ — subscription product film](LUME.md)** follows a fictional learning subscription through its course library, lesson player, progress and membership card. Original vector covers, a continuous camera and the shared L+ mark connect the interface in a 22-second loop.
 

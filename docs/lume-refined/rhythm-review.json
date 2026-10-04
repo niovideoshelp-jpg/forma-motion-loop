@@ -1,0 +1,142 @@
+{
+  "status": "Rhythm and source continuity review complete; no remaining findings in the reviewed coverage",
+  "audio": {
+    "source": "Deep Urban — Eugenio Mininni / Mixkit",
+    "bpm": 120,
+    "sha256": "fa101285e70f7ec6003e74e76609a75e5713db2ba4100686e2db21392311e8a7",
+    "preserved": true,
+    "beatMap": [
+      {
+        "time": 3.3,
+        "measuredAttack": 3.305,
+        "deltaMs": 5
+      },
+      {
+        "time": 6.8,
+        "measuredAttack": 6.8075,
+        "deltaMs": 8
+      },
+      {
+        "time": 9.3,
+        "measuredAttack": 9.2975,
+        "deltaMs": -3
+      },
+      {
+        "time": 12.3,
+        "measuredAttack": 12.2975,
+        "deltaMs": -3
+      },
+      {
+        "time": 16.3,
+        "measuredAttack": 16.2975,
+        "deltaMs": -3
+      },
+      {
+        "time": 18.3,
+        "measuredAttack": 18.3,
+        "deltaMs": 0
+      },
+      {
+        "time": 20.3,
+        "measuredAttack": 20.3,
+        "deltaMs": 0
+      }
+    ],
+    "measuredWavLufs": "-14.01",
+    "measuredWavTruePeakDbtp": "-2.07"
+  },
+  "motionInspection": {
+    "file": "public/lume-motion.js",
+    "observations": [
+      "Six authored surface/camera handoffs communicate product navigation.",
+      "Pointer pulses are restricted to subscription, course selection and play clicks.",
+      "The inspected timeline is paused and time-seekable, without beat-driven repeat or yoyo decoration.",
+      "A musical attack aligns with the beginning of each principal gesture; visual landing occurs later and must not be claimed to coincide with the attack."
+    ],
+    "visualArrivalWindows": [
+      [
+        3.3,
+        4.1
+      ],
+      [
+        6.8,
+        7.5
+      ],
+      [
+        9.3,
+        10.05
+      ],
+      [
+        12.3,
+        13.15
+      ],
+      [
+        16.3,
+        16.95
+      ],
+      [
+        20.3,
+        21.75
+      ]
+    ],
+    "finalIntegrationVerified": true,
+    "finalIntegrationNote": "Functional handoffs and restrained click responses verified. The caption, progress reveal and membership confirmation corrections are integrated."
+  },
+  "visualReview": {
+    "exactMoments": 8,
+    "denseFrames": 104,
+    "contactWindowsReviewed": 8,
+    "comparisons": [
+      "compare-01.png",
+      "compare-02.png"
+    ],
+    "findings": [],
+    "conclusions": [
+      "The six large movements communicate navigation and retain useful reading intervals.",
+      "The lesson activity changes composition, curvature, growth and stepped structure instead of repeating a decorative pulse on every beat.",
+      "The existing five short whooshes cover functional handoffs. Additional effects are unnecessary.",
+      "The 120 BPM soundtrack and principal anchors remain unchanged; membership status now reaches full opacity at its confirmation cue."
+    ],
+    "limitations": [
+      "Dense source frames and authored timing inspected. No new subjective listening or encoded-video quality claim is made.",
+      "Audio attack alignment describes gesture starts, not final camera arrival.",
+      "No MP4 render was started during this review."
+    ],
+    "correctionsVerified": [
+      {
+        "area": "First handoff",
+        "evidence": [
+          "critical/window-01.png",
+          "critical/window-02.png"
+        ],
+        "result": "No detached dark plaque at 3.30 s; caption enters at 3.50 s and follows the cover."
+      },
+      {
+        "area": "Progress reveal",
+        "evidence": [
+          "critical/window-04.png",
+          "public/lume-refined.js"
+        ],
+        "result": "Outgoing player heading clears by 9.58 s; incoming progress heading travels with the curtain without collision."
+      },
+      {
+        "area": "Membership confirmation",
+        "evidence": [
+          "public/lume-refined.js",
+          "out/lume/audio-cues.json"
+        ],
+        "result": "Plan enters at 13.45 s over 0.35 s. Active status enters at 14.12 s over 0.18 s and is fully visible at the existing 14.30 s chime."
+      }
+    ],
+    "windowNotes": [
+      "The first handoff has no detached caption plaque. The subscription surface contracts continuously into the cover.",
+      "The caption enters from 3.50 s over 0.30 s, follows the cover height and stays spatially attached. No separate black band competes with the handoff.",
+      "The cover expands into the player continuously. Header and playback chrome appear progressively without an empty frame.",
+      "The outgoing player title is cleared by 9.58 s. The progress heading follows the reveal curtain; both titles remain separated throughout the inspected frames.",
+      "The graph stroke survives the blue surface transformation and becomes the membership detail. The brief reduced-detail state supports the handoff.",
+      "The membership card expands into the brand surface. Personal details recede while the plus mark and wordmark become dominant, without a discontinuity.",
+      "The return uses an opaque paper surface and a persistent button. Its deceleration provides a readable return to the subscription layout.",
+      "The headline uses sequential masked line reveals and settles into the opening layout. The partially exposed third line is an intentional reveal, not missing content."
+    ]
+  }
+}

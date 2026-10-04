@@ -1,0 +1,7 @@
+# Preserve the verified official vendor bytes and frozen engine hashes.
+public/assets/gsap/*.min.js -text
+public/lume-refined*.js text eol=lf
+public/lume-motion.js text eol=lf
+scripts/lume-refined*.cjs text eol=lf
+docs/lume-refined/*.json text eol=lf
+docs/lume-refined/*.md text eol=lf

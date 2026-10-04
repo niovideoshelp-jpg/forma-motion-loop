@@ -1,0 +1,58 @@
+{
+  "film": "Lume+ GSAP refinement",
+  "width": 1440,
+  "height": 1440,
+  "fps": 60,
+  "frames": 1320,
+  "duration": 22,
+  "engineSha256": "0386c84103e24febb42600f4d9984637bc04748e551e2207b81e90ca71490ba9",
+  "motionSha256": "43eb559569e88a8450114836c0c93243e44d52809a2fffac24c7142b9e21a733",
+  "artSha256": "01ca2385db6e0f105182fec0affd19dfc24c8f5b875abac5a9ee999bd7284126",
+  "videoSha256": "776d38106f33d5ef781ae59d1208db52f0db0cf9bdea974c3cc6adff2a9bf435",
+  "audioSha256": "fa101285e70f7ec6003e74e76609a75e5713db2ba4100686e2db21392311e8a7",
+  "gsap": {
+    "package": "gsap",
+    "version": "3.15.0",
+    "revision": "13e2b790546426a1a2e0e9b409f3f8dc6d6611f2",
+    "archive": "https://github.com/greensock/GSAP/archive/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2.tar.gz",
+    "license": "https://gsap.com/standard-license/",
+    "files": [
+      {
+        "name": "gsap.min.js",
+        "bytes": 72927,
+        "sha256": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+        "source": "https://github.com/greensock/GSAP/blob/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/dist/gsap.min.js"
+      },
+      {
+        "name": "CustomEase.min.js",
+        "bytes": 7143,
+        "sha256": "466e426a5c60c21c94b15a30a3dffacac9bb39ce8f4e07d071d7d4bb1be43390",
+        "source": "https://github.com/greensock/GSAP/blob/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/dist/CustomEase.min.js"
+      },
+      {
+        "name": "MotionPathPlugin.min.js",
+        "bytes": 22002,
+        "sha256": "ace44a07c6c179f5347d9b46a152d468e4c9f272ee0d68bf0354e00d60000693",
+        "source": "https://github.com/greensock/GSAP/blob/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/dist/MotionPathPlugin.min.js"
+      },
+      {
+        "name": "MorphSVGPlugin.min.js",
+        "bytes": 21195,
+        "sha256": "19c891a412240d8521b13330813d9b551ea5b0f707907c365ffecaf1dfa0f5cf",
+        "source": "https://github.com/greensock/GSAP/blob/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/dist/MorphSVGPlugin.min.js"
+      }
+    ]
+  },
+  "reviewers": [
+    "astra_motion",
+    "astra_art_review",
+    "astra_illustrations",
+    "astra_audio"
+  ],
+  "sourceLoopEqual": true,
+  "seekComparisons": 48,
+  "sourceJumpCandidates": 0,
+  "renderedJumpCandidates": 0,
+  "decodedJumpCandidates": 0,
+  "note": "Audio source downloads and isolated mixed WAV are excluded from Git. Validation applies to this frozen engine and export."
+}

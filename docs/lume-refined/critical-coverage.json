@@ -1,0 +1,1003 @@
+{
+  "resolution": [
+    1440,
+    1440
+  ],
+  "fps": 60,
+  "exactPointCount": 8,
+  "denseSamplesPerWindow": 13,
+  "uniqueDenseFrames": 104,
+  "frameCoverage": [
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    575,
+    576,
+    577,
+    578,
+    579,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    758,
+    759,
+    760,
+    761,
+    762,
+    763,
+    764,
+    765,
+    766,
+    767,
+    768,
+    769,
+    770,
+    981,
+    982,
+    983,
+    984,
+    985,
+    986,
+    987,
+    988,
+    989,
+    990,
+    991,
+    992,
+    993,
+    1245,
+    1246,
+    1247,
+    1248,
+    1249,
+    1250,
+    1251,
+    1252,
+    1253,
+    1254,
+    1255,
+    1256,
+    1257,
+    1275,
+    1276,
+    1277,
+    1278,
+    1279,
+    1280,
+    1281,
+    1282,
+    1283,
+    1284,
+    1285,
+    1286,
+    1287
+  ],
+  "windows": [
+    {
+      "requestedTime": 3.3,
+      "exactPointFile": "critical/point-01.png",
+      "centerFrame": 198,
+      "frameCenterTime": 3.3,
+      "contactSheet": "critical/window-01.png",
+      "samples": [
+        {
+          "frame": 192,
+          "time": 3.2,
+          "offset": -6,
+          "file": "critical/frame-0192.png",
+          "adjacentThumbnailDifference": null
+        },
+        {
+          "frame": 193,
+          "time": 3.216666666666667,
+          "offset": -5,
+          "file": "critical/frame-0193.png",
+          "adjacentThumbnailDifference": 0
+        },
+        {
+          "frame": 194,
+          "time": 3.2333333333333334,
+          "offset": -4,
+          "file": "critical/frame-0194.png",
+          "adjacentThumbnailDifference": 0
+        },
+        {
+          "frame": 195,
+          "time": 3.25,
+          "offset": -3,
+          "file": "critical/frame-0195.png",
+          "adjacentThumbnailDifference": 0
+        },
+        {
+          "frame": 196,
+          "time": 3.2666666666666666,
+          "offset": -2,
+          "file": "critical/frame-0196.png",
+          "adjacentThumbnailDifference": 0
+        },
+        {
+          "frame": 197,
+          "time": 3.283333333333333,
+          "offset": -1,
+          "file": "critical/frame-0197.png",
+          "adjacentThumbnailDifference": 0
+        },
+        {
+          "frame": 198,
+          "time": 3.3,
+          "offset": 0,
+          "file": "critical/frame-0198.png",
+          "adjacentThumbnailDifference": 0
+        },
+        {
+          "frame": 199,
+          "time": 3.316666666666667,
+          "offset": 1,
+          "file": "critical/frame-0199.png",
+          "adjacentThumbnailDifference": 0.42936197916666835
+        },
+        {
+          "frame": 200,
+          "time": 3.3333333333333335,
+          "offset": 2,
+          "file": "critical/frame-0200.png",
+          "adjacentThumbnailDifference": 1.4034649884259263
+        },
+        {
+          "frame": 201,
+          "time": 3.35,
+          "offset": 3,
+          "file": "critical/frame-0201.png",
+          "adjacentThumbnailDifference": 2.5626446759259247
+        },
+        {
+          "frame": 202,
+          "time": 3.3666666666666667,
+          "offset": 4,
+          "file": "critical/frame-0202.png",
+          "adjacentThumbnailDifference": 3.7907624421296253
+        },
+        {
+          "frame": 203,
+          "time": 3.3833333333333333,
+          "offset": 5,
+          "file": "critical/frame-0203.png",
+          "adjacentThumbnailDifference": 7.541702835648252
+        },
+        {
+          "frame": 204,
+          "time": 3.4,
+          "offset": 6,
+          "file": "critical/frame-0204.png",
+          "adjacentThumbnailDifference": 18.817816840277747
+        }
+      ],
+      "reviewStatus": "approved",
+      "finding": null,
+      "reviewer": "astra_art_review",
+      "assessment": "O plano se dobra de forma opaca e mantém a continuidade com a biblioteca; nenhuma faixa órfã aparece."
+    },
+    {
+      "requestedTime": 3.55,
+      "exactPointFile": "critical/point-02.png",
+      "centerFrame": 213,
+      "frameCenterTime": 3.55,
+      "contactSheet": "critical/window-02.png",
+      "samples": [
+        {
+          "frame": 207,
+          "time": 3.45,
+          "offset": -6,
+          "file": "critical/frame-0207.png",
+          "adjacentThumbnailDifference": null
+        },
+        {
+          "frame": 208,
+          "time": 3.466666666666667,
+          "offset": -5,
+          "file": "critical/frame-0208.png",
+          "adjacentThumbnailDifference": 27.514250578704296
+        },
+        {
+          "frame": 209,
+          "time": 3.4833333333333334,
+          "offset": -4,
+          "file": "critical/frame-0209.png",
+          "adjacentThumbnailDifference": 20.44986979166671
+        },
+        {
+          "frame": 210,
+          "time": 3.5,
+          "offset": -3,
+          "file": "critical/frame-0210.png",
+          "adjacentThumbnailDifference": 12.027705439814886
+        },
+        {
+          "frame": 211,
+          "time": 3.5166666666666666,
+          "offset": -2,
+          "file": "critical/frame-0211.png",
+          "adjacentThumbnailDifference": 16.52228009259282
+        },
+        {
+          "frame": 212,
+          "time": 3.533333333333333,
+          "offset": -1,
+          "file": "critical/frame-0212.png",
+          "adjacentThumbnailDifference": 10.710611979165341
+        },
+        {
+          "frame": 213,
+          "time": 3.55,
+          "offset": 0,
+          "file": "critical/frame-0213.png",
+          "adjacentThumbnailDifference": 6.43898292824078
+        },
+        {
+          "frame": 214,
+          "time": 3.566666666666667,
+          "offset": 1,
+          "file": "critical/frame-0214.png",
+          "adjacentThumbnailDifference": 5.4015480324070815
+        },
+        {
+          "frame": 215,
+          "time": 3.5833333333333335,
+          "offset": 2,
+          "file": "critical/frame-0215.png",
+          "adjacentThumbnailDifference": 5.268916377314542
+        },
+        {
+          "frame": 216,
+          "time": 3.6,
+          "offset": 3,
+          "file": "critical/frame-0216.png",
+          "adjacentThumbnailDifference": 4.964482060185484
+        },
+        {
+          "frame": 217,
+          "time": 3.6166666666666667,
+          "offset": 4,
+          "file": "critical/frame-0217.png",
+          "adjacentThumbnailDifference": 4.705258969907579
+        },
+        {
+          "frame": 218,
+          "time": 3.6333333333333333,
+          "offset": 5,
+          "file": "critical/frame-0218.png",
+          "adjacentThumbnailDifference": 4.587528935185322
+        },
+        {
+          "frame": 219,
+          "time": 3.65,
+          "offset": 6,
+          "file": "critical/frame-0219.png",
+          "adjacentThumbnailDifference": 4.541992187499987
+        }
+      ],
+      "reviewStatus": "approved",
+      "finding": null,
+      "reviewer": "astra_art_review",
+      "assessment": "A capa e a legenda entram acompanhando a superfície. Não há resíduo cinza do plano anterior."
+    },
+    {
+      "requestedTime": 7.15,
+      "exactPointFile": "critical/point-03.png",
+      "centerFrame": 429,
+      "frameCenterTime": 7.15,
+      "contactSheet": "critical/window-03.png",
+      "samples": [
+        {
+          "frame": 423,
+          "time": 7.05,
+          "offset": -6,
+          "file": "critical/frame-0423.png",
+          "adjacentThumbnailDifference": null
+        },
+        {
+          "frame": 424,
+          "time": 7.066666666666666,
+          "offset": -5,
+          "file": "critical/frame-0424.png",
+          "adjacentThumbnailDifference": 12.598958333333304
+        },
+        {
+          "frame": 425,
+          "time": 7.083333333333333,
+          "offset": -4,
+          "file": "critical/frame-0425.png",
+          "adjacentThumbnailDifference": 10.71068431712984
+        },
+        {
+          "frame": 426,
+          "time": 7.1,
+          "offset": -3,
+          "file": "critical/frame-0426.png",
+          "adjacentThumbnailDifference": 8.790075231481529
+        },
+        {
+          "frame": 427,
+          "time": 7.116666666666666,
+          "offset": -2,
+          "file": "critical/frame-0427.png",
+          "adjacentThumbnailDifference": 7.8716362847224115
+        },
+        {
+          "frame": 428,
+          "time": 7.133333333333334,
+          "offset": -1,
+          "file": "critical/frame-0428.png",
+          "adjacentThumbnailDifference": 6.888671874999982
+        },
+        {
+          "frame": 429,
+          "time": 7.15,
+          "offset": 0,
+          "file": "critical/frame-0429.png",
+          "adjacentThumbnailDifference": 6.229239004629599
+        },
+        {
+          "frame": 430,
+          "time": 7.166666666666667,
+          "offset": 1,
+          "file": "critical/frame-0430.png",
+          "adjacentThumbnailDifference": 5.63773148148149
+        },
+        {
+          "frame": 431,
+          "time": 7.183333333333334,
+          "offset": 2,
+          "file": "critical/frame-0431.png",
+          "adjacentThumbnailDifference": 5.36664496527786
+        },
+        {
+          "frame": 432,
+          "time": 7.2,
+          "offset": 3,
+          "file": "critical/frame-0432.png",
+          "adjacentThumbnailDifference": 5.060546874999968
+        },
+        {
+          "frame": 433,
+          "time": 7.216666666666667,
+          "offset": 4,
+          "file": "critical/frame-0433.png",
+          "adjacentThumbnailDifference": 4.56589988425927
+        },
+        {
+          "frame": 434,
+          "time": 7.233333333333333,
+          "offset": 5,
+          "file": "critical/frame-0434.png",
+          "adjacentThumbnailDifference": 4.29065393518518
+        },
+        {
+          "frame": 435,
+          "time": 7.25,
+          "offset": 6,
+          "file": "critical/frame-0435.png",
+          "adjacentThumbnailDifference": 3.805013020833286
+        }
+      ],
+      "reviewStatus": "approved",
+      "finding": null,
+      "reviewer": "astra_art_review",
+      "assessment": "Uma única faixa opaca transporta o título até o player. As palavras permanecem separadas durante a mudança de linha."
+    },
+    {
+      "requestedTime": 9.675,
+      "exactPointFile": "critical/point-04.png",
+      "centerFrame": 581,
+      "frameCenterTime": 9.683333333333334,
+      "contactSheet": "critical/window-04.png",
+      "samples": [
+        {
+          "frame": 575,
+          "time": 9.583333333333334,
+          "offset": -6,
+          "file": "critical/frame-0575.png",
+          "adjacentThumbnailDifference": null
+        },
+        {
+          "frame": 576,
+          "time": 9.6,
+          "offset": -5,
+          "file": "critical/frame-0576.png",
+          "adjacentThumbnailDifference": 3.2653356481482336
+        },
+        {
+          "frame": 577,
+          "time": 9.616666666666667,
+          "offset": -4,
+          "file": "critical/frame-0577.png",
+          "adjacentThumbnailDifference": 3.3631365740741455
+        },
+        {
+          "frame": 578,
+          "time": 9.633333333333333,
+          "offset": -3,
+          "file": "critical/frame-0578.png",
+          "adjacentThumbnailDifference": 4.721752025462942
+        },
+        {
+          "frame": 579,
+          "time": 9.65,
+          "offset": -2,
+          "file": "critical/frame-0579.png",
+          "adjacentThumbnailDifference": 4.442816840277727
+        },
+        {
+          "frame": 580,
+          "time": 9.666666666666666,
+          "offset": -1,
+          "file": "critical/frame-0580.png",
+          "adjacentThumbnailDifference": 3.9271195023147425
+        },
+        {
+          "frame": 581,
+          "time": 9.683333333333334,
+          "offset": 0,
+          "file": "critical/frame-0581.png",
+          "adjacentThumbnailDifference": 3.4219473379629424
+        },
+        {
+          "frame": 582,
+          "time": 9.7,
+          "offset": 1,
+          "file": "critical/frame-0582.png",
+          "adjacentThumbnailDifference": 2.684932002314772
+        },
+        {
+          "frame": 583,
+          "time": 9.716666666666667,
+          "offset": 2,
+          "file": "critical/frame-0583.png",
+          "adjacentThumbnailDifference": 2.0027488425926325
+        },
+        {
+          "frame": 584,
+          "time": 9.733333333333333,
+          "offset": 3,
+          "file": "critical/frame-0584.png",
+          "adjacentThumbnailDifference": 1.6855468750000089
+        },
+        {
+          "frame": 585,
+          "time": 9.75,
+          "offset": 4,
+          "file": "critical/frame-0585.png",
+          "adjacentThumbnailDifference": 1.484555844907415
+        },
+        {
+          "frame": 586,
+          "time": 9.766666666666667,
+          "offset": 5,
+          "file": "critical/frame-0586.png",
+          "adjacentThumbnailDifference": 1.369429976851877
+        },
+        {
+          "frame": 587,
+          "time": 9.783333333333333,
+          "offset": 6,
+          "file": "critical/frame-0587.png",
+          "adjacentThumbnailDifference": 1.1593967013888857
+        }
+      ],
+      "reviewStatus": "approved",
+      "finding": null,
+      "reviewer": "astra_art_review",
+      "assessment": "Título, subtítulo, contador e rótulo permanecem acima da linha. A cortina remove o conteúdo anterior sem atravessar o texto novo; singular “1 dia” correto."
+    },
+    {
+      "requestedTime": 12.725,
+      "exactPointFile": "critical/point-05.png",
+      "centerFrame": 764,
+      "frameCenterTime": 12.733333333333333,
+      "contactSheet": "critical/window-05.png",
+      "samples": [
+        {
+          "frame": 758,
+          "time": 12.633333333333333,
+          "offset": -6,
+          "file": "critical/frame-0758.png",
+          "adjacentThumbnailDifference": null
+        },
+        {
+          "frame": 759,
+          "time": 12.65,
+          "offset": -5,
+          "file": "critical/frame-0759.png",
+          "adjacentThumbnailDifference": 1.5487557870370567
+        },
+        {
+          "frame": 760,
+          "time": 12.666666666666666,
+          "offset": -4,
+          "file": "critical/frame-0760.png",
+          "adjacentThumbnailDifference": 1.3827763310185317
+        },
+        {
+          "frame": 761,
+          "time": 12.683333333333334,
+          "offset": -3,
+          "file": "critical/frame-0761.png",
+          "adjacentThumbnailDifference": 1.2915943287036837
+        },
+        {
+          "frame": 762,
+          "time": 12.7,
+          "offset": -2,
+          "file": "critical/frame-0762.png",
+          "adjacentThumbnailDifference": 1.0628978587962923
+        },
+        {
+          "frame": 763,
+          "time": 12.716666666666667,
+          "offset": -1,
+          "file": "critical/frame-0763.png",
+          "adjacentThumbnailDifference": 1.094401041666659
+        },
+        {
+          "frame": 764,
+          "time": 12.733333333333333,
+          "offset": 0,
+          "file": "critical/frame-0764.png",
+          "adjacentThumbnailDifference": 0.972909432870369
+        },
+        {
+          "frame": 765,
+          "time": 12.75,
+          "offset": 1,
+          "file": "critical/frame-0765.png",
+          "adjacentThumbnailDifference": 0.8735532407407381
+        },
+        {
+          "frame": 766,
+          "time": 12.766666666666667,
+          "offset": 2,
+          "file": "critical/frame-0766.png",
+          "adjacentThumbnailDifference": 0.7785011574073979
+        },
+        {
+          "frame": 767,
+          "time": 12.783333333333333,
+          "offset": 3,
+          "file": "critical/frame-0767.png",
+          "adjacentThumbnailDifference": 0.7200882523148135
+        },
+        {
+          "frame": 768,
+          "time": 12.8,
+          "offset": 4,
+          "file": "critical/frame-0768.png",
+          "adjacentThumbnailDifference": 0.6712601273148181
+        },
+        {
+          "frame": 769,
+          "time": 12.816666666666666,
+          "offset": 5,
+          "file": "critical/frame-0769.png",
+          "adjacentThumbnailDifference": 0.6522352430555588
+        },
+        {
+          "frame": 770,
+          "time": 12.833333333333334,
+          "offset": 6,
+          "file": "critical/frame-0770.png",
+          "adjacentThumbnailDifference": 0.523943865740736
+        }
+      ],
+      "reviewStatus": "approved",
+      "finding": null,
+      "reviewer": "astra_art_review",
+      "assessment": "A linha do gráfico se transforma sobre o cartão azul, sem pontos abandonados ou desconexão visível."
+    },
+    {
+      "requestedTime": 16.45,
+      "exactPointFile": "critical/point-06.png",
+      "centerFrame": 987,
+      "frameCenterTime": 16.45,
+      "contactSheet": "critical/window-06.png",
+      "samples": [
+        {
+          "frame": 981,
+          "time": 16.35,
+          "offset": -6,
+          "file": "critical/frame-0981.png",
+          "adjacentThumbnailDifference": null
+        },
+        {
+          "frame": 982,
+          "time": 16.366666666666667,
+          "offset": -5,
+          "file": "critical/frame-0982.png",
+          "adjacentThumbnailDifference": 2.7852647569444278
+        },
+        {
+          "frame": 983,
+          "time": 16.383333333333333,
+          "offset": -4,
+          "file": "critical/frame-0983.png",
+          "adjacentThumbnailDifference": 3.7749565972221877
+        },
+        {
+          "frame": 984,
+          "time": 16.4,
+          "offset": -3,
+          "file": "critical/frame-0984.png",
+          "adjacentThumbnailDifference": 4.656575520833248
+        },
+        {
+          "frame": 985,
+          "time": 16.416666666666668,
+          "offset": -2,
+          "file": "critical/frame-0985.png",
+          "adjacentThumbnailDifference": 5.679578993055562
+        },
+        {
+          "frame": 986,
+          "time": 16.433333333333334,
+          "offset": -1,
+          "file": "critical/frame-0986.png",
+          "adjacentThumbnailDifference": 6.642144097222268
+        },
+        {
+          "frame": 987,
+          "time": 16.45,
+          "offset": 0,
+          "file": "critical/frame-0987.png",
+          "adjacentThumbnailDifference": 7.578993055555625
+        },
+        {
+          "frame": 988,
+          "time": 16.466666666666665,
+          "offset": 1,
+          "file": "critical/frame-0988.png",
+          "adjacentThumbnailDifference": 8.296802662037068
+        },
+        {
+          "frame": 989,
+          "time": 16.483333333333334,
+          "offset": 2,
+          "file": "critical/frame-0989.png",
+          "adjacentThumbnailDifference": 8.697374131944354
+        },
+        {
+          "frame": 990,
+          "time": 16.5,
+          "offset": 3,
+          "file": "critical/frame-0990.png",
+          "adjacentThumbnailDifference": 8.120695891203848
+        },
+        {
+          "frame": 991,
+          "time": 16.516666666666666,
+          "offset": 4,
+          "file": "critical/frame-0991.png",
+          "adjacentThumbnailDifference": 7.717918113425913
+        },
+        {
+          "frame": 992,
+          "time": 16.533333333333335,
+          "offset": 5,
+          "file": "critical/frame-0992.png",
+          "adjacentThumbnailDifference": 7.483362268518476
+        },
+        {
+          "frame": 993,
+          "time": 16.55,
+          "offset": 6,
+          "file": "critical/frame-0993.png",
+          "adjacentThumbnailDifference": 7.224934895833367
+        }
+      ],
+      "reviewStatus": "approved",
+      "finding": null,
+      "reviewer": "astra_art_review",
+      "assessment": "O símbolo passa acima do nome com espaço suficiente; assinatura única, sem colisão ou duplicação."
+    },
+    {
+      "requestedTime": 20.85,
+      "exactPointFile": "critical/point-07.png",
+      "centerFrame": 1251,
+      "frameCenterTime": 20.85,
+      "contactSheet": "critical/window-07.png",
+      "samples": [
+        {
+          "frame": 1245,
+          "time": 20.75,
+          "offset": -6,
+          "file": "critical/frame-1245.png",
+          "adjacentThumbnailDifference": null
+        },
+        {
+          "frame": 1246,
+          "time": 20.766666666666666,
+          "offset": -5,
+          "file": "critical/frame-1246.png",
+          "adjacentThumbnailDifference": 1.5775824652777706
+        },
+        {
+          "frame": 1247,
+          "time": 20.783333333333335,
+          "offset": -4,
+          "file": "critical/frame-1247.png",
+          "adjacentThumbnailDifference": 1.58145254629628
+        },
+        {
+          "frame": 1248,
+          "time": 20.8,
+          "offset": -3,
+          "file": "critical/frame-1248.png",
+          "adjacentThumbnailDifference": 1.4909939236111103
+        },
+        {
+          "frame": 1249,
+          "time": 20.816666666666666,
+          "offset": -2,
+          "file": "critical/frame-1249.png",
+          "adjacentThumbnailDifference": 1.5085358796296189
+        },
+        {
+          "frame": 1250,
+          "time": 20.833333333333332,
+          "offset": -1,
+          "file": "critical/frame-1250.png",
+          "adjacentThumbnailDifference": 1.4007161458333428
+        },
+        {
+          "frame": 1251,
+          "time": 20.85,
+          "offset": 0,
+          "file": "critical/frame-1251.png",
+          "adjacentThumbnailDifference": 1.2723885995370414
+        },
+        {
+          "frame": 1252,
+          "time": 20.866666666666667,
+          "offset": 1,
+          "file": "critical/frame-1252.png",
+          "adjacentThumbnailDifference": 1.2851200810185206
+        },
+        {
+          "frame": 1253,
+          "time": 20.883333333333333,
+          "offset": 2,
+          "file": "critical/frame-1253.png",
+          "adjacentThumbnailDifference": 1.1769748263888924
+        },
+        {
+          "frame": 1254,
+          "time": 20.9,
+          "offset": 3,
+          "file": "critical/frame-1254.png",
+          "adjacentThumbnailDifference": 1.1357421874999951
+        },
+        {
+          "frame": 1255,
+          "time": 20.916666666666668,
+          "offset": 4,
+          "file": "critical/frame-1255.png",
+          "adjacentThumbnailDifference": 1.051613136574071
+        },
+        {
+          "frame": 1256,
+          "time": 20.933333333333334,
+          "offset": 5,
+          "file": "critical/frame-1256.png",
+          "adjacentThumbnailDifference": 1.0332031249999907
+        },
+        {
+          "frame": 1257,
+          "time": 20.95,
+          "offset": 6,
+          "file": "critical/frame-1257.png",
+          "adjacentThumbnailDifference": 0.9635416666666556
+        }
+      ],
+      "reviewStatus": "approved",
+      "finding": null,
+      "reviewer": "astra_art_review",
+      "assessment": "O retorno mantém a placa opaca e o botão azul. A breve redução de conteúdo faz parte da transformação e não produz flash ou superfície acinzentada."
+    },
+    {
+      "requestedTime": 21.35,
+      "exactPointFile": "critical/point-08.png",
+      "centerFrame": 1281,
+      "frameCenterTime": 21.35,
+      "contactSheet": "critical/window-08.png",
+      "samples": [
+        {
+          "frame": 1275,
+          "time": 21.25,
+          "offset": -6,
+          "file": "critical/frame-1275.png",
+          "adjacentThumbnailDifference": null
+        },
+        {
+          "frame": 1276,
+          "time": 21.266666666666666,
+          "offset": -5,
+          "file": "critical/frame-1276.png",
+          "adjacentThumbnailDifference": 0.8909143518518484
+        },
+        {
+          "frame": 1277,
+          "time": 21.283333333333335,
+          "offset": -4,
+          "file": "critical/frame-1277.png",
+          "adjacentThumbnailDifference": 0.786892361111106
+        },
+        {
+          "frame": 1278,
+          "time": 21.3,
+          "offset": -3,
+          "file": "critical/frame-1278.png",
+          "adjacentThumbnailDifference": 0.7595486111111103
+        },
+        {
+          "frame": 1279,
+          "time": 21.316666666666666,
+          "offset": -2,
+          "file": "critical/frame-1279.png",
+          "adjacentThumbnailDifference": 0.761140046296295
+        },
+        {
+          "frame": 1280,
+          "time": 21.333333333333332,
+          "offset": -1,
+          "file": "critical/frame-1280.png",
+          "adjacentThumbnailDifference": 0.8363715277777776
+        },
+        {
+          "frame": 1281,
+          "time": 21.35,
+          "offset": 0,
+          "file": "critical/frame-1281.png",
+          "adjacentThumbnailDifference": 0.7109736689814801
+        },
+        {
+          "frame": 1282,
+          "time": 21.366666666666667,
+          "offset": 1,
+          "file": "critical/frame-1282.png",
+          "adjacentThumbnailDifference": 0.63035300925926
+        },
+        {
+          "frame": 1283,
+          "time": 21.383333333333333,
+          "offset": 2,
+          "file": "critical/frame-1283.png",
+          "adjacentThumbnailDifference": 0.5311053240740732
+        },
+        {
+          "frame": 1284,
+          "time": 21.4,
+          "offset": 3,
+          "file": "critical/frame-1284.png",
+          "adjacentThumbnailDifference": 0.578559027777779
+        },
+        {
+          "frame": 1285,
+          "time": 21.416666666666668,
+          "offset": 4,
+          "file": "critical/frame-1285.png",
+          "adjacentThumbnailDifference": 0.4450954861111122
+        },
+        {
+          "frame": 1286,
+          "time": 21.433333333333334,
+          "offset": 5,
+          "file": "critical/frame-1286.png",
+          "adjacentThumbnailDifference": 0.45981626157407374
+        },
+        {
+          "frame": 1287,
+          "time": 21.45,
+          "offset": 6,
+          "file": "critical/frame-1287.png",
+          "adjacentThumbnailDifference": 0.3593749999999994
+        }
+      ],
+      "reviewStatus": "approved",
+      "finding": null,
+      "reviewer": "astra_art_review",
+      "assessment": "O texto do hero reaparece por recorte, com uma única placa de plano e um único CTA. Os glifos parciais são estados contínuos do recorte."
+    }
+  ],
+  "pageErrors": [],
+  "reviewStatus": "approved",
+  "audioReference": {
+    "source": "Deep Urban — Eugenio Mininni / Mixkit",
+    "bpm": 120,
+    "beatMap": [
+      {
+        "time": 3.3,
+        "measuredAttack": 3.305,
+        "deltaMs": 5
+      },
+      {
+        "time": 6.8,
+        "measuredAttack": 6.8075,
+        "deltaMs": 8
+      },
+      {
+        "time": 9.3,
+        "measuredAttack": 9.2975,
+        "deltaMs": -3
+      },
+      {
+        "time": 12.3,
+        "measuredAttack": 12.2975,
+        "deltaMs": -3
+      },
+      {
+        "time": 16.3,
+        "measuredAttack": 16.2975,
+        "deltaMs": -3
+      },
+      {
+        "time": 18.3,
+        "measuredAttack": 18.3,
+        "deltaMs": 0
+      },
+      {
+        "time": 20.3,
+        "measuredAttack": 20.3,
+        "deltaMs": 0
+      }
+    ],
+    "note": "Previously measured musical attack times. Visual arrival timing must be assessed from the new motion; this is not an audio-visual sync pass."
+  },
+  "reviewer": "astra_art_review",
+  "reviewedAt": "2026-10-04T21:31:32.378Z",
+  "reviewScope": "Visual continuity and transitions in eight final Canvas CPU contact windows: 104 source frames at 1440x1440, 60 fps. Supporting prior detailed review: frames 555–590 with identical trajectories and a different antialiasing configuration.",
+  "sourceFile": "public/lume-refined.js",
+  "sourceSHA256": "0386c84103e24febb42600f4d9984637bc04748e551e2207b81e90ca71490ba9",
+  "sourceSHA": "0386c84103e24febb42600f4d9984637bc04748e551e2207b81e90ca71490ba9",
+  "renderingMode": "Canvas 2D software/CPU; final capture configuration",
+  "findings": [],
+  "exportApproval": "Approved within the stated source-frame visual-review scope; final encoded video and audio are outside this review."
+}

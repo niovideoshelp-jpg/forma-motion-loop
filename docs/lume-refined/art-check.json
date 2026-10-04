@@ -1,0 +1,9 @@
+{
+  "coverMatches": [
+    true,
+    true,
+    true
+  ],
+  "handoffMatches": true,
+  "deterministic": true
+}

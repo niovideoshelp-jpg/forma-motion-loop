@@ -1,0 +1,33 @@
+{
+  "package": "gsap",
+  "version": "3.15.0",
+  "revision": "13e2b790546426a1a2e0e9b409f3f8dc6d6611f2",
+  "archive": "https://github.com/greensock/GSAP/archive/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2.tar.gz",
+  "license": "https://gsap.com/standard-license/",
+  "files": [
+    {
+      "name": "gsap.min.js",
+      "bytes": 72927,
+      "sha256": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+      "source": "https://github.com/greensock/GSAP/blob/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/dist/gsap.min.js"
+    },
+    {
+      "name": "CustomEase.min.js",
+      "bytes": 7143,
+      "sha256": "466e426a5c60c21c94b15a30a3dffacac9bb39ce8f4e07d071d7d4bb1be43390",
+      "source": "https://github.com/greensock/GSAP/blob/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/dist/CustomEase.min.js"
+    },
+    {
+      "name": "MotionPathPlugin.min.js",
+      "bytes": 22002,
+      "sha256": "ace44a07c6c179f5347d9b46a152d468e4c9f272ee0d68bf0354e00d60000693",
+      "source": "https://github.com/greensock/GSAP/blob/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/dist/MotionPathPlugin.min.js"
+    },
+    {
+      "name": "MorphSVGPlugin.min.js",
+      "bytes": 21195,
+      "sha256": "19c891a412240d8521b13330813d9b551ea5b0f707907c365ffecaf1dfa0f5cf",
+      "source": "https://github.com/greensock/GSAP/blob/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/dist/MorphSVGPlugin.min.js"
+    }
+  ]
+}

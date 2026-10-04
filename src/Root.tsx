@@ -76,5 +76,14 @@ export const RemotionRoot: React.FC = () => (
       durationInFrames={1320}
       defaultProps={{ engine: "lume.js", audio: "assets/lume-mix.wav" }}
     />
+    <Composition
+      id="LumeRefined"
+      component={Film}
+      width={1440}
+      height={1440}
+      fps={60}
+      durationInFrames={1320}
+      defaultProps={{ engine: "lume-refined.js", audio: "assets/lume-mix.wav" }}
+    />
   </>
 );
