@@ -1,6 +1,7 @@
 const fs = require("fs"),
   path = require("path"),
   sharp = require("sharp"),
+  crypto = require("crypto"),
   { spawnSync } = require("child_process");
 
 process.chdir(path.resolve(__dirname, ".."));
@@ -53,6 +54,10 @@ function delta(a, b) {
 (async () => {
   if (!fs.existsSync(input) || fs.statSync(input).size === 0)
     throw Error(`Missing finished export: ${input}`);
+  const videoSha256 = crypto
+    .createHash("sha256")
+    .update(fs.readFileSync(input))
+    .digest("hex");
   fs.mkdirSync(folder, { recursive: true });
   const probe = JSON.parse(
     run("ffprobe", [
@@ -126,6 +131,7 @@ function delta(a, b) {
   const measured = JSON.parse(loudnessMatch[0]);
   const loudness = {
     input,
+    videoSha256,
     integratedLUFS: finite(measured.input_i, "integrated loudness"),
     truePeakDbtp: finite(measured.input_tp, "true peak"),
     loudnessRangeLU: finite(measured.input_lra, "loudness range"),
@@ -203,6 +209,7 @@ function delta(a, b) {
   );
   const scan = {
     input,
+    videoSha256,
     metadata,
     decodedFrames,
     analysis: {

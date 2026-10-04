@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "measuredEntry": 0.79079985,
+  "authoredStart": 0.79079984,
+  "startErrorSeconds": -9.99999993922529e-9,
+  "worldContact": {
+    "x": 415.0942,
+    "y": 295.99999
+  },
+  "localContact": {
+    "x": 100.0942,
+    "y": 45.999990000000025
+  },
+  "authoredLocalContact": {
+    "x": 100.09419,
+    "y": 46
+  },
+  "strip": {
+    "x": 870,
+    "y": 995,
+    "width": 330,
+    "height": 9,
+    "excludes": "caption, outline and initial cursor"
+  },
+  "samples": [
+    {
+      "legend": "initial-outline",
+      "time": 0,
+      "hit": false,
+      "fillPhase": 0,
+      "bluePixelsInInteriorStrip": 0
+    },
+    {
+      "legend": "before-entry-1-frame",
+      "time": 0.7741331833333333,
+      "hit": false,
+      "fillPhase": 0,
+      "bluePixelsInInteriorStrip": 0
+    },
+    {
+      "legend": "before-entry-1-microsecond",
+      "time": 0.7907988499999999,
+      "hit": false,
+      "fillPhase": 0,
+      "bluePixelsInInteriorStrip": 0
+    },
+    {
+      "legend": "authored-fill-start",
+      "time": 0.79079984,
+      "hit": false,
+      "fillPhase": 0,
+      "bluePixelsInInteriorStrip": 0
+    },
+    {
+      "legend": "fill-in-progress",
+      "time": 1.05,
+      "hit": true,
+      "fillPhase": 0.5092959647380437,
+      "bluePixelsInInteriorStrip": 2079
+    },
+    {
+      "legend": "fill-complete",
+      "time": 1.59079984,
+      "hit": true,
+      "fillPhase": 1,
+      "bluePixelsInInteriorStrip": 2732
+    },
+    {
+      "legend": "drain-complete-before-cursor",
+      "time": 21.3,
+      "hit": null,
+      "fillPhase": 0,
+      "bluePixelsInInteriorStrip": 0
+    },
+    {
+      "legend": "loop-end",
+      "time": 21.983333333333334,
+      "hit": null,
+      "fillPhase": 0,
+      "bluePixelsInInteriorStrip": 0
+    }
+  ]
+}

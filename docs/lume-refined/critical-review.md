@@ -1,30 +1,30 @@
 # Lume refined — revisão final de transições
 
-**Parecer: aprovado.** Revisor: `astra_art_review`. Nenhum defeito bloqueante encontrado nas oito janelas finais.
+**Parecer: aprovado.** Revisor: `astra_art_review`. Nenhum defeito bloqueante encontrado nas oito janelas regeneradas após a alteração do CTA.
 
-Escopo: oito contatos da captura final Canvas 2D por CPU, com 13 quadros consecutivos por janela, totalizando 104 quadros de origem em 1440 × 1440 a 60 fps. O parecer cobre continuidade, máscaras, transporte de objetos, sobreposições e legibilidade durante as transições.
+Escopo: oito contatos finais Canvas 2D por CPU; 13 quadros consecutivos por janela, total de 104 quadros de origem em 1440 × 1440 a 60 fps. A revisão cobre continuidade, máscaras, transporte de objetos e legibilidade, com atenção ao handoff de 3,3 s e ao botão com contorno em 21,35 s.
 
 Fonte: `public/lume-refined.js`
 
-SHA-256: `0386c84103e24febb42600f4d9984637bc04748e551e2207b81e90ca71490ba9`
+SHA-256: `adccb12092e6f8d3761d024a6fa6e533da5deea3575fd21201abe60576bdb766`
 
 ## 01 — 3.300 s
 
 Quadros 192–204. [Contato](critical/window-01.png) · [Instante exato](critical/point-01.png).
 
-Aprovado. O plano se dobra de forma opaca e mantém a continuidade com a biblioteca; nenhuma faixa órfã aparece.
+Aprovado. O CTA continua azul após a confirmação. A passagem para a superfície seguinte mantém posição, preenchimento e continuidade; o plano se dobra de forma opaca sem faixa órfã.
 
 ## 02 — 3.550 s
 
 Quadros 207–219. [Contato](critical/window-02.png) · [Instante exato](critical/point-02.png).
 
-Aprovado. A capa e a legenda entram acompanhando a superfície. Não há resíduo cinza do plano anterior.
+Aprovado. A capa emerge da mesma superfície e a legenda acompanha sua geometria. Nenhum resíduo cinza do plano anterior.
 
 ## 03 — 7.150 s
 
 Quadros 423–435. [Contato](critical/window-03.png) · [Instante exato](critical/point-03.png).
 
-Aprovado. Uma única faixa opaca transporta o título até o player. As palavras permanecem separadas durante a mudança de linha.
+Aprovado. Faixa opaca única transporta o título; palavras separadas, arte estável e sem título duplicado.
 
 ## 04 — 9.675 s
 
@@ -36,28 +36,30 @@ Aprovado. Título, subtítulo, contador e rótulo permanecem acima da linha. A c
 
 Quadros 758–770. [Contato](critical/window-05.png) · [Instante exato](critical/point-05.png).
 
-Aprovado. A linha do gráfico se transforma sobre o cartão azul, sem pontos abandonados ou desconexão visível.
+Aprovado. Linha do gráfico se transforma sobre cartão azul, sem pontos abandonados ou desconexão visível.
 
 ## 06 — 16.450 s
 
 Quadros 981–993. [Contato](critical/window-06.png) · [Instante exato](critical/point-06.png).
 
-Aprovado. O símbolo passa acima do nome com espaço suficiente; assinatura única, sem colisão ou duplicação.
+Aprovado. Símbolo passa acima do nome com espaço suficiente; assinatura única, sem colisão.
 
 ## 07 — 20.850 s
 
 Quadros 1245–1257. [Contato](critical/window-07.png) · [Instante exato](critical/point-07.png).
 
-Aprovado. O retorno mantém a placa opaca e o botão azul. A breve redução de conteúdo faz parte da transformação e não produz flash ou superfície acinzentada.
+Aprovado. Retorno conserva a placa opaca. O botão azul começa a drenar para revelar fundo claro e borda azul, sem duplicação ou mudança abrupta de forma.
 
 ## 08 — 21.350 s
 
 Quadros 1275–1287. [Contato](critical/window-08.png) · [Instante exato](critical/point-08.png).
 
-Aprovado. O texto do hero reaparece por recorte, com uma única placa de plano e um único CTA. Os glifos parciais são estados contínuos do recorte.
+Aprovado. O CTA já está claro com borda e texto azuis, sem resíduo do líquido. Hero reaparece por recorte e há uma única placa e um único botão.
 
 ## Evidência complementar e limites
 
-A revisão detalhada anterior dos quadros 555–590 (9,25–9,833 s) está registrada em [transition-review.json](transition-review.json) e no [contato de 36 quadros](transition-review/window-555-590.png). Ela verificou a entrada progressiva de título e contador após suas caixas passarem pela linha. As trajetórias são as mesmas da versão final; a configuração de antialiasing dessa captura anterior difere da captura CPU atual. A janela final 575–587 foi novamente inspecionada nesta revisão e não apresenta regressão.
+A alteração do botão tem parecer específico em [cta-review.json](cta-review.json), incluindo contraste durante o preenchimento, origem da frente líquida e recuperação do estado inicial.
 
-O responsável pelo engine informou aprovação de 48/48 buscas, 1320 quadros sem flags e zero pixels de diferença no loop. Esses testes não foram repetidos por este revisor. A análise aqui documentada é visual dos quadros de origem; não constitui inspeção do vídeo final codificado nem validação de sincronismo de áudio. Nenhum arquivo de engine foi alterado pelo revisor.
+A revisão detalhada anterior dos quadros 555–590 (9,25–9,833 s) permanece como evidência complementar em [transition-review.json](transition-review.json) e no [contato de 36 quadros](transition-review/window-555-590.png). Ela verificou a entrada de título e contador somente após suas caixas passarem pela linha. As trajetórias dessa passagem foram preservadas; a captura anterior usa outra configuração de antialiasing. A janela atual 575–587 foi novamente inspecionada e continua aprovada.
+
+A aprovação aqui é visual dos quadros de origem. A igualdade numérica do loop, a determinância de seek e a exportação codificada devem ser confirmadas pelos respectivos relatórios de auditoria da versão atual; esses testes não foram repetidos por este revisor. Não foi avaliado sincronismo de áudio. Nenhum engine foi alterado nem captura regenerada por este revisor.

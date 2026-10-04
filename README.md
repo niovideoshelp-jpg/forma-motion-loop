@@ -8,6 +8,8 @@
 
 Built with official GSAP CustomEase, MotionPath and MorphSVG, pinned from GitHub. Reproduction, visual comparisons and source/encoded validation reports are in [LUME-REFINED.md](LUME-REFINED.md).
 
+The opening now starts with a blue outlined CTA that fills with liquid from the pointer's entry point. Its label changes color through the same mask, and the fill recedes at the ending to restore the initial frame. [Hover preview](docs/lume-refined/cta-hover.png).
+
 ![Refined storyboard](docs/lume-refined/storyboard.png)
 
 ## Previous edition: Lume+

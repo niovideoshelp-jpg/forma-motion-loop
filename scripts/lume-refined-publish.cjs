@@ -13,6 +13,8 @@ const preflight = read("preflight.json"),
   encoded = read("encoded-scan.json"),
   transition = read("transition-review.json"),
   remotion = read("remotion-check.json");
+if (encoded.videoSha256 !== hash(path.join(source, "lume-refined-1440-60.mp4")))
+  throw Error("Decoded evidence belongs to a different video export");
 if (
   !preflight.loopEqual ||
   !preflight.seekIndependent ||
@@ -28,11 +30,21 @@ if (
   throw Error("Video validation failed");
 if (!transition.exportApproved || !remotion.equal || remotion.changedPixels)
   throw Error("Review or Remotion parity failed");
+if (remotion.frames?.some((frame) => !frame.equal || frame.changedPixels !== 0))
+  throw Error("A Remotion comparison frame failed");
 if (remotion.sourceSha256 !== hash("public/lume-refined.js"))
   throw Error("Remotion evidence belongs to a different engine revision");
 const coverage = read("critical-coverage.json"),
   motion = read("motion-check.json");
 if (!motion.passed) throw Error("Independent motion check failed");
+const cta = read("cta-review.json"),
+  ctaContact = read("cta-hover-check.json");
+if (
+  cta.status !== "approved" ||
+  cta.sourceSHA !== hash("public/lume-refined.js") ||
+  !ctaContact.passed
+)
+  throw Error("Liquid CTA review or contact check failed");
 if (
   coverage.reviewStatus !== "approved" ||
   coverage.sourceSHA256 !== hash("public/lume-refined.js")
@@ -67,8 +79,14 @@ const files = [
   "art-check.json",
   "engine-player-current.png",
   "remotion-player.png",
+  "cta-hover.png",
+  "cta-review.json",
+  "cta-hover-check.json",
+  "remotion-opening.png",
+  "engine-opening-current.png",
 ];
 files.forEach((name) => copy(name));
+copy("cta/point-01.png", "cta-first.png");
 copy("transition-review/window-555-590.png", "player-progress-review.png");
 coverage.windows.forEach((window) => {
   copy(window.contactSheet);

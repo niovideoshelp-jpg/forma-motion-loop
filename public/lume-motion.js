@@ -11,6 +11,13 @@ export const MOTION_BEATS = Object.freeze([
   { key: "f", name: "brand", at: 16.3, duration: 0.65 },
   { key: "r", name: "return", at: 20.3, duration: 1.45 },
 ]);
+// Rounded-rectangle hit time for the authored pointer route, measured in GSAP.
+export const CTA_HOVER = Object.freeze({
+  start: 0.79079984,
+  duration: 0.8,
+  x: 100.09419,
+  y: 46,
+});
 
 const clamp = (v) => Math.max(0, Math.min(1, v));
 const mix = (a, b, p) => a + (b - a) * p;
@@ -181,7 +188,7 @@ export function createMotion(runtime = globalThis) {
       pointerEase,
     );
   }
-  pointerPath("M285,140 C220,140 75,12 0,0", { x: 285, y: 140 }, 0.15, 0.7);
+  pointerPath("M285,140 C220,140 75,12 0,0", { x: 285, y: 140 }, 0.12, 1.65);
   tween(contact, { scale: 1 }, { scale: 0.985 }, 2.925, 0.075, "power1.in");
   tween(contact, { scale: 0.985 }, { scale: 1 }, 3, 0.18, settle);
   pointerPath("M0,0 C40,30 175,240 155,275", { x: 0, y: 0 }, 3.38, 0.72);

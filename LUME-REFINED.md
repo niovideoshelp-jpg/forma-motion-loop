@@ -8,6 +8,7 @@ A second edition of the fictional subscription product film, reviewed by four ag
 
 ## What changed
 
+- The opening CTA starts with a light fill, blue outline and blue label. When the pointer enters at 0.7908 seconds, an organic blue front fills it over 0.8 seconds; the label turns white only inside the liquid. A longer pointer approach and underline maintain activity before the 3-second press. The liquid drains at 20.80–21.30 seconds to restore the outlined loop endpoint. [Hover and return contact sheet](docs/lume-refined/cta-hover.png).
 - The subscription card folds behind the growing course cover. The opening retains its context during the handoff.
 - One opaque band carries the course title from the library into the player. Horizontal text placement finishes before the two lines join.
 - The lesson demonstrates composition: a circle develops into a curve, the bloom rotates, columns grow and the staircase resolves. The play overlay leaves the artwork after the press.
@@ -51,6 +52,7 @@ Open [the browser preview](http://127.0.0.1:4187/lume-refined.html). In another 
 node scripts/lume-refined-produce.cjs stills
 node scripts/lume-refined-produce.cjs compare
 node scripts/lume-refined-produce.cjs critical
+node scripts/lume-cta-preview.cjs
 node scripts/lume-refined-motion-check.cjs
 node scripts/lume-refined-produce.cjs audit
 node scripts/lume-refined-produce.cjs render
@@ -63,9 +65,9 @@ Output: `out/lume-refined/lume-refined-1440-60.mp4`. Run `npm run dev` and selec
 
 ## Validation evidence
 
-The source audit scans all 1,320 frames for isolated jumps and compares 48 full-resolution seek replays. Opening and closing source frames match exactly across 1440 × 1440 RGBA pixels. Independent motion checks cover 285 timeline comparisons, 1,321 valid poses, seven cold canvas replays and 48 additional full canvas replays. Remotion frame 510 matches the browser canvas pixel for pixel. The canvas requests CPU rasterization from creation so early pixel readbacks cannot change its rendering backend.
+The source audit scans all 1,320 frames for isolated jumps and compares 48 full-resolution seek replays. Opening and closing source frames match exactly across 1440 × 1440 RGBA pixels. Independent motion checks cover 285 timeline comparisons, 1,321 valid poses, seven cold canvas replays and 48 additional full canvas replays. Remotion frames 0 and 510 match the browser canvas pixel for pixel. The canvas requests CPU rasterization from creation so early pixel readbacks cannot change its rendering backend.
 
-The encoded MP4 is decoded and scanned separately: **1440 × 1440, 60 fps, 1,320 frames, 22.000 seconds**, H.264/AAC. All 1,320 decoded frames were scanned with **zero isolated jump candidates**. Finished audio measures **−14.03 LUFS / −1.71 dBTP**. Source-pixel equality does not imply identical decoded pixels after H.264 compression; the encoded endpoint thumbnails differ by a mean 0.0531 and a maximum 3 channel levels.
+The encoded MP4 is decoded and scanned separately: **1440 × 1440, 60 fps, 1,320 frames, 22.000 seconds**, H.264/AAC. All 1,320 decoded frames were scanned with **zero isolated jump candidates**. Finished audio measures **−14.03 LUFS / −1.71 dBTP**. Source-pixel equality does not imply identical decoded pixels after H.264 compression; the encoded endpoint thumbnails differ by a mean 0.0636 and a maximum 3 channel levels.
 
 - [Source preflight](docs/lume-refined/preflight.json)
 - [Production frame scan](docs/lume-refined/frame-scan.json)
@@ -76,6 +78,8 @@ The encoded MP4 is decoded and scanned separately: **1440 × 1440, 60 fps, 1,320
 - [Transition review](docs/lume-refined/transition-review.json)
 - [Rhythm review](docs/lume-refined/rhythm-review.json)
 - [Remotion comparison](docs/lume-refined/remotion-check.json)
+- [Liquid CTA review](docs/lume-refined/cta-review.json)
+- [Measured pointer contact and fill timing](docs/lume-refined/cta-hover-check.json)
 - [Critical contacts](docs/lume-refined/critical.png)
 - [Before and after, part 1](docs/lume-refined/compare-01.png)
 - [Before and after, part 2](docs/lume-refined/compare-02.png)

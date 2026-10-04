@@ -1,0 +1,39 @@
+{
+  "status": "approved",
+  "reviewer": "astra_art_review",
+  "reviewedAt": "2026-10-04T21:53:52.640Z",
+  "sourceFile": "public/lume-refined.js",
+  "sourceSHA": "adccb12092e6f8d3761d024a6fa6e533da5deea3575fd21201abe60576bdb766",
+  "motionSourceFile": "public/lume-motion.js",
+  "motionSourceSHA": "0fdcbbf5ab947c079130560720a0dd141782d20072e6fd4a8d49c00b82a2fa4b",
+  "scope": "Visual review of eight CTA hover/return source-frame samples; full-resolution inspection of liquid fill at 0.97 s and return at 21.1 s, plus source review of the shared CTA drawing helper. Final encoded motion and full-frame numerical loop audit are outside this review.",
+  "evidence": [
+    "out/lume-refined/cta-hover.png",
+    "out/lume-refined/cta/point-04.png",
+    "out/lume-refined/cta/point-07.png"
+  ],
+  "contactSheetSHA": "36e711da9d661501ab60eebcaa16ee8744757f58ef36926818f089260276539a",
+  "sampleTimes": [
+    0,
+    0.55,
+    0.79079984,
+    0.97,
+    1.1,
+    1.6,
+    21.1,
+    21.9833333333
+  ],
+  "checks": {
+    "initialOutlineVisible": true,
+    "fillOriginCorrespondsToPointerEntry": true,
+    "labelContrastPreservedAcrossLiquidBoundary": true,
+    "liquidFrontSmoothAndContained": true,
+    "blueFillAtCompletedHover": true,
+    "returnRestoresOutlineBeforePointerReentry": true,
+    "initialAndFinalSamplesVisuallyMatch": true
+  },
+  "timingAssessment": "The approach, fill, pointer settling and underline carry the opening through approximately 1.85 s. Underline withdrawal and the existing 3 s press preserve the established beat. Return drain 20.8–21.3 s completes before pointer reentry at 21.4 s.",
+  "visualAssessment": "Approved for this change. The restrained, curved liquid front gives the pointer contact a visible consequence without obscuring the label. Blue and white text use the same geometry and separate masks, preserving readability. The final outlined state matches the opening visually; exact pixel equality remains the engine audit responsibility.",
+  "findings": [],
+  "engineModifiedByReviewer": false
+}

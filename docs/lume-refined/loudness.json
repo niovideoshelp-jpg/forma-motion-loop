@@ -1,5 +1,6 @@
 {
   "input": "out\\lume-refined\\lume-refined-1440-60.mp4",
+  "videoSha256": "b75c1df3db370bf8d95e347953843911d2cf90e927cf197e55ac9109b2373b25",
   "integratedLUFS": -14.03,
   "truePeakDbtp": -1.71,
   "loudnessRangeLU": 1.2,

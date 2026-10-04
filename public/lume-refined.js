@@ -1,5 +1,5 @@
 import { drawCover, drawEmblem, drawLesson } from "./lume-refined-art.js";
-import { createMotion } from "./lume-motion.js";
+import { createMotion, CTA_HOVER } from "./lume-motion.js";
 export const W = 1440,
   H = 1440,
   FPS = 60,
@@ -309,6 +309,60 @@ export function createRenderer(canvas, assets) {
     c.stroke();
     c.restore();
   }
+  function liquidPath(x, y, w, h, p) {
+    if (p <= 0 || p >= 1) return null;
+    const ox = x + CTA_HOVER.x * (w / 420),
+      oy = y + CTA_HOVER.y * (h / 92),
+      radius = farthest({ x, y, w, h }, { x: ox, y: oy }) * 1.1 * p,
+      path = new Path2D();
+    for (let i = 0; i <= 80; i++) {
+      const a = (i / 80) * Math.PI * 2,
+        ripple =
+          Math.sin(Math.PI * p) *
+          (0.065 * Math.sin(3 * a + p * Math.PI * 2) +
+            0.035 * Math.sin(5 * a - p * Math.PI)),
+        r = radius * (1 + ripple),
+        px = ox + Math.cos(a) * r,
+        py = oy + Math.sin(a) * r * (0.72 + 0.28 * p);
+      if (i === 0) path.moveTo(px, py);
+      else path.lineTo(px, py);
+    }
+    path.closePath();
+    return path;
+  }
+  function ctaButton(x, y, w, h, rad, p, label = 1, checked = 0) {
+    plate(x, y, w, h, rad, C.white);
+    const liquid = liquidPath(x, y, w, h, p);
+    clip(c, x, y, w, h, rad, () => {
+      if (p === 1) rr(c, x, y, w, h, rad, C.blue);
+      else if (liquid) {
+        c.fillStyle = C.blue;
+        c.fill(liquid);
+      }
+      const caption = (col) =>
+        text(c, "Assinar agora", x, y, 38, col, 600, "center");
+      alpha(c, label, () => {
+        if (p === 1) caption(C.white);
+        else {
+          caption(C.blue);
+          if (liquid) {
+            c.save();
+            c.clip(liquid);
+            caption(C.white);
+            c.restore();
+          }
+        }
+      });
+      alpha(c, checked, () => check(c, x, y, checked, 22, C.white));
+    });
+    c.save();
+    c.beginPath();
+    c.roundRect(x - w / 2 + 1.4, y - h / 2 + 1.4, w - 2.8, h - 2.8, rad - 1.4);
+    c.strokeStyle = C.blue;
+    c.lineWidth = 2.8;
+    c.stroke();
+    c.restore();
+  }
   function planContent(x = 315, y = -10, drawName = true) {
     c.save();
     c.translate(x - 315, y + 10);
@@ -376,7 +430,7 @@ export function createRenderer(canvas, assets) {
           450,
         );
       });
-      const under = E(t, 1.1, 0.65) * (1 - E(t, 2.65, 0.25));
+      const under = E(t, 1.05, 0.8) * (1 - E(t, 2.65, 0.25));
       alpha(c, under, () =>
         line(
           c,
@@ -551,18 +605,24 @@ export function createRenderer(canvas, assets) {
   }
   function mainSurface(t, displayTime = t) {
     const s = surface(t);
+    if (t < 3.3) {
+      const press = E(t, 3, 0.2);
+      ctaButton(
+        s.x,
+        s.y,
+        s.w,
+        s.h,
+        s.rad,
+        E(t, CTA_HOVER.start, CTA_HOVER.duration),
+        1 - press,
+        press,
+      );
+      return s;
+    }
     let fill = t < 6.8 ? C.blue : t < 12.3 ? C.paper : C.blue;
     if (t >= 20.3 && paperFlood(t, s).p === 1) fill = C.white;
     plate(s.x, s.y, s.w, s.h, Math.max(0, s.rad), fill, 1 - s.f + s.r);
     clip(c, s.x, s.y, s.w, s.h, Math.max(0, s.rad), () => {
-      if (t < 3.3) {
-        alpha(c, 1 - E(t, 3, 0.2), () =>
-          text(c, "Assinar agora", 315, 250, 38, C.white, 600, "center"),
-        );
-        alpha(c, E(t, 3, 0.2), () =>
-          check(c, 315, 250, E(t, 3, 0.2), 22, C.white),
-        );
-      }
       if (t >= 3.3 && t < 6.8) {
         const reveal = E(t, 3.3, 0.48);
         circleMask(
@@ -883,8 +943,9 @@ export function createRenderer(canvas, assets) {
     c.scale(1 / cam.z, 1 / cam.z);
     intro(0, 1, false, t);
     c.restore();
-    if (m === 1) plate(bx, by, 420, 92, 24, C.blue);
-    else {
+    if (m === 1) {
+      ctaButton(bx, by, 420, 92, 24, 1 - E(t, 20.8, 0.5), E(t, 20.9, 0.38));
+    } else {
       const draw = (col) => {
         c.save();
         c.translate(bx, by);
@@ -896,9 +957,6 @@ export function createRenderer(canvas, assets) {
       circleMask(c, flood.x, flood.y, flood.r, () => draw(C.white), true);
       circleMask(c, flood.x, flood.y, flood.r, () => draw(C.blue));
     }
-    alpha(c, E(t, 20.9, 0.38), () =>
-      text(c, "Assinar agora", bx, by, 38, C.white, 600, "center"),
-    );
   }
   function cursor(t) {
     const p = { ...sample.cursor },

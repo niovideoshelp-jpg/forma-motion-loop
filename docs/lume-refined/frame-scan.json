@@ -30,8 +30,8 @@
   ],
   "shutterInFrames": 0.42,
   "endpointPolicy": "Actual rendered subframes with time wrapping; no copied endpoint",
-  "firstHash": "51898c111540b2d03f809a8ca9792eae279d1aed9adaa97fb599967b89d9c187",
-  "lastHash": "51898c111540b2d03f809a8ca9792eae279d1aed9adaa97fb599967b89d9c187",
+  "firstHash": "7adc3ef4288d51d5678ff76909d8fa77f466b06eee73918b1b6281ac46ac2f1a",
+  "lastHash": "7adc3ef4288d51d5678ff76909d8fa77f466b06eee73918b1b6281ac46ac2f1a",
   "loopEqual": true,
   "flags": [],
   "rows": [
@@ -80,625 +80,625 @@
     {
       "frame": 8,
       "time": 0.13333333333333333,
-      "difference": 0,
+      "difference": 0.0003255208333333333,
       "subframes": 4
     },
     {
       "frame": 9,
       "time": 0.15,
-      "difference": 0.00043402777777777775,
+      "difference": 0.0006510416666666665,
       "subframes": 4
     },
     {
       "frame": 10,
       "time": 0.16666666666666666,
-      "difference": 0.001193576388888889,
+      "difference": 0.0009765624999999998,
       "subframes": 4
     },
     {
       "frame": 11,
       "time": 0.18333333333333332,
-      "difference": 0.004014756944444445,
+      "difference": 0.0019169560185185184,
       "subframes": 4
     },
     {
       "frame": 12,
       "time": 0.2,
-      "difference": 0.006510416666666668,
+      "difference": 0.0022424768518518514,
       "subframes": 4
     },
     {
       "frame": 13,
       "time": 0.21666666666666667,
-      "difference": 0.007993344907407406,
+      "difference": 0.0024233217592592596,
       "subframes": 4
     },
     {
       "frame": 14,
       "time": 0.23333333333333334,
-      "difference": 0.012188946759259259,
+      "difference": 0.00343605324074074,
       "subframes": 4
     },
     {
       "frame": 15,
       "time": 0.25,
-      "difference": 0.01341869212962963,
+      "difference": 0.0018446180555555555,
       "subframes": 4
     },
     {
       "frame": 16,
       "time": 0.26666666666666666,
-      "difference": 0.019531249999999997,
+      "difference": 0.003906249999999999,
       "subframes": 4
     },
     {
       "frame": 17,
       "time": 0.2833333333333333,
-      "difference": 0.02311197916666667,
+      "difference": 0.004340277777777778,
       "subframes": 4
     },
     {
       "frame": 18,
       "time": 0.3,
-      "difference": 0.023437500000000003,
+      "difference": 0.00390625,
       "subframes": 4
     },
     {
       "frame": 19,
       "time": 0.31666666666666665,
-      "difference": 0.02549913194444444,
+      "difference": 0.007125289351851852,
       "subframes": 4
     },
     {
       "frame": 20,
       "time": 0.3333333333333333,
-      "difference": 0.027199074074074063,
+      "difference": 0.006184895833333332,
       "subframes": 4
     },
     {
       "frame": 21,
       "time": 0.35,
-      "difference": 0.029188368055555566,
+      "difference": 0.0049189814814814825,
       "subframes": 4
     },
     {
       "frame": 22,
       "time": 0.36666666666666664,
-      "difference": 0.029224537037037035,
+      "difference": 0.006763599537037038,
       "subframes": 4
     },
     {
       "frame": 23,
       "time": 0.38333333333333336,
-      "difference": 0.028067129629629626,
+      "difference": 0.008861400462962962,
       "subframes": 4
     },
     {
       "frame": 24,
       "time": 0.4,
-      "difference": 0.025607638888888888,
+      "difference": 0.009584780092592594,
       "subframes": 4
     },
     {
       "frame": 25,
       "time": 0.4166666666666667,
-      "difference": 0.022063078703703706,
+      "difference": 0.0073061342592592605,
       "subframes": 4
     },
     {
       "frame": 26,
       "time": 0.43333333333333335,
-      "difference": 0.014973958333333336,
+      "difference": 0.012912326388888888,
       "subframes": 4
     },
     {
       "frame": 27,
       "time": 0.45,
-      "difference": 0.01869936342592593,
+      "difference": 0.010344328703703705,
       "subframes": 4
     },
     {
       "frame": 28,
       "time": 0.4666666666666667,
-      "difference": 0.014105902777777781,
+      "difference": 0.008861400462962965,
       "subframes": 4
     },
     {
       "frame": 29,
       "time": 0.48333333333333334,
-      "difference": 0.011357060185185185,
+      "difference": 0.014973958333333334,
       "subframes": 4
     },
     {
       "frame": 30,
       "time": 0.5,
-      "difference": 0.012369791666666668,
+      "difference": 0.008572048611111112,
       "subframes": 4
     },
     {
       "frame": 31,
       "time": 0.5166666666666667,
-      "difference": 0.01048900462962963,
+      "difference": 0.014431423611111112,
       "subframes": 4
     },
     {
       "frame": 32,
       "time": 0.5333333333333333,
-      "difference": 0.00904224537037037,
+      "difference": 0.010452835648148145,
       "subframes": 4
     },
     {
       "frame": 33,
       "time": 0.55,
-      "difference": 0.0071976273148148156,
+      "difference": 0.011140046296296299,
       "subframes": 4
     },
     {
       "frame": 34,
       "time": 0.5666666666666667,
-      "difference": 0.0048828125,
+      "difference": 0.01414207175925926,
       "subframes": 4
     },
     {
       "frame": 35,
       "time": 0.5833333333333334,
-      "difference": 0.004231770833333332,
+      "difference": 0.01222511574074074,
       "subframes": 4
     },
     {
       "frame": 36,
       "time": 0.6,
-      "difference": 0.0049189814814814825,
+      "difference": 0.013635706018518514,
       "subframes": 4
     },
     {
       "frame": 37,
       "time": 0.6166666666666667,
-      "difference": 0.005063657407407407,
+      "difference": 0.013129340277777773,
       "subframes": 4
     },
     {
       "frame": 38,
       "time": 0.6333333333333333,
-      "difference": 0.004738136574074073,
+      "difference": 0.013093171296296295,
       "subframes": 4
     },
     {
       "frame": 39,
       "time": 0.65,
-      "difference": 0.004376446759259259,
+      "difference": 0.012731481481481484,
       "subframes": 4
     },
     {
       "frame": 40,
       "time": 0.6666666666666666,
-      "difference": 0.004484953703703704,
+      "difference": 0.011393229166666666,
       "subframes": 4
     },
     {
       "frame": 41,
       "time": 0.6833333333333333,
-      "difference": 0.004521122685185185,
+      "difference": 0.00972945601851852,
       "subframes": 4
     },
     {
       "frame": 42,
       "time": 0.7,
-      "difference": 0.0031467013888888877,
+      "difference": 0.013129340277777778,
       "subframes": 4
     },
     {
       "frame": 43,
       "time": 0.7166666666666667,
-      "difference": 0.0025318287037037037,
+      "difference": 0.00929542824074074,
       "subframes": 4
     },
     {
       "frame": 44,
       "time": 0.7333333333333333,
-      "difference": 0.004846643518518518,
+      "difference": 0.006944444444444444,
       "subframes": 4
     },
     {
       "frame": 45,
       "time": 0.75,
-      "difference": 0.002097800925925926,
+      "difference": 0.013201678240740741,
       "subframes": 4
     },
     {
       "frame": 46,
       "time": 0.7666666666666667,
-      "difference": 0.0014105902777777784,
+      "difference": 0.008101851851851853,
       "subframes": 4
     },
     {
       "frame": 47,
       "time": 0.7833333333333333,
-      "difference": 0.0008680555555555554,
+      "difference": 0.0054615162037037045,
       "subframes": 4
     },
     {
       "frame": 48,
       "time": 0.8,
-      "difference": 0.0010127314814814812,
+      "difference": 0.008499710648148145,
       "subframes": 4
     },
     {
       "frame": 49,
       "time": 0.8166666666666667,
-      "difference": 0.000614872685185185,
+      "difference": 0.00980179398148148,
       "subframes": 4
     },
     {
       "frame": 50,
       "time": 0.8333333333333334,
-      "difference": 0.0006148726851851851,
+      "difference": 0.006546585648148149,
       "subframes": 4
     },
     {
       "frame": 51,
       "time": 0.85,
-      "difference": 0.0001808449074074074,
+      "difference": 0.004810474537037038,
       "subframes": 4
     },
     {
       "frame": 52,
       "time": 0.8666666666666667,
-      "difference": 0,
+      "difference": 0.012695312499999998,
       "subframes": 4
     },
     {
       "frame": 53,
       "time": 0.8833333333333333,
-      "difference": 0,
+      "difference": 0.014720775462962968,
       "subframes": 4
     },
     {
       "frame": 54,
       "time": 0.9,
-      "difference": 0,
+      "difference": 0.02101417824074074,
       "subframes": 4
     },
     {
       "frame": 55,
       "time": 0.9166666666666666,
-      "difference": 0,
+      "difference": 0.04615162037037036,
       "subframes": 4
     },
     {
       "frame": 56,
       "time": 0.9333333333333333,
-      "difference": 0,
+      "difference": 0.06998697916666664,
       "subframes": 4
     },
     {
       "frame": 57,
       "time": 0.95,
-      "difference": 0,
+      "difference": 0.07515914351851853,
       "subframes": 4
     },
     {
       "frame": 58,
       "time": 0.9666666666666667,
-      "difference": 0,
+      "difference": 0.14746093749999997,
       "subframes": 4
     },
     {
       "frame": 59,
       "time": 0.9833333333333333,
-      "difference": 0,
+      "difference": 0.26276765046296297,
       "subframes": 4
     },
     {
       "frame": 60,
       "time": 1,
-      "difference": 0,
+      "difference": 0.24837239583333337,
       "subframes": 4
     },
     {
       "frame": 61,
       "time": 1.0166666666666666,
-      "difference": 0,
+      "difference": 0.14507378472222224,
       "subframes": 4
     },
     {
       "frame": 62,
       "time": 1.0333333333333334,
-      "difference": 0,
+      "difference": 0.09729456018518513,
       "subframes": 4
     },
     {
       "frame": 63,
       "time": 1.05,
-      "difference": 0,
+      "difference": 0.09270109953703703,
       "subframes": 4
     },
     {
       "frame": 64,
       "time": 1.0666666666666667,
-      "difference": 0,
+      "difference": 0.08843315972222218,
       "subframes": 4
     },
     {
       "frame": 65,
       "time": 1.0833333333333333,
-      "difference": 0,
+      "difference": 0.0749059606481482,
       "subframes": 4
     },
     {
       "frame": 66,
       "time": 1.1,
-      "difference": 0,
+      "difference": 0.08752893518518519,
       "subframes": 4
     },
     {
       "frame": 67,
       "time": 1.1166666666666667,
-      "difference": 0,
+      "difference": 0.0732421875,
       "subframes": 4
     },
     {
       "frame": 68,
       "time": 1.1333333333333333,
-      "difference": 0,
+      "difference": 0.06459780092592593,
       "subframes": 4
     },
     {
       "frame": 69,
       "time": 1.15,
-      "difference": 0.00014467592592592592,
+      "difference": 0.05432581018518514,
       "subframes": 4
     },
     {
       "frame": 70,
       "time": 1.1666666666666667,
-      "difference": 0.00028935185185185184,
+      "difference": 0.046115451388888874,
       "subframes": 4
     },
     {
       "frame": 71,
       "time": 1.1833333333333333,
-      "difference": 0.00043402777777777775,
+      "difference": 0.04155815972222221,
       "subframes": 4
     },
     {
       "frame": 72,
       "time": 1.2,
-      "difference": 0.00122974537037037,
+      "difference": 0.035192418981481476,
       "subframes": 4
     },
     {
       "frame": 73,
       "time": 1.2166666666666666,
-      "difference": 0.0022063078703703698,
+      "difference": 0.03190104166666666,
       "subframes": 4
     },
     {
       "frame": 74,
       "time": 1.2333333333333334,
-      "difference": 0.0031105324074074073,
+      "difference": 0.023799189814814836,
       "subframes": 4
     },
     {
       "frame": 75,
       "time": 1.25,
-      "difference": 0.005208333333333332,
+      "difference": 0.017288773148148154,
       "subframes": 4
     },
     {
       "frame": 76,
       "time": 1.2666666666666666,
-      "difference": 0.0071976273148148156,
+      "difference": 0.009223090277777773,
       "subframes": 4
     },
     {
       "frame": 77,
       "time": 1.2833333333333334,
-      "difference": 0.008282696759259259,
+      "difference": 0.009837962962962955,
       "subframes": 4
     },
     {
       "frame": 78,
       "time": 1.3,
-      "difference": 0.008463541666666664,
+      "difference": 0.009259259259259255,
       "subframes": 4
     },
     {
       "frame": 79,
       "time": 1.3166666666666667,
-      "difference": 0.00987413194444445,
+      "difference": 0.009657118055555556,
       "subframes": 4
     },
     {
       "frame": 80,
       "time": 1.3333333333333333,
-      "difference": 0.009946469907407406,
+      "difference": 0.010525173611111112,
       "subframes": 4
     },
     {
       "frame": 81,
       "time": 1.35,
-      "difference": 0.00864438657407407,
+      "difference": 0.010525173611111108,
       "subframes": 4
     },
     {
       "frame": 82,
       "time": 1.3666666666666667,
-      "difference": 0.009006076388888888,
+      "difference": 0.008644386574074077,
       "subframes": 4
     },
     {
       "frame": 83,
       "time": 1.3833333333333333,
-      "difference": 0.009910300925925932,
+      "difference": 0.00853587962962963,
       "subframes": 4
     },
     {
       "frame": 84,
       "time": 1.4,
-      "difference": 0.007703993055555557,
+      "difference": 0.010054976851851857,
       "subframes": 4
     },
     {
       "frame": 85,
       "time": 1.4166666666666667,
-      "difference": 0.008174189814814811,
+      "difference": 0.007884837962962967,
       "subframes": 4
     },
     {
       "frame": 86,
       "time": 1.4333333333333333,
-      "difference": 0.006365740740740741,
+      "difference": 0.006438078703703715,
       "subframes": 4
     },
     {
       "frame": 87,
       "time": 1.45,
-      "difference": 0.0068359375000000035,
+      "difference": 0.007957175925925925,
       "subframes": 4
     },
     {
       "frame": 88,
       "time": 1.4666666666666666,
-      "difference": 0.005606192129629628,
+      "difference": 0.007450810185185183,
       "subframes": 4
     },
     {
       "frame": 89,
       "time": 1.4833333333333334,
-      "difference": 0.0045934606481481495,
+      "difference": 0.007667824074074073,
       "subframes": 4
     },
     {
       "frame": 90,
       "time": 1.5,
-      "difference": 0.007450810185185185,
+      "difference": 0.006655092592592591,
       "subframes": 4
     },
     {
       "frame": 91,
       "time": 1.5166666666666666,
-      "difference": 0.0030743634259259253,
+      "difference": 0.005063657407407413,
       "subframes": 4
     },
     {
       "frame": 92,
       "time": 1.5333333333333334,
-      "difference": 0.004267939814814813,
+      "difference": 0.005099826388888898,
       "subframes": 4
     },
     {
       "frame": 93,
       "time": 1.55,
-      "difference": 0.0023148148148148143,
+      "difference": 0.006365740740740742,
       "subframes": 4
     },
     {
       "frame": 94,
       "time": 1.5666666666666667,
-      "difference": 0.0034360532407407387,
+      "difference": 0.0024594907407407395,
       "subframes": 4
     },
     {
       "frame": 95,
       "time": 1.5833333333333333,
-      "difference": 0.00267650462962963,
+      "difference": 0.004376446759259259,
       "subframes": 4
     },
     {
       "frame": 96,
       "time": 1.6,
-      "difference": 0.0031467013888888877,
+      "difference": 0.0036168981481481447,
       "subframes": 4
     },
     {
       "frame": 97,
       "time": 1.6166666666666667,
-      "difference": 0.0013020833333333333,
+      "difference": 0.003616898148148145,
       "subframes": 4
     },
     {
       "frame": 98,
       "time": 1.6333333333333333,
-      "difference": 0.003399884259259255,
+      "difference": 0.0028935185185185175,
       "subframes": 4
     },
     {
       "frame": 99,
       "time": 1.65,
-      "difference": 0.0008318865740740739,
+      "difference": 0.001591435185185186,
       "subframes": 4
     },
     {
       "frame": 100,
       "time": 1.6666666666666667,
-      "difference": 0.0019531249999999996,
+      "difference": 0.003002025462962961,
       "subframes": 4
     },
     {
       "frame": 101,
       "time": 1.6833333333333333,
-      "difference": 0.0006510416666666665,
+      "difference": 0.001519097222222223,
       "subframes": 4
     },
     {
       "frame": 102,
       "time": 1.7,
-      "difference": 0.00043402777777777775,
+      "difference": 0.0028211805555555533,
       "subframes": 4
     },
     {
       "frame": 103,
       "time": 1.7166666666666666,
-      "difference": 0.0014467592592592596,
+      "difference": 0.0017361111111111119,
       "subframes": 4
     },
     {
       "frame": 104,
       "time": 1.7333333333333334,
-      "difference": 0.00028935185185185184,
+      "difference": 0.0007957175925925924,
       "subframes": 4
     },
     {
       "frame": 105,
       "time": 1.75,
-      "difference": 0.00007233796296296296,
+      "difference": 0.002025462962962963,
       "subframes": 4
     },
     {
       "frame": 106,
       "time": 1.7666666666666666,
-      "difference": 0,
+      "difference": 0.00043402777777777775,
       "subframes": 4
     },
     {
       "frame": 107,
       "time": 1.7833333333333334,
-      "difference": 0,
+      "difference": 0.0005063657407407407,
       "subframes": 4
     },
     {
       "frame": 108,
       "time": 1.8,
-      "difference": 0,
+      "difference": 0.0014105902777777784,
       "subframes": 4
     },
     {
       "frame": 109,
       "time": 1.8166666666666667,
-      "difference": 0,
+      "difference": 0.0001808449074074074,
       "subframes": 4
     },
     {
       "frame": 110,
       "time": 1.8333333333333333,
-      "difference": 0,
+      "difference": 0.0001808449074074074,
       "subframes": 4
     },
     {
       "frame": 111,
       "time": 1.85,
-      "difference": 0,
+      "difference": 0.00003616898148148148,
       "subframes": 4
     },
     {
@@ -1088,103 +1088,103 @@
     {
       "frame": 176,
       "time": 2.933333333333333,
-      "difference": 0.0003255208333333333,
+      "difference": 0.00036168981481481485,
       "subframes": 4
     },
     {
       "frame": 177,
       "time": 2.95,
-      "difference": 0.0037977430555555546,
+      "difference": 0.0034722222222222194,
       "subframes": 4
     },
     {
       "frame": 178,
       "time": 2.966666666666667,
-      "difference": 0.022171585648148136,
+      "difference": 0.01569733796296298,
       "subframes": 4
     },
     {
       "frame": 179,
       "time": 2.9833333333333334,
-      "difference": 0.023220486111111122,
+      "difference": 0.02314814814814815,
       "subframes": 4
     },
     {
       "frame": 180,
       "time": 3,
-      "difference": 0.03164785879629629,
+      "difference": 0.03490306712962961,
       "subframes": 4
     },
     {
       "frame": 181,
       "time": 3.0166666666666666,
-      "difference": 0.01627604166666668,
+      "difference": 0.012767650462962946,
       "subframes": 4
     },
     {
       "frame": 182,
       "time": 3.033333333333333,
-      "difference": 0.03374565972222222,
+      "difference": 0.03906250000000001,
       "subframes": 4
     },
     {
       "frame": 183,
       "time": 3.05,
-      "difference": 0.05483217592592593,
+      "difference": 0.05682146990740752,
       "subframes": 4
     },
     {
       "frame": 184,
       "time": 3.066666666666667,
-      "difference": 0.0431134259259259,
+      "difference": 0.041087962962962916,
       "subframes": 4
     },
     {
       "frame": 185,
       "time": 3.0833333333333335,
-      "difference": 0.028320312499999993,
+      "difference": 0.028899016203703682,
       "subframes": 4
     },
     {
       "frame": 186,
       "time": 3.1,
-      "difference": 0.03533709490740743,
+      "difference": 0.029260706018518504,
       "subframes": 4
     },
     {
       "frame": 187,
       "time": 3.1166666666666667,
-      "difference": 0.015082465277777802,
+      "difference": 0.015154803240740767,
       "subframes": 4
     },
     {
       "frame": 188,
       "time": 3.1333333333333333,
-      "difference": 0.008716724537037033,
+      "difference": 0.008716724537037035,
       "subframes": 4
     },
     {
       "frame": 189,
       "time": 3.15,
-      "difference": 0.004846643518518523,
+      "difference": 0.005425347222222226,
       "subframes": 4
     },
     {
       "frame": 190,
       "time": 3.1666666666666665,
-      "difference": 0.003942418981481482,
+      "difference": 0.003219039351851852,
       "subframes": 4
     },
     {
       "frame": 191,
       "time": 3.183333333333333,
-      "difference": 0.00021701388888888888,
+      "difference": 0.00047019675925925923,
       "subframes": 4
     },
     {
       "frame": 192,
       "time": 3.2,
-      "difference": 0.00003616898148148148,
+      "difference": 0,
       "subframes": 4
     },
     {
@@ -1220,13 +1220,13 @@
     {
       "frame": 198,
       "time": 3.3,
-      "difference": 0.020797164351851954,
+      "difference": 0.02090567129629639,
       "subframes": 12
     },
     {
       "frame": 199,
       "time": 3.316666666666667,
-      "difference": 0.4394531250000025,
+      "difference": 0.4426359953703727,
       "subframes": 12
     },
     {
@@ -7502,373 +7502,373 @@
     {
       "frame": 1245,
       "time": 20.75,
-      "difference": 1.5736038773148173,
+      "difference": 1.5753761574074083,
       "subframes": 12
     },
     {
       "frame": 1246,
       "time": 20.766666666666666,
-      "difference": 1.5168547453703574,
+      "difference": 1.5151548032407236,
       "subframes": 12
     },
     {
       "frame": 1247,
       "time": 20.783333333333335,
-      "difference": 1.4339916087963063,
+      "difference": 1.4313512731481568,
       "subframes": 12
     },
     {
       "frame": 1248,
       "time": 20.8,
-      "difference": 1.3846932870370479,
+      "difference": 1.39131221064816,
       "subframes": 12
     },
     {
       "frame": 1249,
       "time": 20.816666666666666,
-      "difference": 1.3746383101851771,
+      "difference": 1.3718532986111012,
       "subframes": 12
     },
     {
       "frame": 1250,
       "time": 20.833333333333332,
-      "difference": 1.268952546296308,
+      "difference": 1.2671802662037082,
       "subframes": 12
     },
     {
       "frame": 1251,
       "time": 20.85,
-      "difference": 1.2661675347222225,
+      "difference": 1.273220486111115,
       "subframes": 12
     },
     {
       "frame": 1252,
       "time": 20.866666666666667,
-      "difference": 1.090530960648152,
+      "difference": 1.091905381944448,
       "subframes": 12
     },
     {
       "frame": 1253,
       "time": 20.883333333333333,
-      "difference": 1.1516565393518463,
+      "difference": 1.1505353009259232,
       "subframes": 12
     },
     {
       "frame": 1254,
       "time": 20.9,
-      "difference": 1.0193142361111105,
+      "difference": 1.0742549189814805,
       "subframes": 12
     },
     {
       "frame": 1255,
       "time": 20.916666666666668,
-      "difference": 1.0271990740740757,
+      "difference": 1.1277126736111172,
       "subframes": 12
     },
     {
       "frame": 1256,
       "time": 20.933333333333334,
-      "difference": 0.9262152777777861,
+      "difference": 1.0628616898148264,
       "subframes": 12
     },
     {
       "frame": 1257,
       "time": 20.95,
-      "difference": 0.8774233217592602,
+      "difference": 0.9840133101851838,
       "subframes": 12
     },
     {
       "frame": 1258,
       "time": 20.966666666666665,
-      "difference": 0.8416883680555539,
+      "difference": 0.9794198495370393,
       "subframes": 12
     },
     {
       "frame": 1259,
       "time": 20.983333333333334,
-      "difference": 0.8911313657407443,
+      "difference": 0.9392722800925911,
       "subframes": 12
     },
     {
       "frame": 1260,
       "time": 21,
-      "difference": 0.8188295717592585,
+      "difference": 0.8612919560185175,
       "subframes": 12
     },
     {
       "frame": 1261,
       "time": 21.016666666666666,
-      "difference": 0.749168113425928,
+      "difference": 0.8121021412037082,
       "subframes": 12
     },
     {
       "frame": 1262,
       "time": 21.033333333333335,
-      "difference": 0.7588614004629641,
+      "difference": 0.7489872685185204,
       "subframes": 12
     },
     {
       "frame": 1263,
       "time": 21.05,
-      "difference": 0.7364004629629654,
+      "difference": 0.6713686342592601,
       "subframes": 12
     },
     {
       "frame": 1264,
       "time": 21.066666666666666,
-      "difference": 0.7730396412036994,
+      "difference": 0.6539713541666649,
       "subframes": 12
     },
     {
       "frame": 1265,
       "time": 21.083333333333332,
-      "difference": 0.6867042824074082,
+      "difference": 0.5342881944444443,
       "subframes": 12
     },
     {
       "frame": 1266,
       "time": 21.1,
-      "difference": 0.6434100115740764,
+      "difference": 0.5121166087962974,
       "subframes": 12
     },
     {
       "frame": 1267,
       "time": 21.116666666666667,
-      "difference": 0.6189959490740744,
+      "difference": 0.4992404513888883,
       "subframes": 12
     },
     {
       "frame": 1268,
       "time": 21.133333333333333,
-      "difference": 0.8547815393518535,
+      "difference": 0.6998697916666692,
       "subframes": 12
     },
     {
       "frame": 1269,
       "time": 21.15,
-      "difference": 0.9538122106481447,
+      "difference": 0.7696035879629683,
       "subframes": 12
     },
     {
       "frame": 1270,
       "time": 21.166666666666668,
-      "difference": 0.6865957754629635,
+      "difference": 0.5650318287037034,
       "subframes": 12
     },
     {
       "frame": 1271,
       "time": 21.183333333333334,
-      "difference": 0.7065248842592596,
+      "difference": 0.5747974537037034,
       "subframes": 12
     },
     {
       "frame": 1272,
       "time": 21.2,
-      "difference": 0.6634114583333296,
+      "difference": 0.579354745370368,
       "subframes": 12
     },
     {
       "frame": 1273,
       "time": 21.216666666666665,
-      "difference": 0.7370153356481505,
+      "difference": 0.589879918981483,
       "subframes": 12
     },
     {
       "frame": 1274,
       "time": 21.233333333333334,
-      "difference": 0.8854528356481498,
+      "difference": 0.7472149884259269,
       "subframes": 12
     },
     {
       "frame": 1275,
       "time": 21.25,
-      "difference": 0.8859592013888922,
+      "difference": 0.7832754629629647,
       "subframes": 12
     },
     {
       "frame": 1276,
       "time": 21.266666666666666,
-      "difference": 0.8152126736111078,
+      "difference": 0.7276837384259235,
       "subframes": 12
     },
     {
       "frame": 1277,
       "time": 21.283333333333335,
-      "difference": 0.6386718750000003,
+      "difference": 0.5685040509259254,
       "subframes": 12
     },
     {
       "frame": 1278,
       "time": 21.3,
-      "difference": 0.6061197916666644,
+      "difference": 0.5249565972222213,
       "subframes": 12
     },
     {
       "frame": 1279,
       "time": 21.316666666666666,
-      "difference": 0.5784505208333338,
+      "difference": 0.5296223958333337,
       "subframes": 12
     },
     {
       "frame": 1280,
       "time": 21.333333333333332,
-      "difference": 0.7025101273148118,
+      "difference": 0.6117259837962927,
       "subframes": 12
     },
     {
       "frame": 1281,
       "time": 21.35,
-      "difference": 0.6207682291666641,
+      "difference": 0.5306712962962926,
       "subframes": 12
     },
     {
       "frame": 1282,
       "time": 21.366666666666667,
-      "difference": 0.5733506944444481,
+      "difference": 0.4700882523148183,
       "subframes": 12
     },
     {
       "frame": 1283,
       "time": 21.383333333333333,
-      "difference": 0.517252604166667,
+      "difference": 0.4611545138888878,
       "subframes": 12
     },
     {
       "frame": 1284,
       "time": 21.4,
-      "difference": 0.4874131944444481,
+      "difference": 0.4533058449074106,
       "subframes": 12
     },
     {
       "frame": 1285,
       "time": 21.416666666666668,
-      "difference": 0.4142433449074073,
+      "difference": 0.37405960648148223,
       "subframes": 12
     },
     {
       "frame": 1286,
       "time": 21.433333333333334,
-      "difference": 0.3101490162037047,
+      "difference": 0.26627604166666774,
       "subframes": 12
     },
     {
       "frame": 1287,
       "time": 21.45,
-      "difference": 0.2726056134259245,
+      "difference": 0.22667100694444361,
       "subframes": 12
     },
     {
       "frame": 1288,
       "time": 21.466666666666665,
-      "difference": 0.2799117476851858,
+      "difference": 0.23665364583333315,
       "subframes": 12
     },
     {
       "frame": 1289,
       "time": 21.483333333333334,
-      "difference": 0.2306495949074068,
+      "difference": 0.2000144675925921,
       "subframes": 12
     },
     {
       "frame": 1290,
       "time": 21.5,
-      "difference": 0.1995442708333334,
+      "difference": 0.1776982060185178,
       "subframes": 12
     },
     {
       "frame": 1291,
       "time": 21.516666666666666,
-      "difference": 0.16804108796296277,
+      "difference": 0.14547164351851835,
       "subframes": 12
     },
     {
       "frame": 1292,
       "time": 21.533333333333335,
-      "difference": 0.13082320601851868,
+      "difference": 0.10839843750000012,
       "subframes": 12
     },
     {
       "frame": 1293,
       "time": 21.55,
-      "difference": 0.1470269097222229,
+      "difference": 0.1125217013888889,
       "subframes": 12
     },
     {
       "frame": 1294,
       "time": 21.566666666666666,
-      "difference": 0.15740740740740683,
+      "difference": 0.11291956018518563,
       "subframes": 12
     },
     {
       "frame": 1295,
       "time": 21.583333333333332,
-      "difference": 0.09704137731481496,
+      "difference": 0.06937210648148168,
       "subframes": 12
     },
     {
       "frame": 1296,
       "time": 21.6,
-      "difference": 0.1344039351851852,
+      "difference": 0.09534143518518574,
       "subframes": 12
     },
     {
       "frame": 1297,
       "time": 21.616666666666667,
-      "difference": 0.08275462962962968,
+      "difference": 0.06463396990740719,
       "subframes": 12
     },
     {
       "frame": 1298,
       "time": 21.633333333333333,
-      "difference": 0.07125289351851898,
+      "difference": 0.049551504629629387,
       "subframes": 12
     },
     {
       "frame": 1299,
       "time": 21.65,
-      "difference": 0.0652850115740744,
+      "difference": 0.048502604166666616,
       "subframes": 12
     },
     {
       "frame": 1300,
       "time": 21.666666666666668,
-      "difference": 0.04788773148148135,
+      "difference": 0.040509259259259134,
       "subframes": 12
     },
     {
       "frame": 1301,
       "time": 21.683333333333334,
-      "difference": 0.03457754629629609,
+      "difference": 0.02159288194444454,
       "subframes": 12
     },
     {
       "frame": 1302,
       "time": 21.7,
-      "difference": 0.05103443287037021,
+      "difference": 0.03631365740740733,
       "subframes": 12
     },
     {
       "frame": 1303,
       "time": 21.716666666666665,
-      "difference": 0.019314236111111157,
+      "difference": 0.025245949074074167,
       "subframes": 12
     },
     {
       "frame": 1304,
       "time": 21.733333333333334,
-      "difference": 0.022424768518518524,
+      "difference": 0.019350405092592615,
       "subframes": 12
     },
     {
       "frame": 1305,
       "time": 21.75,
-      "difference": 0.0078125,
+      "difference": 0.009910300925925921,
       "subframes": 4
     },
     {
       "frame": 1306,
       "time": 21.766666666666666,
-      "difference": 0.00021701388888888888,
+      "difference": 0.0006510416666666665,
       "subframes": 4
     },
     {
