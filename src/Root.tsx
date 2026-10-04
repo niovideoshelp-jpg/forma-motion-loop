@@ -62,7 +62,7 @@ export const RemotionRoot: React.FC = () => (
       height={1440}
       fps={60}
       durationInFrames={1320}
-      defaultProps={{ engine: "orbita.js", audio: "assets/orbita-mix.wav" }}
+      defaultProps={{ engine: "orbita-dynamic.js", audio: "assets/orbita-mix.wav" }}
     />
   </>
 );

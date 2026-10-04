@@ -26,11 +26,11 @@ fs.mkdirSync(folder, { recursive: true });
   });
   if (mode === "stills") {
     const shots = [
-      ["busca", 0.8],
-      ["destino", 4.7],
-      ["rota", 9.5],
-      ["passagem", 13.3],
-      ["marca", 18.0],
+      ["destino", 3.25],
+      ["rota", 6.45],
+      ["passagem", 9.0],
+      ["roteiro", 13.5],
+      ["marca", 17.5],
       ["loop", 21.8],
     ];
     const tiles = [];
@@ -117,7 +117,7 @@ fs.mkdirSync(folder, { recursive: true });
     await browser.close();
     return;
   }
-  const output = `${folder}/orbita-1440-60.mp4`,
+  const output = `${folder}/orbita-dynamic-1440-60.mp4`,
     ff = spawn("ffmpeg", [
       "-hide_banner",
       "-y",
@@ -163,7 +163,7 @@ fs.mkdirSync(folder, { recursive: true });
     lastHash;
   for (let f = 0; f < 1320; f++) {
     const r = await page.evaluate((f) => {
-      const count = f >= 369 && f < 468 ? 12 : 8;
+      const count = (f >= 234 && f < 285) || (f >= 639 && f < 687) ? 12 : 4;
       ac.clearRect(0, 0, 1440, 1440);
       for (let i = 0; i < count; i++) {
         const time =
@@ -220,7 +220,7 @@ fs.mkdirSync(folder, { recursive: true });
     JSON.stringify(
       {
         frames: 1320,
-        subframes: 8,
+        subframes: 4,
         travelSubframes: 12,
         firstHash,
         lastHash,

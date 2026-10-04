@@ -14,6 +14,8 @@ Prompt: “Use case: photorealistic-natural. Asset type: square atmospheric elec
 
 The second film's `public/assets/orbita-madeira.png` was also generated with the built-in image tool. Its full prompt is recorded in [ORBITA.md](ORBITA.md). The Órbita name and orbital mark are original fictional branding drawn in canvas.
 
+The redesigned Órbita edition uses Lucide SVG icons (ISC), D3 Geo (ISC), topojson-client (ISC), world-atlas (ISC; Natural Earth geographic data), and Flubber (MIT). Sources, use and rebuild instructions are in [ORBITA.md](ORBITA.md). Bundled library licenses are in `public/assets/orbita-vectors/`.
+
 ## Cursor
 
 Source: https://github.com/ful1e5/apple_cursor/blob/main/svg/left_ptr.svg

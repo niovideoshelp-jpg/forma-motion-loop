@@ -2,9 +2,9 @@
 
 ## New edition: Órbita
 
-**[Órbita — seu próximo destino](ORBITA.md)** is the second film: a search field becomes a Madeira destination card, a curved route, a boarding pass and an orbital mark. It uses longer continuous morphs, quintic easing and eight motion-blur samples per frame for smoother movement. The original Forma video remains below.
+**[Órbita — seu próximo destino](ORBITA.md)** is the second film, now redesigned with faster transitions, Lucide SVG icons, a D3 geographic map, a detailed boarding pass, an itinerary and a Flubber compass morph. Four motion-blur samples per frame preserve detail, with twelve during the fastest camera moves. The original Forma video remains below.
 
-[Download Órbita — finished MP4](docs/orbita/orbita-1440-60.mp4) · 22 seconds · 1440 × 1440 · 60 fps · −14.0 LUFS.
+[Download Órbita — dynamic edition MP4](docs/orbita/orbita-dynamic-1440-60.mp4) · 22 seconds · 1440 × 1440 · 60 fps · −14.1 LUFS.
 
 ![Órbita storyboard](docs/orbita/storyboard.png)
 

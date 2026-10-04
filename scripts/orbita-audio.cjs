@@ -10,7 +10,7 @@ const ff = (args) => {
 };
 const sr = 48000,
   rate = 110 / 148,
-  drop = 6.15,
+  drop = 3.9,
   offset = 13.809 - drop * rate;
 ff([
   "-i",
@@ -59,14 +59,15 @@ for (let i = 0; i < out.length; i++) {
   out[i] = ((full[i] || 0) * mix + (low[i] || 0) * 0.7 * (1 - mix)) * 0.65;
 }
 const cues = [
-  ["search", 1.15, "click"],
-  ["reveal", 2.3, "whoosh"],
-  ["map", 6.15, "whoosh"],
-  ["route", 7.8, "click"],
-  ["ticket", 10.8, "whoosh"],
-  ["confirm", 14, "click"],
-  ["orbit", 15.7, "whoosh"],
-  ["return", 18.5, "whoosh"],
+  ["search", 0.5, "click"],
+  ["reveal", 1.15, "whoosh"],
+  ["map", 3.9, "whoosh"],
+  ["route", 5.05, "click"],
+  ["ticket", 7.05, "whoosh"],
+  ["wallet", 10.65, "whoosh"],
+  ["confirm", 14.15, "click"],
+  ["compass", 15.05, "whoosh"],
+  ["return", 19.45, "whoosh"],
 ];
 const ledger = [];
 for (const [name, time, type] of cues) {
@@ -117,7 +118,7 @@ ff([
   "-i",
   "raw/orbita-stereo.wav",
   "-af",
-  `loudnorm=I=-14:TP=-1:LRA=12:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true,volume=-0.2dB`,
+  `loudnorm=I=-14:TP=-1:LRA=12:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true,volume=-0.3dB`,
   "-ar",
   "48000",
   "public/assets/orbita-mix.wav",

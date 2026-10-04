@@ -1,76 +1,83 @@
 {
   "source": "Head Bang — Arulo / Mixkit",
-  "drop": 6.15,
+  "drop": 3.9,
   "rate": 0.7432432432432432,
-  "offset": 9.238054054054054,
+  "offset": 10.910351351351352,
   "normalization": {
-    "input_i": "-26.29",
-    "input_tp": "-8.29",
-    "input_lra": "9.00",
-    "input_thresh": "-36.36",
-    "output_i": "-12.76",
+    "input_i": "-23.96",
+    "input_tp": "-4.95",
+    "input_lra": "7.10",
+    "input_thresh": "-34.22",
+    "output_i": "-12.82",
     "output_tp": "-1.00",
-    "output_lra": "2.70",
-    "output_thresh": "-22.80",
+    "output_lra": "1.90",
+    "output_thresh": "-22.88",
     "normalization_type": "dynamic",
-    "target_offset": "-1.24"
+    "target_offset": "-1.18"
   },
   "events": [
     {
       "name": "search",
-      "time": 1.15,
+      "time": 0.5,
       "source": "click",
       "peak": 0.19454166666666667,
-      "start": 0.9554583333333333
+      "start": 0.30545833333333333
     },
     {
       "name": "reveal",
-      "time": 2.3,
+      "time": 1.15,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 1.5852291666666667
+      "start": 0.43522916666666667
     },
     {
       "name": "map",
-      "time": 6.15,
+      "time": 3.9,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 5.435229166666667
+      "start": 3.185229166666667
     },
     {
       "name": "route",
-      "time": 7.8,
+      "time": 5.05,
       "source": "click",
       "peak": 0.19454166666666667,
-      "start": 7.605458333333333
+      "start": 4.855458333333333
     },
     {
       "name": "ticket",
-      "time": 10.8,
+      "time": 7.05,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 10.085229166666666
+      "start": 6.335229166666666
+    },
+    {
+      "name": "wallet",
+      "time": 10.65,
+      "source": "whoosh",
+      "peak": 0.7147708333333334,
+      "start": 9.935229166666666
     },
     {
       "name": "confirm",
-      "time": 14,
+      "time": 14.15,
       "source": "click",
       "peak": 0.19454166666666667,
-      "start": 13.805458333333334
+      "start": 13.955458333333333
     },
     {
-      "name": "orbit",
-      "time": 15.7,
+      "name": "compass",
+      "time": 15.05,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 14.985229166666667
+      "start": 14.335229166666666
     },
     {
       "name": "return",
-      "time": 18.5,
+      "time": 19.45,
       "source": "whoosh",
       "peak": 0.7147708333333334,
-      "start": 17.785229166666667
+      "start": 18.735229166666667
     }
   ]
 }

@@ -1,16 +1,15 @@
-[Parsed_ebur128_0 @ 0000022b0db43b00] Summary:
 
   Integrated loudness:
-    I:         -14.0 LUFS
-    Threshold: -24.0 LUFS
+    I:         -14.1 LUFS
+    Threshold: -24.1 LUFS
 
   Loudness range:
-    LRA:         3.2 LU
-    Threshold: -33.9 LUFS
-    LRA low:   -15.4 LUFS
-    LRA high:  -12.2 LUFS
+    LRA:         2.4 LU
+    Threshold: -34.1 LUFS
+    LRA low:   -15.2 LUFS
+    LRA high:  -12.8 LUFS
 
   True peak:
-    Peak:       -1.1 dBFS
-[out#0/null @ 0000022b0db43d00] video:547KiB audio:4128KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
-frame= 1320 fps=386 q=-0.0 Lsize=N/A time=00:00:22.00 bitrate=N/A speed=6.43x elapsed=0:00:03.42
+    Peak:       -1.2 dBFS
+[out#0/null @ 000002a67eac1500] video:547KiB audio:4128KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 1320 fps=445 q=-0.0 Lsize=N/A time=00:00:22.00 bitrate=N/A speed=7.42x elapsed=0:00:02.96
