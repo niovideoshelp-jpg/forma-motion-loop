@@ -1,5 +1,15 @@
 # Forma — every frame
 
+## New edition: Lume+
+
+**[Lume+ — subscription product film](LUME.md)** follows a fictional learning subscription through its course library, lesson player, progress and membership card. Original vector covers, a continuous camera and the shared L+ mark connect the interface in a 22-second loop.
+
+[Watch or download Lume+](docs/lume/lume-1440-60.mp4) · 1440 × 1440 · 60 fps. Music: Deep Urban — Eugenio Mininni, with interface effects from [Mixkit](https://mixkit.co/license/).
+
+Verified 22.000 seconds and 1,320 frames. Source endpoints match exactly; the source and decoded-video scans found no isolated jump candidates. Finished audio: −14.03 LUFS / −1.71 dBTP. Reproduction and evidence are in [LUME.md](LUME.md).
+
+![Lume+ storyboard](docs/lume/storyboard.png)
+
 ## New edition: Órbita
 
 **[Órbita — seu próximo destino](ORBITA.md)** now includes original vector travel illustrations, a staged boarding-pass confirmation, an opaque photo-to-map reveal and a compass that becomes the search field. The latest refinement uses measured musical attacks and contributions from GPT-6 Astra. The original Forma video remains below.

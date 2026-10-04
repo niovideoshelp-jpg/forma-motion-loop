@@ -62,7 +62,19 @@ export const RemotionRoot: React.FC = () => (
       height={1440}
       fps={60}
       durationInFrames={1320}
-      defaultProps={{ engine: "orbita-dynamic.js", audio: "assets/orbita-mix.wav" }}
+      defaultProps={{
+        engine: "orbita-dynamic.js",
+        audio: "assets/orbita-mix.wav",
+      }}
+    />
+    <Composition
+      id="Lume"
+      component={Film}
+      width={1440}
+      height={1440}
+      fps={60}
+      durationInFrames={1320}
+      defaultProps={{ engine: "lume.js", audio: "assets/lume-mix.wav" }}
     />
   </>
 );

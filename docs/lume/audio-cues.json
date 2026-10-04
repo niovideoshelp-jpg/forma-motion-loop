@@ -1,0 +1,193 @@
+{
+  "source": "Deep Urban — Eugenio Mininni / Mixkit",
+  "sourceUrl": "https://assets.mixkit.co/music/623/623.mp3",
+  "sourcePage": "https://mixkit.co/free-stock-music/house/",
+  "license": "https://mixkit.co/license/#musicFree",
+  "bpm": 120,
+  "sourceBpm": 124,
+  "rate": 0.967741935483871,
+  "offset": 12.284451612903226,
+  "preroll": 1,
+  "drop": 3.3,
+  "duration": 22,
+  "sampleRate": 48000,
+  "channels": 2,
+  "samples": 1056000,
+  "events": [
+    {
+      "name": "subscribe",
+      "time": 3,
+      "source": "select-click",
+      "gain": 0.075,
+      "sourcePeak": 0.068875,
+      "start": 2.931125,
+      "end": 3.18
+    },
+    {
+      "name": "library",
+      "time": 3.3,
+      "source": "air-whoosh",
+      "gain": 0.065,
+      "sourcePeak": 0.24154166666666665,
+      "start": 3.14,
+      "end": 3.58
+    },
+    {
+      "name": "activated",
+      "time": 3.9,
+      "source": "page-chime",
+      "gain": 0.028,
+      "sourcePeak": 0.3123958333333333,
+      "start": 3.78,
+      "end": 4.45
+    },
+    {
+      "name": "select-course",
+      "time": 6.8,
+      "source": "select-click",
+      "gain": 0.07,
+      "sourcePeak": 0.068875,
+      "start": 6.731125,
+      "end": 6.98
+    },
+    {
+      "name": "press-play",
+      "time": 8.3,
+      "source": "option-select",
+      "gain": 0.055,
+      "sourcePeak": 0.12083333333333333,
+      "start": 8.18,
+      "end": 8.48
+    },
+    {
+      "name": "progress",
+      "time": 9.3,
+      "source": "air-whoosh",
+      "gain": 0.042,
+      "sourcePeak": 0.24154166666666665,
+      "start": 9.14,
+      "end": 9.58
+    },
+    {
+      "name": "membership",
+      "time": 12.3,
+      "source": "air-whoosh",
+      "gain": 0.06,
+      "sourcePeak": 0.24154166666666665,
+      "start": 12.14,
+      "end": 12.58
+    },
+    {
+      "name": "earned-card",
+      "time": 14.3,
+      "source": "page-chime",
+      "gain": 0.035,
+      "sourcePeak": 0.3123958333333333,
+      "start": 14.18,
+      "end": 14.85
+    },
+    {
+      "name": "brand",
+      "time": 16.3,
+      "source": "air-whoosh",
+      "gain": 0.06,
+      "sourcePeak": 0.24154166666666665,
+      "start": 16.14,
+      "end": 16.58
+    },
+    {
+      "name": "return",
+      "time": 20.3,
+      "source": "air-whoosh",
+      "gain": 0.038,
+      "sourcePeak": 0.24154166666666665,
+      "start": 20.14,
+      "end": 20.58
+    }
+  ],
+  "beatMap": [
+    {
+      "time": 3.3,
+      "measuredAttack": 3.305,
+      "deltaMs": 5
+    },
+    {
+      "time": 6.8,
+      "measuredAttack": 6.8075,
+      "deltaMs": 8
+    },
+    {
+      "time": 9.3,
+      "measuredAttack": 9.2975,
+      "deltaMs": -3
+    },
+    {
+      "time": 12.3,
+      "measuredAttack": 12.2975,
+      "deltaMs": -3
+    },
+    {
+      "time": 16.3,
+      "measuredAttack": 16.2975,
+      "deltaMs": -3
+    },
+    {
+      "time": 18.3,
+      "measuredAttack": 18.3,
+      "deltaMs": 0
+    },
+    {
+      "time": 20.3,
+      "measuredAttack": 20.3,
+      "deltaMs": 0
+    }
+  ],
+  "normalization": {
+    "original": {
+      "input_i": "-17.35",
+      "input_tp": "-4.17",
+      "input_lra": "1.30",
+      "input_thresh": "-27.37",
+      "output_i": "-13.16",
+      "output_tp": "-1.00",
+      "output_lra": "1.90",
+      "output_thresh": "-23.16",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.84"
+    },
+    "centerCycle": {
+      "input_i": "-13.93",
+      "input_tp": "-2.00",
+      "input_lra": "1.20",
+      "input_thresh": "-23.93",
+      "output_i": "-13.23",
+      "output_tp": "-1.00",
+      "output_lra": "2.00",
+      "output_thresh": "-23.23",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.77"
+    },
+    "correctionDb": -0.07000000000000028,
+    "final": {
+      "input_i": "-14.01",
+      "input_tp": "-2.07",
+      "input_lra": "1.20",
+      "input_thresh": "-24.01",
+      "output_i": "-13.23",
+      "output_tp": "-1.00",
+      "output_lra": "2.00",
+      "output_thresh": "-23.23",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.77"
+    }
+  },
+  "seam": {
+    "method": "True pre-roll + middle of three normalized cycles",
+    "crossfadeSeconds": 0.5,
+    "boundaryStep": [
+      0.00004972699746292345,
+      0.0012512706092734094
+    ]
+  },
+  "output": "public/assets/lume-mix.wav"
+}

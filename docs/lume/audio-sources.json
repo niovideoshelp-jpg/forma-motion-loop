@@ -1,0 +1,102 @@
+{
+  "verifiedOn": "2026-10-04",
+  "selection": {
+    "name": "Deep Urban",
+    "artist": "Eugenio Mininni",
+    "id": 623,
+    "sourcePage": "https://mixkit.co/free-stock-music/house/",
+    "url": "https://assets.mixkit.co/music/623/623.mp3",
+    "local": "raw/lume/deep-urban.mp3",
+    "sha256": "ac7e28f0cdd6c607df199c759f34ca66cfebd881ea61c26473fb4cecebe64fa8",
+    "license": "https://mixkit.co/license/#musicFree",
+    "classificationFromSource": [
+      "Tech House",
+      "Hypnotic",
+      "Driving",
+      "Technology",
+      "Corporate"
+    ],
+    "nominalBpm": 124,
+    "measuredBpm": 123.75,
+    "renderBpm": 120,
+    "reason": "Instrumental tech-house arrangement, clear low-end attacks and restrained technology/corporate metadata; 120 BPM permits an exact 44-beat 22-second loop."
+  },
+  "alternative": {
+    "name": "House 02",
+    "artist": "Lily J",
+    "id": 744,
+    "url": "https://assets.mixkit.co/music/744/744.mp3",
+    "local": "raw/lume/house-02.mp3",
+    "measuredBpm": 122.45,
+    "reasonNotSelected": "Busier melodic/deep-house identity; selected Deep Urban gives the product UI more space."
+  },
+  "effects": [
+    {
+      "name": "select-click",
+      "title": "Select click",
+      "id": 1109,
+      "url": "https://assets.mixkit.co/active_storage/sfx/1109/1109-preview.mp3",
+      "sourcePage": "https://mixkit.co/free-sound-effects/interface/",
+      "local": "raw/lume/select-click.mp3",
+      "sha256": "4473ef3397b4a35bb75520e637b827e9984ae1d09bbf27c7f7c72cacc17885f7",
+      "license": "https://mixkit.co/license/#sfxFree"
+    },
+    {
+      "name": "option-select",
+      "title": "Interface option select",
+      "id": 2573,
+      "url": "https://assets.mixkit.co/active_storage/sfx/2573/2573-preview.mp3",
+      "sourcePage": "https://mixkit.co/free-sound-effects/interface/",
+      "local": "raw/lume/option-select.mp3",
+      "sha256": "a5118de16f2b7aef75b69a4698610e0a2d260e8724e5191b096adb87a107114d",
+      "license": "https://mixkit.co/license/#sfxFree"
+    },
+    {
+      "name": "page-chime",
+      "title": "Page forward single chime",
+      "id": 1107,
+      "url": "https://assets.mixkit.co/active_storage/sfx/1107/1107-preview.mp3",
+      "sourcePage": "https://mixkit.co/free-sound-effects/interface/",
+      "local": "raw/lume/page-chime.mp3",
+      "sha256": "179ba20aaa7f5ab8ff75969e3a51db5dc7b8f6d9d3b40defd32d3b55e6a97ecc",
+      "license": "https://mixkit.co/license/#sfxFree"
+    },
+    {
+      "name": "air-whoosh",
+      "title": "Quick air woosh",
+      "id": 2605,
+      "url": "https://assets.mixkit.co/active_storage/sfx/2605/2605-preview.mp3",
+      "sourcePage": "https://mixkit.co/free-sound-effects/woosh/",
+      "local": "raw/lume/air-whoosh.mp3",
+      "sha256": "faa42dd877dcdbbd0362e9623a22c847dffd5392d1389274a5607be47bfcdc26",
+      "license": "https://mixkit.co/license/#sfxFree"
+    }
+  ],
+  "licenseVerification": {
+    "index": "https://mixkit.co/license/",
+    "musicFAQ": "https://mixkit.co/free-stock-music/?page=1",
+    "sfxFAQ": "https://mixkit.co/free-sound-effects/",
+    "summary": "Mixkit lists Stock Music Free License and Sound Effects Free License separately. Its official music FAQ explicitly permits websites, social media, YouTube and online advertisements, with attribution appreciated but not required. The official SFX page permits commercial and personal projects without attribution.",
+    "localSnapshots": [
+      "raw/lume/house.html",
+      "raw/lume/interface.html",
+      "raw/lume/whoosh.html",
+      "raw/lume/license.html"
+    ]
+  },
+  "downloadPolicy": {
+    "musicCandidatesDownloaded": 2,
+    "soundEffectsDownloaded": 4,
+    "sourceUrls": "Extracted from the current official pages; no guessed asset IDs."
+  },
+  "final": {
+    "path": "public/assets/lume-mix.wav",
+    "sha256": "fa101285e70f7ec6003e74e76609a75e5713db2ba4100686e2db21392311e8a7",
+    "duration": 22,
+    "sampleRate": 48000,
+    "channels": 2,
+    "bitDepth": 24,
+    "integratedLufs": -14.01,
+    "truePeakDbtp": -2.07
+  }
+}
