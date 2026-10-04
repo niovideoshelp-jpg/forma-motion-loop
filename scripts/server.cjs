@@ -2,6 +2,7 @@ const http = require("http"),
   fs = require("fs"),
   path = require("path");
 const root = path.resolve("public");
+const port = Number(process.argv[2]) || 4173;
 http
   .createServer((req, res) => {
     const p = path.resolve(
@@ -36,6 +37,6 @@ http
       res.end(data);
     });
   })
-  .listen(4173, "127.0.0.1", () =>
-    console.log("http://127.0.0.1:4173/preview.html"),
+  .listen(port, "127.0.0.1", () =>
+    console.log(`http://127.0.0.1:${port}/preview.html`),
   );

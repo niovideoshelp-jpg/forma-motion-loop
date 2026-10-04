@@ -12,6 +12,8 @@ Prompt: “Use case: photorealistic-natural. Asset type: square album cover for 
 
 Prompt: “Use case: photorealistic-natural. Asset type: square atmospheric electronic album cover. Fine art aerial landscape photograph of sculptural burnt copper sand dunes at last light, large elegant diagonal ridge, deep rust shadows, wisps of dusty mist and pale warm sky in upper sixth. Medium format photography, tactile fine natural film grain, beautifully simple composition, quiet and expansive, subdued copper and umber palette. Full bleed square. No text, no borders, no people, no objects, no watermark. Fictional album is named DUNE / 02 but DO NOT render text.”
 
+The second film's `public/assets/orbita-madeira.png` was also generated with the built-in image tool. Its full prompt is recorded in [ORBITA.md](ORBITA.md). The Órbita name and orbital mark are original fictional branding drawn in canvas.
+
 ## Cursor
 
 Source: https://github.com/ful1e5/apple_cursor/blob/main/svg/left_ptr.svg

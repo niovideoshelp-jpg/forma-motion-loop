@@ -1,0 +1,76 @@
+{
+  "source": "Head Bang — Arulo / Mixkit",
+  "drop": 6.15,
+  "rate": 0.7432432432432432,
+  "offset": 9.238054054054054,
+  "normalization": {
+    "input_i": "-26.29",
+    "input_tp": "-8.29",
+    "input_lra": "9.00",
+    "input_thresh": "-36.36",
+    "output_i": "-12.76",
+    "output_tp": "-1.00",
+    "output_lra": "2.70",
+    "output_thresh": "-22.80",
+    "normalization_type": "dynamic",
+    "target_offset": "-1.24"
+  },
+  "events": [
+    {
+      "name": "search",
+      "time": 1.15,
+      "source": "click",
+      "peak": 0.19454166666666667,
+      "start": 0.9554583333333333
+    },
+    {
+      "name": "reveal",
+      "time": 2.3,
+      "source": "whoosh",
+      "peak": 0.7147708333333334,
+      "start": 1.5852291666666667
+    },
+    {
+      "name": "map",
+      "time": 6.15,
+      "source": "whoosh",
+      "peak": 0.7147708333333334,
+      "start": 5.435229166666667
+    },
+    {
+      "name": "route",
+      "time": 7.8,
+      "source": "click",
+      "peak": 0.19454166666666667,
+      "start": 7.605458333333333
+    },
+    {
+      "name": "ticket",
+      "time": 10.8,
+      "source": "whoosh",
+      "peak": 0.7147708333333334,
+      "start": 10.085229166666666
+    },
+    {
+      "name": "confirm",
+      "time": 14,
+      "source": "click",
+      "peak": 0.19454166666666667,
+      "start": 13.805458333333334
+    },
+    {
+      "name": "orbit",
+      "time": 15.7,
+      "source": "whoosh",
+      "peak": 0.7147708333333334,
+      "start": 14.985229166666667
+    },
+    {
+      "name": "return",
+      "time": 18.5,
+      "source": "whoosh",
+      "peak": 0.7147708333333334,
+      "start": 17.785229166666667
+    }
+  ]
+}

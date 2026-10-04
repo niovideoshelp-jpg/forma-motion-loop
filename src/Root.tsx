@@ -7,7 +7,10 @@ import {
   staticFile,
   Audio,
 } from "remotion";
-const Film: React.FC = () => {
+const Film: React.FC<{ engine: string; audio: string }> = ({
+  engine,
+  audio,
+}) => {
   const frame = useCurrentFrame();
   const initialFrame = useRef(frame);
   const canvas = useRef<HTMLCanvasElement>(null);
@@ -17,12 +20,10 @@ const Film: React.FC = () => {
   useEffect(() => {
     let active = true;
     const run = async () => {
-      const engine = await import(
-        /* webpackIgnore: true */ staticFile("engine.js")
-      );
-      const assets = await engine.loadAssets(staticFile("assets/"));
+      const module = await import(/* webpackIgnore: true */ staticFile(engine));
+      const assets = await module.loadAssets(staticFile("assets/"));
       if (active && canvas.current) {
-        renderer.current = engine.createRenderer(canvas.current, assets);
+        renderer.current = module.createRenderer(canvas.current, assets);
         renderer.current!.seek(initialFrame.current / 60);
         setLoaded(true);
         continueRender(handle);
@@ -32,24 +33,36 @@ const Film: React.FC = () => {
     return () => {
       active = false;
     };
-  }, [handle]);
+  }, [handle, engine]);
   useEffect(() => {
     renderer.current?.seek(frame / 60);
   }, [frame, loaded]);
   return (
     <>
       <canvas ref={canvas} width={1440} height={1440} />
-      <Audio src={staticFile("assets/mix.wav")} />
+      <Audio src={staticFile(audio)} />
     </>
   );
 };
 export const RemotionRoot: React.FC = () => (
-  <Composition
-    id="Forma"
-    component={Film}
-    width={1440}
-    height={1440}
-    fps={60}
-    durationInFrames={1320}
-  />
+  <>
+    <Composition
+      id="Forma"
+      component={Film}
+      width={1440}
+      height={1440}
+      fps={60}
+      durationInFrames={1320}
+      defaultProps={{ engine: "engine.js", audio: "assets/mix.wav" }}
+    />
+    <Composition
+      id="Orbita"
+      component={Film}
+      width={1440}
+      height={1440}
+      fps={60}
+      durationInFrames={1320}
+      defaultProps={{ engine: "orbita.js", audio: "assets/orbita-mix.wav" }}
+    />
+  </>
 );
