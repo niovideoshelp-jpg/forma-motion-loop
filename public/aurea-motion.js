@@ -4,17 +4,17 @@ export const MOTION_LAYOUT = {
   viewport: { w: 1080, h: 1920 },
   centers: [0, 1150, 2300, 3450, 4600, 5750, 6900],
   heroes: {
-    noir: { x: 90, y: 907.5, w: 940, h: 1175 },
-    lumiere: { x: 1050, y: 927.5, w: 940, h: 1175 },
-    prune: { x: 2400, y: 907.5, w: 940, h: 1175 },
+    noir: { x: 0, y: 965, w: 768, h: 960 },
+    lumiere: { x: 1150, y: 965, w: 768, h: 960 },
+    prune: { x: 2300, y: 965, w: 768, h: 960 },
   },
   sharedPoses: [
-    { x: 3470, y: 1000, w: 720, h: 900 },
-    { x: 4358, y: 780, w: 416, h: 520 },
-    { x: 5870, y: 900, w: 688, h: 860 },
+    { x: 3450, y: 965, w: 688, h: 860 },
+    { x: 4600, y: 735, w: 320, h: 400 },
+    { x: 5750, y: 925, w: 640, h: 800 },
   ],
-  detailPose: { x: 3180, y: 1225, w: 360, h: 450 },
-  cta: { x: 385, y: 1535, w: 590, h: 104 },
+  detailPose: { x: 3168, y: 975, w: 336, h: 420 },
+  cta: { x: 540, y: 1535, w: 590, h: 104 },
   greenCta: { x: 540, y: 1535, w: 900, h: 112 },
 };
 
@@ -62,8 +62,8 @@ export function createMotionRig(overrides = {}) {
   beats.forEach((at, i) => {
     const next = {
       x: layout.centers[i + 1],
-      y: i === 2 ? -12 : 0,
-      logZoom: i === 2 ? Math.log(1.015) : 0,
+      y: 0,
+      logZoom: 0,
     };
     tl.fromTo(camera, lastCamera, { ...next, duration: 0.8, ease }, at);
     lastCamera = next;
@@ -71,7 +71,7 @@ export function createMotionRig(overrides = {}) {
   // Subtle composition drift uses its arrival as the next departure, never a reset.
   const pruneArrival = {
     ...layout.heroes.prune,
-    x: layout.heroes.prune.x - 24,
+    x: layout.heroes.prune.x,
     y: layout.heroes.prune.y - 12,
   };
   tl.fromTo(
@@ -94,7 +94,7 @@ export function createMotionRig(overrides = {}) {
     } else {
       const end = {
         ...next,
-        x: next.x + (i === 1 ? 16 : -24),
+        x: next.x,
         y: next.y - (i === 1 ? 8 : 12),
       };
       tl.fromTo(
@@ -109,13 +109,13 @@ export function createMotionRig(overrides = {}) {
   tl.fromTo(
     drift,
     { noir: 0 },
-    { noir: 24, duration: 3.25, ease: smooth },
+    { noir: -16, duration: 3.25, ease: smooth },
     0.05,
   );
   tl.fromTo(
     drift,
     { lumiere: 0 },
-    { lumiere: -24, duration: 2.5, ease: smooth },
+    { lumiere: -16, duration: 2.5, ease: smooth },
     3.3,
   );
   tl.to({}, { duration: 0.9 }, 21.1);
@@ -168,10 +168,10 @@ export function createMotionRig(overrides = {}) {
       camera: cam,
       shared: sh,
       portraits: {
-        noir: { ...layout.heroes.noir, x: layout.heroes.noir.x + drift.noir },
+        noir: { ...layout.heroes.noir, y: layout.heroes.noir.y + drift.noir },
         lumiere: {
           ...layout.heroes.lumiere,
-          x: layout.heroes.lumiere.x + drift.lumiere,
+          y: layout.heroes.lumiere.y + drift.lumiere,
         },
         prune: sh,
         return: {

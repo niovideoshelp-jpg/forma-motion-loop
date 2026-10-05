@@ -33,18 +33,18 @@ const content = (t, a) => E(t, a + 0.4, 0.4);
 const arrive = (t, a) => E(t, a + 0.16, 0.64);
 const LAYOUT = {
   heroes: {
-    noir: { x: 90, y: 907.5, w: 940, h: 1175 },
-    lumiere: { x: 1050, y: 927.5, w: 940, h: 1175 },
-    prune: { x: 2400, y: 907.5, w: 940, h: 1175 },
+    noir: { x: 0, y: 965, w: 768, h: 960 },
+    lumiere: { x: 1150, y: 965, w: 768, h: 960 },
+    prune: { x: 2300, y: 965, w: 768, h: 960 },
   },
   sharedPoses: [
-    { x: 3470, y: 1000, w: 720, h: 900 },
-    { x: 4358, y: 780, w: 416, h: 520 },
-    { x: 5870, y: 900, w: 688, h: 860 },
+    { x: 3450, y: 965, w: 688, h: 860 },
+    { x: 4600, y: 735, w: 320, h: 400 },
+    { x: 5750, y: 925, w: 640, h: 800 },
   ],
-  cta: { x: 385, y: 1535, w: 590, h: 104 },
+  cta: { x: 540, y: 1535, w: 590, h: 104 },
   greenCta: { x: 540, y: 1535, w: 900, h: 112 },
-  detailPose: { x: 3180, y: 1225, w: 360, h: 450 },
+  detailPose: { x: 3168, y: 975, w: 336, h: 420 },
 };
 function loadScript(url) {
   return new Promise((resolve, reject) => {
@@ -86,7 +86,7 @@ export async function loadAssets(base = "./assets/") {
           im.src =
             base +
             "aurea/" +
-            (name === "touchHand" ? "touch-hand-long.svg" : name + ".webp");
+            (name === "touchHand" ? "touch-hand-only.svg" : name + ".webp");
         }),
     ),
   );
@@ -228,7 +228,7 @@ export function createRenderer(canvas, assets) {
                 ? "brand"
                 : "return";
   function brandSmall(cx, color) {
-    text(c, "AURÉA", cx - 450, 270, 64, color, "AureaBodoni");
+    text(c, "AURÉA", cx, 275, 60, color, "AureaBodoni", 500, "center");
   }
   function label(
     cx,
@@ -251,48 +251,44 @@ export function createRenderer(canvas, assets) {
       c.save();
       c.translate(0, 26 * (1 - q));
       brandSmall(cx, col);
-      const x = cx + (right ? 450 : -450),
-        align = right ? "right" : "left";
       text(
         c,
         name,
-        x,
-        390,
-        name === "Lumière" ? 116 : 124,
+        cx,
+        365,
+        112,
         col,
         "AureaBodoni",
         500,
-        align,
+        "center",
       );
       text(
         c,
         sub,
-        x + (right ? -4 : 4),
-        486,
+        cx,
+        442,
         44,
         col,
         "AureaManrope",
         500,
-        align,
+        "center",
       );
-      if (name === "Noir") {
-        text(c, "Para noites", cx - 446, 580, 40, col);
-        text(c, "inesquecíveis.", cx - 446, 632, 40, col);
-      }
-      if (name === "Lumière")
-        text(
-          c,
-          "Luz em movimento.",
-          cx + 446,
-          580,
-          40,
-          col,
-          "AureaManrope",
-          500,
-          "right",
-        );
       c.restore();
     });
+  }
+  function buttonWords(x, y, label, green, col) {
+    c.save();
+    c.translate(x, y);
+    c.font = "600 44px AureaManrope";
+    c.letterSpacing = "0px";
+    const labelWidth = c.measureText(label).width,
+      leading = green ? 65 : 0,
+      trailing = 45,
+      start = -(leading + labelWidth + trailing) / 2;
+    if (green) whatsapp(c, start + 20, 0, col, 39);
+    text(c, label, start + leading, 0, 44, col, "AureaManrope", 600);
+    chevron(c, start + leading + labelWidth + 35, 0, col);
+    c.restore();
   }
   function button(cx, t, label, green = false, a = 1, returning = false) {
     const rect = green ? LAYOUT.greenCta : LAYOUT.cta;
@@ -310,20 +306,7 @@ export function createRenderer(canvas, assets) {
         clip(c, x, y, w, h, h / 2, () =>
           disk(c, x + w / 2, y, (w + 3) * fill, C.champagne),
         );
-      const words = (col) => {
-        if (green) whatsapp(c, x - w / 2 + 53, y, col, 39);
-        text(
-          c,
-          label,
-          x - w / 2 + (green ? 106 : 38),
-          y,
-          44,
-          col,
-          "AureaManrope",
-          600,
-        );
-        chevron(c, x + w / 2 - 37, y, col);
-      };
+      const words = (col) => buttonWords(x, y, label, green, col);
       words(green ? C.cream : C.champagne);
       if (!green && fill > 0) {
         c.save();
@@ -340,15 +323,15 @@ export function createRenderer(canvas, assets) {
       a = arrive(dt, 8.3) * (1 - content(dt, 12.3));
     alpha(c, a, () => {
       brandSmall(cx, C.plum);
-      text(c, "O drapeado.", cx - 450, 400, 108, C.plum, "AureaBodoni");
+      text(c, "O drapeado.", cx, 385, 100, C.plum, "AureaBodoni", 500, "center");
       alpha(c, E(dt, 8.95, 0.15), () =>
-        text(c, "Prune · longo ameixa", cx - 446, 490, 40, C.plum),
+        text(c, "Prune · longo ameixa", cx, 470, 40, C.plum, "AureaManrope", 500, "center"),
       );
       const q = E(t, 9.3),
-        x = cx + 150,
-        y = 1005,
-        w = 568,
-        h = 890;
+        x = cx + 184,
+        y = 987.5,
+        w = 532,
+        h = (532 * 555) / 355;
       if (q > 0)
         clip(c, x, y, w * q, h, 0, () =>
           c.drawImage(
@@ -364,8 +347,8 @@ export function createRenderer(canvas, assets) {
           ),
         );
       alpha(c, content(dt, 9.3), () => {
-        text(c, "Prune", cx - 450, 885, 48, C.plum, "AureaBodoni");
-        text(c, "Longo ameixa", cx - 450, 938, 36, C.muted);
+        text(c, "Prune", cx - 282, 1244, 48, C.plum, "AureaBodoni", 500, "center");
+        text(c, "Longo ameixa", cx - 282, 1300, 36, C.muted, "AureaManrope", 500, "center");
       });
     });
   }
@@ -374,12 +357,14 @@ export function createRenderer(canvas, assets) {
       a = arrive(dt, 12.3) * (1 - content(dt, 16.3));
     alpha(c, a, () => {
       brandSmall(cx, C.plum);
-      text(c, "Vamos conversar?", cx - 450, 390, 96, C.plum, "AureaBodoni");
-      whatsapp(c, cx + 95, 571, C.green, 35);
-      text(c, "WhatsApp", cx + 131, 573, 40, C.green, "AureaManrope", 600);
-      text(c, "Prune", cx + 65, 674, 84, C.plum, "AureaBodoni");
-      text(c, "Longo", cx + 70, 770, 44, C.plum);
-      text(c, "Ameixa", cx + 70, 833, 44, C.muted);
+      text(c, "Vamos conversar?", cx, 390, 96, C.plum, "AureaBodoni", 500, "center");
+      c.font = "600 40px AureaManrope";
+      const badgeWidth = c.measureText("WhatsApp").width,
+        badgeStart = cx - (badgeWidth + 55) / 2;
+      whatsapp(c, badgeStart + 17.5, 480, C.green, 35);
+      text(c, "WhatsApp", badgeStart + 55, 480, 40, C.green, "AureaManrope", 600);
+      text(c, "Prune", cx, 990, 64, C.plum, "AureaBodoni", 500, "center");
+      text(c, "Longo · ameixa", cx, 1044, 40, C.muted, "AureaManrope", 500, "center");
       rr(c, cx, 1265, 900, 350, 22, "#EEE7DC");
       alpha(c, content(dt, 12.3), () =>
         [
@@ -398,35 +383,37 @@ export function createRenderer(canvas, assets) {
     const cx = 5750,
       a = arrive(dt, 16.3) * (1 - content(dt, 20.3));
     alpha(c, a, () => {
-      text(c, "AURÉA", cx - 450, 330, 150, C.champagne, "AureaBodoni");
+      text(c, "AURÉA", cx, 320, 150, C.champagne, "AureaBodoni", 500, "center");
       text(
         c,
         "VESTIDOS DE FESTA",
-        cx - 446,
+        cx,
         430,
         34,
         C.cream,
         "AureaManrope",
         500,
-        "left",
+        "center",
         2,
       );
       if (t < 20.3) {
         c.strokeStyle = C.champagne;
         c.lineWidth = 2.7;
         c.beginPath();
-        c.moveTo(cx - 435, 481);
-        c.lineTo(cx - 280, 481);
+        c.moveTo(cx - 77.5, 481);
+        c.lineTo(cx + 77.5, 481);
         c.stroke();
       }
       text(
         c,
         "Para o seu próximo evento.",
-        cx - 450,
+        cx,
         1397,
         64,
         C.cream,
         "AureaBodoni",
+        500,
+        "center",
       );
     });
   }
@@ -435,13 +422,12 @@ export function createRenderer(canvas, assets) {
     const q = E(t, 20.3),
       open = E(t, 20.7, 0.4);
     c.save();
-    c.translate(mix(5750 - 357.5, 6900 - 155, q), mix(481, 1535, q));
+    c.translate(mix(5750, 6900, q), mix(481, 1535, q));
     c.strokeStyle = C.champagne;
     c.lineWidth = 2.7;
     c.stroke(new Path2D(pill(open)));
     alpha(c, E(t, 20.9, 0.2), () => {
-      text(c, "Ver coleção", -257, 0, 44, C.champagne, "AureaManrope", 600);
-      chevron(c, 258, 0, C.champagne);
+      buttonWords(0, 0, "Ver coleção", false, C.champagne);
     });
     c.restore();
   }
@@ -476,7 +462,7 @@ export function createRenderer(canvas, assets) {
       c.shadowBlur = 13;
       c.shadowOffsetX = 4;
       c.shadowOffsetY = 9;
-      c.drawImage(assets.touchHand, -55, -15, 300, 1230);
+      c.drawImage(assets.touchHand, -44, -4, 200, 320);
       c.restore();
       if (p.contact && p.press > 0) {
         c.save();

@@ -20,7 +20,54 @@
     {
       "file": "public/assets/aurea/touch-hand-long.svg",
       "sha256": "b3272abcc55b3201335e47ccbf98a979f918fa8493a93cd5ce63ae0123b08c95"
+    },
+    {
+      "file": "public/assets/aurea/touch-hand-only.svg",
+      "sha256": "c3c485d7401d4676e21bf531720ff43cb648daa862a1306722cc099cbe1ead3c",
+      "derivedFrom": "public/assets/aurea/touch-hand.svg",
+      "originalVector": true,
+      "viewBox": [
+        -44,
+        -4,
+        200,
+        320
+      ],
+      "contactAnchor": [
+        0,
+        0
+      ],
+      "palmTerminationY": 312,
+      "containsForearm": false,
+      "containsLongWrist": false
     }
   ],
-  "treatment": "Semi-realistic vector hand, fingers and continuous forearm; no generated raster or mouse pointer."
+  "treatment": "Original warm-toned vector hand. Current authorized variant ends immediately after the palm; no arm or extended wrist. Earlier hand and forearm assets are preserved but are not the active variant.",
+  "activeVariant": "public/assets/aurea/touch-hand-only.svg",
+  "viewBoxHandOnly": [
+    -44,
+    -4,
+    200,
+    320
+  ],
+  "directionChange": "The user explicitly requested hand only, superseding the earlier continuous-forearm preference.",
+  "handOnlyRasterReview": {
+    "passed": true,
+    "nativeSize": [
+      200,
+      320
+    ],
+    "alphaPixelBounds": {
+      "minX": 5,
+      "minY": 4,
+      "maxX": 194,
+      "maxY": 315
+    },
+    "canvasDrawImage": [
+      -44,
+      -4,
+      200,
+      320
+    ],
+    "externalArtwork": false
+  }
 }

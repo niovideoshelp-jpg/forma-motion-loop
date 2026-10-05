@@ -1,4 +1,4 @@
-// Review artifact: the first published AURÉA against the current six-frame board.
+// Review artifact: the preceding published AURÉA against the current six-frame board.
 const fs = require("node:fs");
 const path = require("node:path");
 const { execFileSync } = require("node:child_process");
@@ -6,7 +6,7 @@ const sharp = require("sharp");
 const root = path.resolve(__dirname, "..");
 async function main() {
   const before = execFileSync("git", [
-    "show", "d75c044:docs/aurea/storyboard.png",
+    "show", "a8b8536:docs/aurea/storyboard.png",
   ], { cwd: root, maxBuffer: 20 * 1024 * 1024 });
   const current = fs.readFileSync(path.join(root, "out/aurea/storyboard.png"));
   const a = await sharp(before).resize({ width: 630 }).png().toBuffer();
@@ -14,8 +14,8 @@ async function main() {
   const metadata = await sharp(a).metadata();
   const labels = Buffer.from(`<svg width="1290" height="52">
     <g fill="#F4DFBF" font-size="22" font-family="Arial">
-      <text x="16" y="32">Primeira edição</text>
-      <text x="676" y="32">Nova edição · toque e deslize</text>
+      <text x="16" y="32">Edição anterior</text>
+      <text x="676" y="32">Nova edição · conteúdo centralizado</text>
     </g></svg>`);
   await sharp({ create: {
     width: 1290, height: metadata.height + 52, channels: 3, background: "#291c30",
