@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-55 -15 300 1230" role="img" aria-labelledby="title desc">
+  <title id="title">Mão direita com o indicador estendido</title>
+  <desc id="desc">Ilustração vetorial original para gesto de toque. A ponta do indicador está em zero, zero; punho e dedos dobrados permanecem abaixo.</desc>
+  <metadata>Original vector artwork authored for the AURÉA concept. No third-party artwork, font, or icon dependency. Contact anchor: x=0, y=0. Transparent background. Forearm extends to y=1200 for off-screen compositing.</metadata>
+  <defs>
+    <linearGradient id="skin" x1="-35" y1="175" x2="147" y2="175" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ba7756"/>
+      <stop offset=".23" stop-color="#d99d76"/>
+      <stop offset=".53" stop-color="#e9b58e"/>
+      <stop offset=".81" stop-color="#dca27d"/>
+      <stop offset="1" stop-color="#bd7e5d"/>
+    </linearGradient>
+    <linearGradient id="finger" x1="-19" y1="76" x2="28" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ba7855"/>
+      <stop offset=".23" stop-color="#dda17a"/>
+      <stop offset=".55" stop-color="#edbd96"/>
+      <stop offset=".83" stop-color="#dda37d"/>
+      <stop offset="1" stop-color="#bb7b59"/>
+    </linearGradient>
+    <linearGradient id="knuckle" x1=".1" y1="0" x2=".8" y2="1">
+      <stop stop-color="#e9b58f"/>
+      <stop offset=".47" stop-color="#dda47e"/>
+      <stop offset="1" stop-color="#b87755"/>
+    </linearGradient>
+    <linearGradient id="thumb" x1="-39" y1="205" x2="41" y2="245" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#bc7d5a"/>
+      <stop offset=".28" stop-color="#e3ac85"/>
+      <stop offset=".68" stop-color="#edba93"/>
+      <stop offset="1" stop-color="#c28662"/>
+    </linearGradient>
+    <linearGradient id="nail" x1="0" y1="10" x2="0" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f1c7b2"/>
+      <stop offset=".28" stop-color="#e8bca5"/>
+      <stop offset="1" stop-color="#dca78b"/>
+    </linearGradient>
+    <radialGradient id="backlight" cx=".42" cy=".38" r=".61">
+      <stop stop-color="#f4c8a3" stop-opacity=".48"/>
+      <stop offset="1" stop-color="#f4c8a3" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="hand-clip">
+      <path d="M0 0 C-12 0-19 12-19 28 L-16 162 C-26 176-35 194-38 211 C-41 231-35 251-23 271 L-6 300 C8 326 12 353 12 384 L12 1200 H136 L128 351 C125 325 139 304 146 278 C154 251 150 229 139 216 C143 200 134 186 119 182 C123 164 110 148 92 147 C90 131 76 120 62 127 C56 114 41 106 28 119 L21 131 L17 23 C16 8 9 0 0 0Z"/>
+    </clipPath>
+  </defs>
+  <!-- Dorsal silhouette. Four finger roots are connected to one palm. -->
+  <path d="M0 0 C-12 0-19 12-19 28 L-16 162 C-26 176-35 194-38 211 C-41 231-35 251-23 271 L-6 300 C8 326 12 353 12 384 L12 1200 H136 L128 351 C125 325 139 304 146 278 C154 251 150 229 139 216 C143 200 134 186 119 182 C123 164 110 148 92 147 C90 131 76 120 62 127 C56 114 41 106 28 119 L21 131 L17 23 C16 8 9 0 0 0Z" fill="url(#skin)"/>
+  <g clip-path="url(#hand-clip)">
+    <path d="M2 0 C-10 0-17 12-17 28 L-14 155 C-13 171-4 182 10 183 C22 184 32 172 29 157 L17 23 C16 8 9 0 2 0Z" fill="url(#finger)"/>
+    <path d="M22 150 C25 166 32 180 39 196 C53 226 78 252 98 270 C96 298 52 314 20 292 C-6 271-13 245-9 211 C-5 185 7 167 22 150Z" fill="url(#backlight)"/>
+    <!-- Middle, ring and little finger flex over the palm. -->
+    <path d="M25 133 C28 120 37 113 46 115 C61 118 69 132 74 148 L86 182 C89 193 84 204 74 208 C64 211 56 205 52 193 L42 165 C35 163 28 150 25 133Z" fill="url(#knuckle)"/>
+    <path d="M66 141 C67 128 75 125 83 129 C95 134 98 149 104 164 L116 197 C120 208 115 219 105 222 C95 225 87 218 84 207 L74 180 C72 167 64 151 66 141Z" fill="url(#knuckle)"/>
+    <path d="M101 168 C102 155 109 153 116 159 C124 166 127 180 132 190 L144 216 C149 226 145 237 136 240 C127 244 119 238 115 229 L105 206 C100 194 96 179 101 168Z" fill="url(#knuckle)"/>
+    <!-- The thumb folds beneath the index, on the left of the right hand. -->
+    <path d="M-31 195 C-25 184-19 174-9 173 C1 172 9 181 9 191 C8 201-1 214-2 225 C-2 236 12 247 29 251 C37 253 42 261 37 269 C31 278 17 278 4 273 C-20 265-33 247-35 228 C-37 215-36 204-31 195Z" fill="url(#thumb)"/>
+    <!-- Nail sits on the distal phalanx, with a modest free edge. -->
+    <path d="M-10 18 C-10 10-6 7 0 7 C6 7 10 11 10 18 L10 33 C10 39 5 42 0 42 C-6 42-10 38-10 33Z" fill="url(#nail)"/>
+    <path d="M-9 16 C-5 12 5 12 9 16" fill="none" stroke="#f8dac6" stroke-width="2" opacity=".7"/>
+    <path d="M-10 34 C-7 41 5 43 10 35" fill="none" stroke="#b77b61" stroke-width="1" opacity=".42"/>
+    <!-- Three subdued creases, deliberately not outlined like a pictogram. -->
+    <g fill="none" stroke="#935b42" stroke-linecap="round" opacity=".34">
+      <path d="M-11 91 C-4 88 7 88 15 92" stroke-width="1.4"/>
+      <path d="M39 155 C47 155 52 159 56 164" stroke-width="1.5"/>
+      <path d="M-7 230 C-2 238 4 243 12 247" stroke-width="1.5"/>
+    </g>
+    <path d="M20 294 C43 307 77 313 110 299" fill="none" stroke="#ad7252" stroke-width="1.3" opacity=".2"/>
+  </g>
+</svg>
+

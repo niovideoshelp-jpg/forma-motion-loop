@@ -1,0 +1,26 @@
+{
+  "type": "Original vector artwork",
+  "author": "AUREA production, astra_illustrations",
+  "thirdPartyAssets": false,
+  "contactAnchor": [
+    0,
+    0
+  ],
+  "viewBoxLong": [
+    -55,
+    -15,
+    300,
+    1230
+  ],
+  "files": [
+    {
+      "file": "public/assets/aurea/touch-hand.svg",
+      "sha256": "7e965ce710207c3683ff0e4e6f5c66a80a8648dddeb54a9ab860b80052450dcc"
+    },
+    {
+      "file": "public/assets/aurea/touch-hand-long.svg",
+      "sha256": "b3272abcc55b3201335e47ccbf98a979f918fa8493a93cd5ce63ae0123b08c95"
+    }
+  ],
+  "treatment": "Semi-realistic vector hand, fingers and continuous forearm; no generated raster or mouse pointer."
+}

@@ -158,6 +158,7 @@ async function openPreview() {
     ".json": "application/json",
     ".png": "image/png",
     ".webp": "image/webp",
+    ".svg": "image/svg+xml",
     ".jpg": "image/jpeg",
     ".woff2": "font/woff2",
     ".wav": "audio/wav",

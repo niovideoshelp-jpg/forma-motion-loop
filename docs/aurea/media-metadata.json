@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "videoSha256": "6af92781a033615a523dff3b3686d14beab2ea662def588e621048d308555aa3",
+  "videoSha256": "10c52785dd83de589fde5bef0253549d30df8c4027efef9a0717f145587f1e53",
   "expected": {
     "width": 1080,
     "height": 1920,

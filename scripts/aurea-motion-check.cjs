@@ -239,12 +239,10 @@ async function main() {
         raw: await sharp(png).ensureAlpha().raw().toBuffer(),
       });
     }
-    const weightedComparisons = weightedFrames
-      .slice(1)
-      .map((sample) => ({
-        frame: sample.frame,
-        ...difference(weightedFrames[0].raw, sample.raw),
-      }));
+    const weightedComparisons = weightedFrames.slice(1).map((sample) => ({
+      frame: sample.frame,
+      ...difference(weightedFrames[0].raw, sample.raw),
+    }));
     report.weightedLoop = {
       passed: weightedComparisons.every((sample) => sample.equal),
       renderer:
@@ -291,8 +289,17 @@ async function main() {
         const firstTime = (predicate) => {
           if (predicate(window.inspect(0))) return 0;
           let low = 0,
-            high = 1.2;
-          if (!predicate(window.inspect(high))) return null;
+            high = null;
+          // Contact is no longer monotonic: the hand leaves after the touch.
+          for (let i = 1; i <= 1200; i++) {
+            const t = i / 1000;
+            if (predicate(window.inspect(t))) {
+              high = t;
+              low = (i - 1) / 1000;
+              break;
+            }
+          }
+          if (high === null) return null;
           for (let i = 0; i < 48; i++) {
             const middle = (low + high) / 2;
             if (predicate(window.inspect(middle))) high = middle;
@@ -300,7 +307,9 @@ async function main() {
           }
           return high;
         };
-        const contains = ({ cursor, cta }) => {
+        const contains = ({ cursor, touch, cta }) => {
+          cursor = touch ?? cursor;
+          if ((cursor.opacity ?? 1) <= 0.01) return false;
           const rect = cta.rect,
             radius = rect.r ?? rect.h / 2;
           const dx = Math.abs(cursor.x - rect.x),
@@ -339,16 +348,20 @@ async function main() {
     report.cursorContinuity = await session.page.evaluate(() => {
       const epsilon = 1e-7;
       const boundaries = [
-        0.35, 3.3, 5.5, 5.8, 6.6, 7, 8.3, 10.1, 10.85, 11.25, 12, 12.3, 13.1,
-        16.3, 20.3, 20.7, 21.3,
-      ];
+        ...new Set([
+          0.35, 3.3, 5.5, 5.8, 6.6, 7, 8.3, 10.1, 10.85, 11.25, 12, 12.3, 13.1,
+          16.3, 20.3, 20.7, 21.3, 0.05, 1.02, 1.52, 2.46, 3.16, 3.54, 4.12,
+          4.84, 5.66, 6.04, 6.62, 7.35, 8.2, 9.44, 10.12, 11.22, 12.18, 12.46,
+          13.04, 18.08, 18.9, 19.4, 20.02, 9.1, 9.3, 10.1,
+        ]),
+      ].sort((a, b) => a - b);
       const samples = boundaries.map((time) => {
         const before = window.inspect(time - epsilon).cursor;
         const at = window.inspect(time).cursor;
         const after = window.inspect(time + epsilon).cursor;
-        const visible =
-          Math.max(before.opacity ?? 1, at.opacity ?? 1, after.opacity ?? 1) >
-          0.01;
+        const visible = [before, at, after].some(
+          (p) => (p.opacity ?? 1) > 0.01 && p.y < 1920 + 60,
+        );
         const delta = Math.max(
           Math.hypot(at.x - before.x, at.y - before.y),
           Math.hypot(after.x - at.x, after.y - at.y),
@@ -362,6 +375,75 @@ async function main() {
         samples,
       };
     });
+    report.touchAttachment = await session.page.evaluate(
+      ({ FPS, W, H }) => {
+        const samples = [],
+          failures = [];
+        for (const [start, end, kind] of [
+          [3.3, 3.54, "noir"],
+          [5.8, 6.04, "lumiere"],
+          [8.3, 9.44, "shared"],
+          [12.3, 12.46, "greenCta"],
+        ]) {
+          const times = [start, end];
+          for (
+            let frame = Math.ceil(start * FPS);
+            frame <= Math.floor(end * FPS);
+            frame++
+          )
+            times.push(frame / FPS);
+          for (const time of [...new Set(times)]) {
+            const d = window.inspect(time),
+              p = d.touch,
+              a = p?.anchor;
+            if (!p?.contact || a?.kind !== kind) {
+              failures.push({
+                time,
+                kind: "missing physical contact",
+                expected: kind,
+              });
+              continue;
+            }
+            const rect =
+              kind === "greenCta"
+                ? d.cta.rect
+                : kind === "shared"
+                  ? d.shared
+                  : d.portraits?.[kind];
+            if (!rect) {
+              failures.push({
+                time,
+                kind: "missing drawn anchor rectangle",
+                expected: kind,
+              });
+              continue;
+            }
+            let x = rect.x + (a.u - 0.5) * rect.w,
+              y = rect.y + (a.v - 0.5) * rect.h;
+            if (kind !== "greenCta") {
+              const z = Math.exp(d.camera.logZoom);
+              x = W / 2 + (x - d.camera.x) * z;
+              y = H / 2 + (y - H / 2 - d.camera.y) * z;
+            }
+            const delta = Math.hypot(x - p.x, y - p.y);
+            samples.push({ time, kind, delta });
+            if (delta > 0.1)
+              failures.push({
+                time,
+                kind: "fingertip slips off photo UV",
+                delta,
+              });
+          }
+        }
+        return {
+          passed: failures.length === 0,
+          samples,
+          failures,
+          tolerancePixels: 0.1,
+        };
+      },
+      { FPS, W, H },
+    );
     const rows = [],
       diagnosticFailures = [];
     for (let from = 0; from <= FRAMES; from += 60) {
@@ -384,6 +466,7 @@ async function main() {
             for (const name of [
               "camera",
               "cursor",
+              "touch",
               "cta",
               "composer",
               "safeArea",
@@ -411,22 +494,7 @@ async function main() {
                 frame,
                 kind: "draft not readable for required interval",
               });
-            if (
-              time < 3.3 &&
-              d.cta?.fill > 0.000001 &&
-              d.cursor &&
-              d.cta.rect
-            ) {
-              const { x, y, w, h } = d.cta.rect;
-              if (
-                Math.abs(d.cursor.x - x) > w / 2 + 0.001 ||
-                Math.abs(d.cursor.y - y) > h / 2 + 0.001
-              )
-                failures.push({
-                  frame,
-                  kind: "intro liquid precedes cursor contact",
-                });
-            }
+            // First rounded contact/fill is checked independently above; a hand may leave after touching.
             if (frame < FRAMES) {
               window.seek(time, time);
               s.small.clearRect(0, 0, SW, SH);
@@ -497,6 +565,7 @@ async function main() {
       report.weightedLoop.passed &&
       report.hover.passed &&
       report.cursorContinuity.passed &&
+      report.touchAttachment.passed &&
       report.diagnostics.failures.length === 0 &&
       flags.length === 0 &&
       !stillRuns.some((r) => r.fullResolutionIdentical) &&
@@ -515,6 +584,7 @@ async function main() {
       diagnosticFailures: report.diagnostics.failures,
       hover: report.hover,
       cursorContinuity: report.cursorContinuity,
+      touchAttachment: report.touchAttachment,
       stillRuns,
       pageErrors: session.errors,
     });

@@ -1,4 +1,5 @@
-/** AURÉA. One canvas, authored world, paused GSAP, no frame history. */
+/** AURÉA editorial. One canvas, a shared photograph and a fingertip-led world. */
+import { createMotionRig } from "./aurea-motion.js";
 export const W = 1080,
   H = 1920,
   FPS = 60,
@@ -11,17 +12,17 @@ const C = {
   muted: "#756977",
 };
 const clamp = (v) => Math.max(0, Math.min(1, v));
-const mix = (a, b, p) => a + (b - a) * p;
+const mix = (a, b, q) => a + (b - a) * q;
 function curve(v) {
   if (v <= 0) return 0;
   if (v >= 1) return 1;
   let lo = 0,
     hi = 1,
     u = v;
-  for (let i = 0; i < 22; i++) {
+  for (let i = 0; i < 24; i++) {
     u = (lo + hi) / 2;
-    const q = 1 - u,
-      x = 3 * q * q * u * 0.45 + 3 * q * u * u * 0.15 + u * u * u;
+    const q = 1 - u;
+    const x = 3 * q * q * u * 0.45 + 3 * q * u * u * 0.15 + u * u * u;
     if (x < v) lo = u;
     else hi = u;
   }
@@ -29,6 +30,22 @@ function curve(v) {
 }
 const E = (t, a, d = 0.8) => curve((t - a) / d);
 const content = (t, a) => E(t, a + 0.4, 0.4);
+const arrive = (t, a) => E(t, a + 0.16, 0.64);
+const LAYOUT = {
+  heroes: {
+    noir: { x: 90, y: 907.5, w: 940, h: 1175 },
+    lumiere: { x: 1050, y: 927.5, w: 940, h: 1175 },
+    prune: { x: 2400, y: 907.5, w: 940, h: 1175 },
+  },
+  sharedPoses: [
+    { x: 3470, y: 1000, w: 720, h: 900 },
+    { x: 4358, y: 780, w: 416, h: 520 },
+    { x: 5870, y: 900, w: 688, h: 860 },
+  ],
+  cta: { x: 385, y: 1535, w: 590, h: 104 },
+  greenCta: { x: 540, y: 1535, w: 900, h: 112 },
+  detailPose: { x: 3180, y: 1225, w: 360, h: 450 },
+};
 function loadScript(url) {
   return new Promise((resolve, reject) => {
     const el = document.createElement("script");
@@ -46,11 +63,10 @@ export async function loadAssets(base = "./assets/") {
     ["MorphSVGPlugin", "MorphSVGPlugin.min.js"],
   ])
     if (!globalThis[name]) await loadScript(base + "gsap/" + file);
-  const fonts = [
+  for (const [family, file, weight] of [
     ["AureaBodoni", "BodoniModa-500-opsz12.ttf", "500"],
     ["AureaManrope", "Manrope-normal-variable.ttf", "200 800"],
-  ];
-  for (const [family, file, weight] of fonts) {
+  ]) {
     const f = new FontFace(
       family,
       "url(" + base + "aurea/fonts/" + file + ")",
@@ -59,8 +75,9 @@ export async function loadAssets(base = "./assets/") {
     await f.load();
     document.fonts.add(f);
   }
+  const names = ["noir", "lumiere", "prune", "touchHand"];
   const images = await Promise.all(
-    ["noir", "lumiere", "prune", "pointer"].map(
+    names.map(
       (name) =>
         new Promise((resolve, reject) => {
           const im = new Image();
@@ -68,16 +85,13 @@ export async function loadAssets(base = "./assets/") {
           im.onerror = () => reject(Error("Cannot load " + name));
           im.src =
             base +
-            (name === "pointer"
-              ? "macos-pointer.png"
-              : "aurea/" + name + ".webp");
+            "aurea/" +
+            (name === "touchHand" ? "touch-hand-long.svg" : name + ".webp");
         }),
     ),
   );
   gsap.ticker.sleep();
-  return Object.fromEntries(
-    ["noir", "lumiere", "prune", "pointer"].map((name, i) => [name, images[i]]),
-  );
+  return Object.fromEntries(names.map((name, i) => [name, images[i]]));
 }
 function rr(c, x, y, w, h, r, fill) {
   if (w <= 0 || h <= 0) return;
@@ -88,17 +102,17 @@ function rr(c, x, y, w, h, r, fill) {
     c.fill();
   }
 }
-function clip(c, x, y, w, h, r, fn) {
-  c.save();
-  rr(c, x, y, w, h, r);
-  c.clip();
-  fn();
-  c.restore();
-}
 function alpha(c, a, fn) {
   if (a <= 0) return;
   c.save();
   c.globalAlpha *= clamp(a);
+  fn();
+  c.restore();
+}
+function clip(c, x, y, w, h, r, fn) {
+  c.save();
+  rr(c, x, y, w, h, r);
+  c.clip();
   fn();
   c.restore();
 }
@@ -112,50 +126,15 @@ function text(
   font = "AureaManrope",
   weight = 500,
   align = "left",
+  tracking = 0,
 ) {
   c.font = weight + " " + size + "px " + font;
   c.fillStyle = color;
   c.textAlign = align;
   c.textBaseline = "middle";
+  c.letterSpacing = tracking + "px";
   c.fillText(s, x, y);
-}
-function rule(c, x, y, w, color) {
-  c.strokeStyle = color;
-  c.lineWidth = 1.5;
-  c.beginPath();
-  c.moveTo(x, y);
-  c.lineTo(x + w, y);
-  c.stroke();
-}
-function arrow(c, x, y, col, size = 18) {
-  c.strokeStyle = col;
-  c.lineWidth = 3.5;
-  c.lineCap = "round";
-  c.lineJoin = "round";
-  c.beginPath();
-  c.moveTo(x - size, y);
-  c.lineTo(x + size, y);
-  c.moveTo(x + size * 0.25, y - size * 0.7);
-  c.lineTo(x + size, y);
-  c.lineTo(x + size * 0.25, y + size * 0.7);
-  c.stroke();
-}
-function shadow(c, x, y, w, h, r) {
-  for (const [blur, dy, opacity] of [
-    [38, 20, 0.07],
-    [12, 5, 0.08],
-  ]) {
-    c.save();
-    c.shadowBlur = blur;
-    c.shadowOffsetY = dy;
-    c.shadowColor = "rgba(20,12,24," + opacity + ")";
-    rr(c, x, y, w, h, r, C.plum);
-    c.restore();
-  }
-}
-function photo(c, im, x, y, w, h, rad = 6) {
-  shadow(c, x, y, w, h, rad);
-  clip(c, x, y, w, h, rad, () => c.drawImage(im, x - w / 2, y - h / 2, w, h));
+  c.letterSpacing = "0px";
 }
 function disk(c, x, y, r, col) {
   if (r <= 0) return;
@@ -164,9 +143,54 @@ function disk(c, x, y, r, col) {
   c.fillStyle = col;
   c.fill();
 }
+function chevron(c, x, y, col) {
+  c.strokeStyle = col;
+  c.lineWidth = 3;
+  c.lineJoin = "round";
+  c.lineCap = "round";
+  c.beginPath();
+  c.moveTo(x - 7, y - 11);
+  c.lineTo(x + 4, y);
+  c.lineTo(x - 7, y + 11);
+  c.stroke();
+}
+function whatsapp(c, x, y, color, size = 40) {
+  c.save();
+  c.translate(x, y);
+  c.scale(size / 40, size / 40);
+  c.strokeStyle = color;
+  c.fillStyle = color;
+  c.lineWidth = 2.7;
+  c.lineJoin = "round";
+  c.lineCap = "round";
+  c.beginPath();
+  c.moveTo(-17, 18);
+  c.lineTo(-13, 10);
+  c.bezierCurveTo(-25, -8, -8, -25, 8, -17);
+  c.bezierCurveTo(27, -8, 20, 20, 1, 20);
+  c.bezierCurveTo(-4, 20, -7, 19, -10, 17);
+  c.closePath();
+  c.stroke();
+  c.beginPath();
+  c.moveTo(-6, -9);
+  c.bezierCurveTo(-10, -8, -8, -1, -2, 5);
+  c.bezierCurveTo(4, 11, 10, 12, 11, 7);
+  c.lineTo(6, 4);
+  c.lineTo(3, 6);
+  c.bezierCurveTo(-1, 4, -4, 1, -5, -3);
+  c.lineTo(-3, -5);
+  c.closePath();
+  c.fill();
+  c.restore();
+}
+function picture(c, im, rect, r = 0) {
+  clip(c, rect.x, rect.y, rect.w, rect.h, r, () =>
+    c.drawImage(im, rect.x - rect.w / 2, rect.y - rect.h / 2, rect.w, rect.h),
+  );
+}
 function morphPath(from, to) {
-  const value = { d: from };
-  const tween = gsap.to(value, {
+  const v = { d: from };
+  const tween = gsap.to(v, {
     morphSVG: { shape: to, prop: "d", precision: 5 },
     duration: 1,
     ease: "none",
@@ -176,81 +200,19 @@ function morphPath(from, to) {
   tween.progress(1, true).progress(0, true);
   return (p) => {
     tween.progress(clamp(p), true);
-    return value.d;
-  };
-}
-function motion() {
-  gsap.registerPlugin(CustomEase, MotionPathPlugin, MorphSVGPlugin);
-  const ease = CustomEase.create("aureaGlide", "M0,0 C0.45,0 0.15,1 1,1");
-  const camera = { x: 0, y: 0, logZoom: 0 };
-  const shared = { x: 2240, y: 1000, w: 720, h: 900 };
-  const tl = gsap.timeline({
-    paused: true,
-    defaults: { lazy: false, immediateRender: false, overwrite: false },
-  });
-  const poses = [
-    [3.3, { x: 1150, y: 0, logZoom: 0 }],
-    [5.8, { x: 2300, y: 0, logZoom: 0 }],
-    [8.3, { x: 3450, y: -12, logZoom: Math.log(1.015) }],
-    [12.3, { x: 4600, y: 0, logZoom: 0 }],
-    [16.3, { x: 5750, y: 0, logZoom: 0 }],
-    [20.3, { x: 6900, y: 0, logZoom: 0 }],
-  ];
-  let prior = { x: 0, y: 0, logZoom: 0 };
-  for (const [at, next] of poses) {
-    tl.fromTo(camera, prior, { ...next, duration: 0.8, ease }, at);
-    prior = next;
-  }
-  const photoPoses = [
-    [8.3, { x: 3300, y: 1000, w: 620, h: 775 }],
-    [12.3, { x: 4450, y: 855, w: 288, h: 360 }],
-    [16.3, { x: 5980, y: 970, w: 460, h: 575 }],
-  ];
-  let previous = { x: 2240, y: 1000, w: 720, h: 900 };
-  for (const [at, next] of photoPoses) {
-    tl.fromTo(shared, previous, { ...next, duration: 0.8, ease }, at);
-    previous = next;
-  }
-  tl.to({}, { duration: 0.9 }, 21.1);
-  tl.seek(22, true);
-  tl.seek(0, true);
-  gsap.ticker.sleep();
-  const clean = (o) =>
-    Object.fromEntries(Object.entries(o).filter(([k]) => k !== "_gsap"));
-  return (t) => {
-    tl.seek(t, true);
-    const sh = clean(shared);
-    for (const [a, b, dx, dy] of [
-      [6.6, 8.3, 5, -3],
-      [13.1, 16.3, 8, -6],
-      [17.1, 20.3, -8, -7],
-    ])
-      if (t >= a && t <= b) {
-        const drift = Math.sin(Math.PI * clamp((t - a) / (b - a))) ** 2;
-        sh.x += dx * drift;
-        sh.y += dy * drift;
-      }
-    return { camera: clean(camera), shared: sh };
+    return v.d;
   };
 }
 export function createRenderer(canvas, assets) {
   canvas.width = W;
   canvas.height = H;
   const c = canvas.getContext("2d", { alpha: false, willReadFrequently: true });
-  const sampleMotion = motion();
-  const flourish = morphPath(
-    "M-180,0 L0,0 L180,0",
-    "M-108,116 L0,-132 L108,116",
-  );
-  const lower = morphPath("M-80,0 L0,0 L80,0", "M-64,34 L0,34 L64,34");
+  gsap.registerPlugin(CustomEase, MotionPathPlugin, MorphSVGPlugin);
+  const rig = createMotionRig(LAYOUT);
   const pill = morphPath(
-    "M-140.4,0 L140.4,0 Z",
-    "M-385,-55 H385 A55,55 0 0 1 440,0 A55,55 0 0 1 385,55 H-385 A55,55 0 0 1 -440,0 A55,55 0 0 1 -385,-55 Z",
+    "M-77.5,0 H77.5 Z",
+    "M-243,-52 H243 A52,52 0 0 1 295,0 A52,52 0 0 1 243,52 H-243 A52,52 0 0 1 -295,0 A52,52 0 0 1 -243,-52 Z",
   );
-  const screen = (x, y, cam) => ({
-    x: 540 + (x - cam.x) * Math.exp(cam.logZoom),
-    y: 960 + (y - 960 - cam.y) * Math.exp(cam.logZoom),
-  });
   const scene = (t) =>
     t < 3.3
       ? "noir"
@@ -265,343 +227,290 @@ export function createRenderer(canvas, assets) {
               : t < 20.3
                 ? "brand"
                 : "return";
-  function cursor(t, s) {
-    const camera = s.camera,
-      sh = s.shared;
-    let p = { x: 1015, y: 1710 },
-      opacity = 1;
-    function route(a, b, q) {
-      return {
-        x: mix(a.x, b.x, q),
-        y: mix(a.y, b.y, q) - 18 * Math.sin(Math.PI * q),
-      };
-    }
-    if (t < 0.35) p = route(p, { x: 980, y: 1530 }, E(t, 0.05, 0.3));
-    else if (t < 3.3)
-      p = route({ x: 980, y: 1530 }, { x: 805, y: 1530 }, E(t, 0.35, 0.8));
-    else if (t < 5.5) {
-      const q = E(t, 3.3, 0.8);
-      p = screen(mix(265, 1450, q), mix(1530, 1200, q), camera);
-    } else if (t < 5.8)
-      p = route({ x: 840, y: 1200 }, { x: 900, y: 1250 }, E(t, 5.5, 0.3));
-    else if (t < 6.6) {
-      p = screen(1510, 1250, camera);
-      opacity = 1 - E(t, 6.25, 0.35);
-    } else if (t < 7.0) opacity = 0;
-    else if (t < 8.3) {
-      p = route({ x: 1030, y: 1660 }, { x: 681.6, y: 1090 }, E(t, 7, 0.6));
-      opacity = E(t, 7, 0.4);
-    } else if (t < 10.1)
-      p = screen(sh.x + 0.28 * sh.w, sh.y + 0.1 * sh.h, camera);
-    else if (t < 10.85) {
-      p = route(
-        { x: 563.954, y: 1091.4425 },
-        { x: 1040, y: 1320 },
-        E(t, 10.1, 0.75),
-      );
-    } else if (t < 11.25) {
-      p = route({ x: 1040, y: 1320 }, { x: 1018, y: 1610 }, E(t, 10.85, 0.4));
-    } else if (t < 12.3) {
-      p = route({ x: 1018, y: 1610 }, { x: 805, y: 1530 }, E(t, 11.25, 0.75));
-    } else if (t < 13.1) {
-      p = { x: 805, y: 1530 };
-    } else if (t < 16.3) {
-      p = route({ x: 805, y: 1530 }, { x: 1015, y: 1710 }, E(t, 13.1, 0.8));
-      opacity = 1 - E(t, 13.9, 0.4);
-    } else if (t < 20.3) {
-      p = route({ x: 1015, y: 1710 }, { x: 805, y: 1530 }, E(t, 17.7, 0.8));
-      opacity = E(t, 17.7, 0.4);
-    } else if (t < 20.7) {
-      p = route({ x: 805, y: 1530 }, { x: 1015, y: 1710 }, E(t, 20.3, 0.4));
-      opacity = 1 - E(t, 20.3, 0.4);
-    } else {
-      p = { x: 1015, y: 1710 };
-      opacity = E(t, 21.3, 0.45);
-    }
-    const pulse = Math.max(
-      ...[3.3, 8.3, 9.3, 12.3].map(
-        (a) => E(t, a - 0.08, 0.08) * (1 - E(t, a, 0.14)),
-      ),
-    );
-    return { ...p, opacity, pulse };
+  function brandSmall(cx, color) {
+    text(c, "AURÉA", cx - 450, 270, 64, color, "AureaBodoni");
   }
-  function header(cx, col, small = "VESTIDOS DE FESTA") {
-    text(c, "AURÉA", cx - 444, 270, 64, col, "AureaBodoni", 500);
-    text(c, small, cx + 444, 272, 32, col, "AureaManrope", 500, "right");
-    rule(c, cx - 444, 309, 888, col);
-  }
-  function editorial(cx, name, subtitle, im, t, first = false) {
-    const light = name === "Prune",
-      col = light ? C.plum : C.cream;
-    const start = name === "Noir" ? 0 : name === "Lumière" ? 3.3 : 5.8;
-    const drift =
-      first && cx === 6900
-        ? 0
-        : Math.sin(
-            Math.PI *
-              clamp(
-                (t - start - (name === "Noir" ? 0.05 : 0)) /
-                  (name === "Noir" ? 3.25 : 2.5),
-              ),
-          ) * 8;
-    if (name !== "Prune")
-      photo(c, im, cx + drift + (name === "Lumière" ? 60 : 0), 1000, 720, 900);
-    header(cx, col);
-    const lines = first
-      ? ["Para noites", "inesquecíveis."]
-      : name === "Lumière"
-        ? ["Luz em", "movimento."]
-        : ["Caimento", "que encanta."];
-    text(c, lines[0], cx, 375, 96, col, "AureaBodoni", 500, "center");
-    text(c, lines[1], cx, 471, 96, col, "AureaBodoni", 500, "center");
-    text(c, name, cx - 444, 1439, 54, col, "AureaBodoni");
-    text(c, subtitle, cx + 444, 1443, 40, col, "AureaManrope", 500, "right");
-  }
-  function liquidButton(
+  function label(
     cx,
+    name,
+    sub,
     t,
-    label,
-    green = false,
-    opacity = 1,
+    dt,
+    at,
+    exit,
+    right = false,
     returning = false,
   ) {
-    alpha(c, opacity, () => {
-      const y = 1530,
-        w = 880,
-        h = 110,
-        r = 55;
-      const fill = green ? 1 : returning ? 0 : E(t, 0.35, 0.8);
+    const light = name === "Prune",
+      col = light ? C.plum : C.cream;
+    const a =
+      (at === 0 || returning ? 1 : arrive(dt, at)) *
+      (returning ? 1 : 1 - content(dt, exit));
+    const q = at === 0 || returning ? 1 : E(t, at + 0.16, 0.64);
+    alpha(c, a, () => {
       c.save();
-      c.shadowBlur = 18;
-      c.shadowOffsetY = 7;
-      c.shadowColor = "rgba(24,12,29,.10)";
-      if (green) rr(c, cx, y, w, h, r, C.green);
+      c.translate(0, 26 * (1 - q));
+      brandSmall(cx, col);
+      const x = cx + (right ? 450 : -450),
+        align = right ? "right" : "left";
+      text(
+        c,
+        name,
+        x,
+        390,
+        name === "Lumière" ? 116 : 124,
+        col,
+        "AureaBodoni",
+        500,
+        align,
+      );
+      text(
+        c,
+        sub,
+        x + (right ? -4 : 4),
+        486,
+        44,
+        col,
+        "AureaManrope",
+        500,
+        align,
+      );
+      if (name === "Noir") {
+        text(c, "Para noites", cx - 446, 580, 40, col);
+        text(c, "inesquecíveis.", cx - 446, 632, 40, col);
+      }
+      if (name === "Lumière")
+        text(
+          c,
+          "Luz em movimento.",
+          cx + 446,
+          580,
+          40,
+          col,
+          "AureaManrope",
+          500,
+          "right",
+        );
       c.restore();
-      rr(c, cx, y, w, h, r);
+    });
+  }
+  function button(cx, t, label, green = false, a = 1, returning = false) {
+    const rect = green ? LAYOUT.greenCta : LAYOUT.cta;
+    const x = cx + rect.x - 540,
+      y = rect.y,
+      w = rect.w,
+      h = rect.h;
+    const fill = green ? 1 : returning ? 0 : E(t, 0.35, 0.8);
+    alpha(c, a, () => {
+      rr(c, x, y, w, h, h / 2, green ? C.green : undefined);
       c.strokeStyle = green ? C.green : C.champagne;
-      c.lineWidth = 2.8;
+      c.lineWidth = 2.7;
       c.stroke();
       if (!green && fill > 0)
-        clip(c, cx, y, w, h, r, () => {
-          disk(c, cx + 440, 1530, 900 * fill, C.champagne);
-        });
-      const drawLabel = (fg) => {
-        text(c, label, cx - 350, y, 44, fg, "AureaManrope", 600);
-        arrow(c, cx + 370, y, fg);
+        clip(c, x, y, w, h, h / 2, () =>
+          disk(c, x + w / 2, y, (w + 3) * fill, C.champagne),
+        );
+      const words = (col) => {
+        if (green) whatsapp(c, x - w / 2 + 53, y, col, 39);
+        text(
+          c,
+          label,
+          x - w / 2 + (green ? 106 : 38),
+          y,
+          44,
+          col,
+          "AureaManrope",
+          600,
+        );
+        chevron(c, x + w / 2 - 37, y, col);
       };
-      drawLabel(green ? C.cream : C.champagne);
+      words(green ? C.cream : C.champagne);
       if (!green && fill > 0) {
         c.save();
         c.beginPath();
-        c.arc(cx + 440, 1530, 900 * fill, 0, Math.PI * 2);
+        c.arc(x + w / 2, y, (w + 3) * fill, 0, Math.PI * 2);
         c.clip();
-        drawLabel(C.plum);
+        words(C.plum);
         c.restore();
       }
     });
   }
   function detail(t, dt) {
-    const cx = 3450;
-    const inA = content(t, 8.3),
-      outA = 1 - content(t, 12.3);
-    alpha(c, inA * outA, () => {
-      header(cx, C.plum, "PRUNE / LONGO");
-      text(c, "Elegância", cx, 390, 96, C.plum, "AureaBodoni", 500, "center");
-      text(
-        c,
-        "em cada detalhe.",
-        cx,
-        486,
-        96,
-        C.plum,
-        "AureaBodoni",
-        500,
-        "center",
+    const cx = 3450,
+      a = arrive(dt, 8.3) * (1 - content(dt, 12.3));
+    alpha(c, a, () => {
+      brandSmall(cx, C.plum);
+      text(c, "O drapeado.", cx - 450, 400, 108, C.plum, "AureaBodoni");
+      alpha(c, E(dt, 8.95, 0.15), () =>
+        text(c, "Prune · longo ameixa", cx - 446, 490, 40, C.plum),
       );
-      const q = E(t, 9.3, 0.8),
-        x = cx + 275,
-        y = 1020,
-        w = 410 * q,
-        h = 640 * q;
-      if (q > 0) {
-        shadow(c, x, y, w, h, 5);
-        clip(c, x, y, w, h, 5, () => {
-          const im = assets.prune;
-          c.drawImage(im, 420, 345, 355, 555, x - w / 2, y - h / 2, w, h);
-        });
-      }
-      alpha(c, content(t, 9.3), () => {
-        text(
-          c,
-          "Drapeado",
-          cx + 275,
-          1400,
-          44,
-          C.plum,
-          "AureaManrope",
-          500,
-          "center",
+      const q = E(t, 9.3),
+        x = cx + 150,
+        y = 1005,
+        w = 568,
+        h = 890;
+      if (q > 0)
+        clip(c, x, y, w * q, h, 0, () =>
+          c.drawImage(
+            assets.prune,
+            420,
+            345,
+            355,
+            555,
+            x - w / 2,
+            y - h / 2,
+            w,
+            h,
+          ),
         );
-        text(
-          c,
-          "Cetim",
-          cx - 185,
-          1414,
-          44,
-          C.plum,
-          "AureaManrope",
-          500,
-          "center",
-        );
+      alpha(c, content(dt, 9.3), () => {
+        text(c, "Prune", cx - 450, 885, 48, C.plum, "AureaBodoni");
+        text(c, "Longo ameixa", cx - 450, 938, 36, C.muted);
       });
-      liquidButton(cx, t, "Peça pelo WhatsApp", true, content(t, 10.5));
     });
   }
   function composer(t, dt) {
     const cx = 4600,
-      a = content(t, 12.3) * (1 - content(t, 16.3));
+      a = arrive(dt, 12.3) * (1 - content(dt, 16.3));
     alpha(c, a, () => {
-      header(cx, C.plum, "SEU VESTIDO, DIRETO");
-      text(
-        c,
-        "Vamos conversar?",
-        cx,
-        397,
-        108,
-        C.plum,
-        "AureaBodoni",
-        500,
-        "center",
-      );
-      shadow(c, cx, 1000, 880, 880, 30);
-      rr(c, cx, 1000, 880, 880, 30, C.cream);
-      text(c, "WhatsApp", cx - 380, 608, 48, C.green, "AureaManrope", 600);
-      rule(c, cx - 380, 655, 760, "#ded1c2");
-      text(c, "Prune", cx + 170, 788, 68, C.plum, "AureaBodoni", 500, "center");
-      text(
-        c,
-        "Longo",
-        cx + 170,
-        872,
-        44,
-        C.plum,
-        "AureaManrope",
-        500,
-        "center",
-      );
-      text(
-        c,
-        "Ameixa",
-        cx + 170,
-        932,
-        44,
-        C.muted,
-        "AureaManrope",
-        500,
-        "center",
-      );
-      rr(c, cx, 1255, 780, 330, 22, "#eee7dc");
-      alpha(c, content(dt, 12.3), () => {
+      brandSmall(cx, C.plum);
+      text(c, "Vamos conversar?", cx - 450, 390, 96, C.plum, "AureaBodoni");
+      whatsapp(c, cx + 95, 571, C.green, 35);
+      text(c, "WhatsApp", cx + 131, 573, 40, C.green, "AureaManrope", 600);
+      text(c, "Prune", cx + 65, 674, 84, C.plum, "AureaBodoni");
+      text(c, "Longo", cx + 70, 770, 44, C.plum);
+      text(c, "Ameixa", cx + 70, 833, 44, C.muted);
+      rr(c, cx, 1265, 900, 350, 22, "#EEE7DC");
+      alpha(c, content(dt, 12.3), () =>
         [
-          "Olá! Tenho interesse",
-          "no vestido Prune.",
-          "Quais tamanhos estão",
+          "Olá! Tenho interesse no",
+          "vestido Prune. Quais",
+          "tamanhos estão",
           "disponíveis?",
         ].forEach((line, i) =>
-          text(c, line, cx - 345, 1153 + i * 61, 44, C.plum),
-        );
-      });
-      text(c, "Rascunho", cx - 345, 1384, 38, C.muted, "AureaManrope");
-      arrow(c, cx + 341, 1384, "#a398a2", 16);
-      liquidButton(cx, t, "Peça pelo WhatsApp", true);
+          text(c, line, cx - 410, 1146 + i * 59, 44, C.plum),
+        ),
+      );
+      text(c, "Rascunho", cx - 410, 1396, 38, C.muted);
     });
   }
-  function brand(t) {
+  function brand(t, dt) {
     const cx = 5750,
-      a = content(t, 16.3) * (1 - content(t, 20.3));
+      a = arrive(dt, 16.3) * (1 - content(dt, 20.3));
     alpha(c, a, () => {
-      text(c, "AURÉA", cx, 367, 150, C.champagne, "AureaBodoni", 500, "center");
+      text(c, "AURÉA", cx - 450, 330, 150, C.champagne, "AureaBodoni");
       text(
         c,
         "VESTIDOS DE FESTA",
-        cx,
-        478,
+        cx - 446,
+        430,
         34,
         C.cream,
         "AureaManrope",
         500,
-        "center",
+        "left",
+        2,
       );
+      if (t < 20.3) {
+        c.strokeStyle = C.champagne;
+        c.lineWidth = 2.7;
+        c.beginPath();
+        c.moveTo(cx - 435, 481);
+        c.lineTo(cx - 280, 481);
+        c.stroke();
+      }
       text(
         c,
-        "Seu próximo evento",
-        cx,
-        1332,
-        82,
+        "Para o seu próximo evento.",
+        cx - 450,
+        1397,
+        64,
         C.cream,
         "AureaBodoni",
-        500,
-        "center",
       );
-      text(
-        c,
-        "começa aqui.",
-        cx,
-        1414,
-        82,
-        C.cream,
-        "AureaBodoni",
-        500,
-        "center",
-      );
-      liquidButton(cx, t, "Peça pelo WhatsApp", true);
     });
   }
   function signature(t) {
-    if (t < 16.3 || t >= 21.1) return;
-    const ret = E(t, 20.3, 0.8),
-      fold = E(t, 20.3, 0.4),
+    if (t < 20.3 || t >= 21.1) return;
+    const q = E(t, 20.3),
       open = E(t, 20.7, 0.4);
-    alpha(c, content(t, 16.3), () => {
+    c.save();
+    c.translate(mix(5750 - 357.5, 6900 - 155, q), mix(481, 1535, q));
+    c.strokeStyle = C.champagne;
+    c.lineWidth = 2.7;
+    c.stroke(new Path2D(pill(open)));
+    alpha(c, E(t, 20.9, 0.2), () => {
+      text(c, "Ver coleção", -257, 0, 44, C.champagne, "AureaManrope", 600);
+      chevron(c, 258, 0, C.champagne);
+    });
+    c.restore();
+  }
+  function flood(t, at, col, origin) {
+    if (t < at) return;
+    const q = E(t, at, 0.4);
+    if (q === 1) {
+      c.fillStyle = col;
+      c.fillRect(0, 0, W, H);
+      return;
+    }
+    const radius = Math.max(
+      ...[
+        [0, 0],
+        [W, 0],
+        [0, H],
+        [W, H],
+      ].map(([x, y]) => Math.hypot(x - origin.x, y - origin.y)),
+    );
+    disk(c, origin.x, origin.y, radius * 1.01 * q, col);
+  }
+  function drawHand(t, s) {
+    const p = rig.touchGesture(t, s);
+    if (p.opacity <= 0) return;
+    alpha(c, p.opacity, () => {
       c.save();
-      c.translate(mix(5495, 6900, ret), mix(925, 1530, ret));
-      c.strokeStyle = C.champagne;
-      c.lineWidth = mix(4.68, 2.8, ret);
-      c.lineJoin = "miter";
-      c.lineCap = "butt";
-      if (t < 20.7) {
-        c.scale(0.78, 0.78);
-        c.lineWidth /= 0.78;
-        c.stroke(new Path2D(flourish(E(t, 16.3) * (1 - fold))));
-        alpha(c, 1 - fold, () => c.stroke(new Path2D(lower(E(t, 16.3)))));
-      } else {
-        if (open === 1) rr(c, 0, 0, 880, 110, 55);
-        else c.stroke(new Path2D(pill(open)));
-        if (open === 1) c.stroke();
-        alpha(c, E(t, 20.9, 0.2), () => {
-          text(c, "Ver coleção", -350, 0, 44, C.champagne, "AureaManrope", 600);
-          arrow(c, 370, 0, C.champagne);
-        });
-      }
+      c.translate(p.x, p.y);
+      c.rotate((p.rotation * Math.PI) / 180);
+      const scale = 0.84 * (1 - 0.028 * p.press);
+      c.scale(scale, scale);
+      c.shadowColor = "rgba(24,12,20,.13)";
+      c.shadowBlur = 13;
+      c.shadowOffsetX = 4;
+      c.shadowOffsetY = 9;
+      c.drawImage(assets.touchHand, -55, -15, 300, 1230);
       c.restore();
+      if (p.contact && p.press > 0) {
+        c.save();
+        c.strokeStyle =
+          scene(t) === "prune" ||
+          scene(t) === "detail" ||
+          scene(t) === "whatsapp"
+            ? "rgba(41,28,48,.25)"
+            : "rgba(244,223,191,.35)";
+        c.lineWidth = 2;
+        c.beginPath();
+        c.arc(p.x, p.y, 10 + 15 * (1 - p.press), 0, Math.PI * 2);
+        c.stroke();
+        c.restore();
+      }
     });
   }
   function diagnose(time) {
-    const t = Math.max(0, Math.min(22, Number.isFinite(time) ? time : 0)),
-      s = sampleMotion(t),
-      p = cursor(t, s),
+    const t = Math.max(0, Math.min(22, Number.isFinite(time) ? time : 0));
+    const s = rig.sampleMotion(t),
+      touch = rig.touchGesture(t, s),
       sc = scene(t);
-    const first = t < 3.3 || t >= 20.3,
-      fill = t >= 20.3 ? 0 : first ? E(t, 0.35, 0.8) : 1;
-    const rect = { x: 540, y: 1530, w: 880, h: 110 };
-    const inside =
-      Math.abs(p.x - rect.x) <= rect.w / 2 &&
-      Math.abs(p.y - rect.y) <= rect.h / 2;
+    const green = t >= 10.9 && t < 20.7,
+      first = t < 3.3 || t >= 20.7,
+      rect = green ? LAYOUT.greenCta : LAYOUT.cta;
     return {
       t,
       scene: sc,
       camera: s.camera,
-      cursor: { x: p.x, y: p.y, opacity: p.opacity },
+      shared: s.shared,
+      portraits: s.portraits,
+      pan: s.pan,
+      touch,
+      cursor: { ...touch, pulse: touch.press },
       activeDress:
         sc === "noir" || sc === "return"
           ? "Noir"
@@ -609,110 +518,66 @@ export function createRenderer(canvas, assets) {
             ? "Lumière"
             : "Prune",
       cta: {
-        rect,
-        hover: first && inside && t >= 0.35,
-        fill,
-        green: !first,
-        label: first ? "Ver coleção" : "Peça pelo WhatsApp",
+        rect: { ...rect, r: rect.h / 2 },
+        hover: t >= 0.35 && t < 1.02,
+        fill: green ? 1 : t >= 20.3 ? 0 : E(t, 0.35, 0.8),
+        green,
+        visible: green || t < 3.3 || t >= 21.1,
+        space: green ? "screen" : "world",
+        label: green ? "Peça pelo WhatsApp" : "Ver coleção",
       },
       composer: { draftComplete: t >= 13.1 && t < 16.3, sendEnabled: false },
       safeArea: { left: 90, right: 990, top: 240, bottom: 1600 },
-      shared: s.shared,
     };
   }
   function seek(time, displayTime = time) {
-    const t = Math.max(0, Math.min(22, Number.isFinite(time) ? time : 0));
-    const dt = Math.max(
-      0,
-      Math.min(22, Number.isFinite(displayTime) ? displayTime : t),
-    );
-    const s = sampleMotion(t),
+    const t = Math.max(0, Math.min(22, Number.isFinite(time) ? time : 0)),
+      dt = Math.max(
+        0,
+        Math.min(22, Number.isFinite(displayTime) ? displayTime : t),
+      );
+    const s = rig.sampleMotion(t),
       cam = s.camera;
     c.reset();
     c.imageSmoothingEnabled = true;
     c.imageSmoothingQuality = "high";
     c.fillStyle = C.plum;
     c.fillRect(0, 0, W, H);
-    if (t >= 5.8) {
-      const q = E(t, 5.8, 0.4);
-      if (q === 1) {
-        c.fillStyle = C.cream;
-        c.fillRect(0, 0, W, H);
-      } else
-        disk(
-          c,
-          900,
-          1250,
-          Math.max(
-            Math.hypot(900, 1250),
-            Math.hypot(180, 1250),
-            Math.hypot(900, 670),
-          ) *
-            1.01 *
-            q,
-          C.cream,
-        );
-    }
-    if (t >= 16.3) {
-      const q = E(t, 16.3, 0.4);
-      if (q === 1) {
-        c.fillStyle = C.plum;
-        c.fillRect(0, 0, W, H);
-      } else
-        disk(
-          c,
-          300,
-          925,
-          Math.max(
-            Math.hypot(780, 995),
-            Math.hypot(300, 995),
-            Math.hypot(780, 925),
-          ) *
-            1.01 *
-            q,
-          C.plum,
-        );
-    }
+    flood(t, 5.8, C.cream, rig.touchGesture(5.8, rig.sampleMotion(5.8)));
+    flood(t, 16.3, C.plum, { x: 620, y: 1535 });
     c.save();
     c.translate(540, 960);
     c.scale(Math.exp(cam.logZoom), Math.exp(cam.logZoom));
     c.translate(-cam.x, -960 - cam.y);
-    // Portraits inhabit adjacent locations. No photo crossfades or garment morphs.
-    if (cam.x < 1120)
-      editorial(0, "Noir", "LONGO · PRETO", assets.noir, t, true);
-    if (cam.x > 40 && cam.x < 2260) {
-      editorial(1150, "Lumière", "MIDI · CHAMPANHE", assets.lumiere, t);
-      alpha(c, 1 - content(t, 5.8), () =>
-        liquidButton(1150, t, "Escolha seu vestido", false, 1),
-      );
+    if (cam.x < 1250) picture(c, assets.noir, s.portraits.noir);
+    if (cam.x > 0 && cam.x < 2350)
+      picture(c, assets.lumiere, s.portraits.lumiere);
+    if (t >= 5.8 && t < 21.1) picture(c, assets.prune, s.shared);
+    if (cam.x > 5750) picture(c, assets.noir, s.portraits.return);
+    if (cam.x < 1250) {
+      label(0, "Noir", "Longo preto", t, dt, 0, 3.3);
+      button(0, t, "Ver coleção", false, 1 - content(dt, 3.3));
     }
-    if (cam.x < 700)
-      alpha(c, 1 - content(t, 3.3), () => liquidButton(0, t, "Ver coleção"));
-    if (t >= 12.3 && t < 17.1) composer(t, dt);
-    if (t >= 16.3 && t < 21.1) brand(t);
-    // Keep this layer order through every handoff, including exactly 12.30.
-    if (t >= 5.8 && t < 21.1)
-      photo(c, assets.prune, s.shared.x, s.shared.y, s.shared.w, s.shared.h);
-    if (cam.x > 1200 && cam.x < 3350) {
-      alpha(c, 1 - content(t, 8.3), () =>
-        editorial(2300, "Prune", "LONGO · AMEIXA", assets.prune, t),
-      );
-    }
+    if (cam.x > 0 && cam.x < 2350)
+      label(1150, "Lumière", "Midi champanhe", t, dt, 3.3, 5.8, true);
+    if (cam.x > 1200 && cam.x < 3350)
+      label(2300, "Prune", "Longo ameixa", t, dt, 5.8, 8.3);
     if (t >= 8.3 && t < 13.1) detail(t, dt);
-    if (cam.x > 5820) {
-      editorial(6900, "Noir", "LONGO · PRETO", assets.noir, t, true);
-      if (t >= 21.1) liquidButton(6900, t, "Ver coleção", false, 1, true);
+    if (t >= 12.3 && t < 17.1) composer(t, dt);
+    if (t >= 16.3 && t < 21.1) brand(t, dt);
+    if (t >= 9.3 && t < 13.1) picture(c, assets.prune, s.shared);
+    if (cam.x > 5750) {
+      label(6900, "Noir", "Longo preto", t, dt, 0, 22, false, true);
+      if (t >= 21.1) button(6900, t, "Ver coleção", false, 1, true);
     }
     signature(t);
     c.restore();
-    const p = cursor(t, s);
-    alpha(c, p.opacity, () => {
-      c.save();
-      c.translate(p.x, p.y);
-      c.scale(1 - 0.065 * p.pulse, 1 - 0.065 * p.pulse);
-      c.drawImage(assets.pointer, -19.7, -11.38, 60, 60);
-      c.restore();
-    });
+    // One persistent mobile control. The touched target stays under the fingertip
+    // while the editorial world and the draft travel behind it.
+    if (t >= 10.5 && t < 20.7)
+      button(540, t, "Peça pelo WhatsApp", true,
+        content(dt, 10.5) * (1 - E(dt, 20.3, 0.4)));
+    drawHand(t, s);
     return diagnose(t);
   }
   return { seek, inspect: diagnose };

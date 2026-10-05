@@ -274,9 +274,11 @@ async function main() {
     ? JSON.parse(fs.readFileSync(path.join(OUT, "frame-scan.json"), "utf8"))
     : null;
   const motionFile = path.join(OUT, "motion-check.json");
-  const cursorAudit = fs.existsSync(motionFile)
-    ? JSON.parse(fs.readFileSync(motionFile, "utf8")).cursorContinuity
+  const motionAudit = fs.existsSync(motionFile)
+    ? JSON.parse(fs.readFileSync(motionFile, "utf8"))
     : null;
+  const cursorAudit = motionAudit?.cursorContinuity;
+  const touchAudit = motionAudit?.touchAttachment;
   const audioFile = path.join(ROOT, "public/assets/aurea-mix.wav");
   const audioMatches =
     fs.existsSync(audioFile) &&
@@ -288,6 +290,7 @@ async function main() {
       scan.passed &&
       audioMatches &&
       cursorAudit?.passed === true &&
+      touchAudit?.passed === true &&
       Object.values(evidence).every((item) => item.valid),
     source,
     videoSha256,
@@ -305,6 +308,14 @@ async function main() {
           )
         : null,
       tolerancePixels: cursorAudit?.tolerancePixels ?? null,
+    },
+    touchAttachment: {
+      passed: touchAudit?.passed === true,
+      comparisons: touchAudit?.samples?.length ?? 0,
+      maximumAnchorDeltaPixels: touchAudit
+        ? Math.max(0, ...touchAudit.samples.map((s) => s.delta))
+        : null,
+      tolerancePixels: touchAudit?.tolerancePixels ?? null,
     },
     evidence,
     output: path.relative(ROOT, VIDEO).replaceAll(path.sep, "/"),
