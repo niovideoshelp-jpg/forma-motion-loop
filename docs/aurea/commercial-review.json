@@ -1,0 +1,83 @@
+{
+  "project": "AUREA",
+  "scope": "Concept fashion film; illustrative generated photographs",
+  "photography": {
+    "status": "approved_for_illustrative_concept",
+    "visually_reviewed": ["Noir", "Lumiere", "Prune"],
+    "material_anatomy_defects_observed": false,
+    "looks_distinguishable": true,
+    "noir_black_fabric_readable": true,
+    "real_product_fidelity": "not_verifiable_without_real_product_references",
+    "requires_illustrative_identification": true
+  },
+  "expected_message": "Olá! Tenho interesse no vestido Prune. Quais tamanhos estão disponíveis?",
+  "message_complete_window_seconds": [13.1, 16.3],
+  "required_message_state": "draft_only",
+  "prohibited_fabricated_content": [
+    "phone_number",
+    "qr_code",
+    "price",
+    "stock",
+    "delivery_promise",
+    "size_options",
+    "sent_message",
+    "customer_or_store_reply"
+  ],
+  "engine_review": "approved_for_photography_and_commercial_scope",
+  "six_stills_review": "approved",
+  "final_review": {
+    "status": "pass",
+    "engine_sha256": "d5a368fe979c908f2e734894af82634b7fe62aed098cad44ab9bc4a1a6ac7cd1",
+    "stills_source_fingerprint": "142f11e8591e13e6f525344804cfd75873c6cb4719e1f251ebd40371d7c1e6a3",
+    "engine_hash_matches_stills_manifest": true,
+    "full_render_blocked_by_this_review": false,
+    "prune_thumbnail_full_model_and_hem_visible": true,
+    "prune_thumbnail_dimensions": [288, 360],
+    "thumbnail_clear_of_header_rule": true,
+    "draft_footer_padding_corrected": true,
+    "documentation_copy_alignment": "verified_aligned_in_final_encoded_review"
+  },
+  "encoded_review": {
+    "status": "pass",
+    "scope": "Encoded garment integrity, correspondence, mobile readability and commercial message",
+    "video_sha256": "6af92781a033615a523dff3b3686d14beab2ea662def588e621048d308555aa3",
+    "combined_source_sha256": "743164e5d35bb07ea40b94be3278906cedf687e6eaab9f9fc65f13a70724c6d7",
+    "engine_sha256": "10be386d72dde0639f7b4f50a3f162c605a9db50fc9c2c8a91f3224aa3cfa1c5",
+    "video_and_engine_hashes_independently_verified": true,
+    "encoded_contact_inspected": true,
+    "direct_mp4_extraction_times": [0.8, 10.7, 13.1, 14.5, 16.283333, 18.5],
+    "direct_extraction_display_size": [360, 640],
+    "noir_black_fabric_readable": true,
+    "prune_detail_and_thumbnail_match": true,
+    "full_garment_hems_preserved": true,
+    "draft_complete_and_readable_at_13_1": true,
+    "draft_readable_at_last_sample_before_16_3": true,
+    "cta_readable": true,
+    "send_or_fabricated_response_observed": false,
+    "material_blockers": [],
+    "publication_blocked_by_this_review": false
+  },
+  "reviewed_stills": [
+    { "name": "Noir", "time": 0.8 },
+    { "name": "Lumiere", "time": 4.7 },
+    { "name": "Prune", "time": 7.2 },
+    { "name": "Detalhe", "time": 10.7 },
+    { "name": "WhatsApp", "time": 14.5 },
+    { "name": "Marca", "time": 18.5 }
+  ],
+  "checks": {
+    "three_full_looks_visible": true,
+    "detail_uses_same_prune_asset": true,
+    "thumbnail_name_and_message_consistent": true,
+    "complete_message_visible_in_14_5_still": true,
+    "complete_window_verified_in_source": true,
+    "every_frame_of_message_window_visually_reviewed": false,
+    "no_prohibited_fabricated_content_found": true,
+    "preview_illustrative_identification_present": true,
+    "send_enabled": false
+  },
+  "material_blockers": [],
+  "non_blocking_visual_findings": [],
+  "resolved_findings": ["draft_footer_padding"],
+  "external_message_sent_by_reviewer": false
+}

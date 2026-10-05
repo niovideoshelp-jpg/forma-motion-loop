@@ -1,0 +1,71 @@
+[
+  {
+    "name": "noir",
+    "illustrative": true,
+    "source": "OpenAI built-in image generation",
+    "identityReference": null,
+    "file": "public/assets/aurea/noir.webp",
+    "sha256": "5bede8297275c4b01c5bc1572fe940a6db23d8970bac615f513fbf8e3c2da475",
+    "format": "webp",
+    "mediaType": "image/webp",
+    "width": 1122,
+    "height": 1402,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 1122,
+      "height": 1402
+    }
+  },
+  {
+    "name": "lumiere",
+    "illustrative": true,
+    "source": "OpenAI built-in image generation",
+    "identityReference": "noir",
+    "file": "public/assets/aurea/lumiere.webp",
+    "sha256": "8ec414cd98bbff850b1ef612b89dbaada8b8beda8ccccf74e138d3efeb778d3d",
+    "format": "webp",
+    "mediaType": "image/webp",
+    "width": 1122,
+    "height": 1402,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 1122,
+      "height": 1402
+    }
+  },
+  {
+    "name": "prune",
+    "illustrative": true,
+    "source": "OpenAI built-in image generation",
+    "identityReference": "noir",
+    "file": "public/assets/aurea/prune.webp",
+    "sha256": "bc875c7c551b973a570a8682f4064348e12aa2a136d2101f3ebfa635fa38a17a",
+    "format": "webp",
+    "mediaType": "image/webp",
+    "width": 1122,
+    "height": 1402,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 1122,
+      "height": 1402
+    }
+  }
+]

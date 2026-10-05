@@ -1,0 +1,55 @@
+{
+  "source": {
+    "sha256": "743164e5d35bb07ea40b94be3278906cedf687e6eaab9f9fc65f13a70724c6d7",
+    "sources": {
+      "public/assets/aurea/fonts/BodoniModa-500-opsz12.ttf": "4d485d4c123995a63fe89f6800a3c016c9b4a5677fb2bcac47eecc30361781bd",
+      "public/assets/aurea/fonts/BodoniModa-METADATA.pb": "f4ba29335a79d264135d7062fc1c79e8fa9a076719e99095416334e27aa00489",
+      "public/assets/aurea/fonts/BodoniModa-OFL.txt": "931dfe2e0cd3c9443295f5c1d754b8a8403bf060df50c1d5900267ade83d0046",
+      "public/assets/aurea/fonts/BodoniModa-normal-variable.ttf": "550f5e34ee0a828d7941b1fe9bc58b34e5260d3f33a61532e6d0a0114e79a5cf",
+      "public/assets/aurea/fonts/Manrope-METADATA.pb": "fb204147a7c16d009d4fa53248b6075bc941d7adfa450a825bc5d4cef2f9ded9",
+      "public/assets/aurea/fonts/Manrope-OFL.txt": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b",
+      "public/assets/aurea/fonts/Manrope-normal-variable.ttf": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+      "public/assets/aurea/fonts/provenance.json": "2d96c2a61c84e268e6b267d917e4fa688953a1c6b48a1d97317d40b718549409",
+      "public/assets/aurea/images-provenance.json": "15c86cd50ff29574769cb8700a959fb40c2f7cbb01b4ed674f93fc66d7917648",
+      "public/assets/aurea/lumiere.webp": "8ec414cd98bbff850b1ef612b89dbaada8b8beda8ccccf74e138d3efeb778d3d",
+      "public/assets/aurea/noir.webp": "5bede8297275c4b01c5bc1572fe940a6db23d8970bac615f513fbf8e3c2da475",
+      "public/assets/aurea/prune.webp": "bc875c7c551b973a570a8682f4064348e12aa2a136d2101f3ebfa635fa38a17a",
+      "public/aurea.html": "dafea7232fd3757ccaa67f6661431ef24695e0f10e2a0fa51a6111dd8126a612",
+      "public/aurea.js": "10be386d72dde0639f7b4f50a3f162c605a9db50fc9c2c8a91f3224aa3cfa1c5",
+      "src/Root.tsx": "2a64c30a30d1412861b1c13e2fb2d37c629e097f180ce343de99a3fe3163015a"
+    }
+  },
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 60,
+  "reviewStatus": "captured; visual review required",
+  "shots": [
+    {
+      "label": "NOIR",
+      "time": 0.8
+    },
+    {
+      "label": "LUMIERE",
+      "time": 4.7
+    },
+    {
+      "label": "PRUNE",
+      "time": 7.2
+    },
+    {
+      "label": "DETALHE",
+      "time": 10.7
+    },
+    {
+      "label": "WHATSAPP",
+      "time": 14.5
+    },
+    {
+      "label": "MARCA",
+      "time": 18.5
+    }
+  ],
+  "pageErrors": []
+}

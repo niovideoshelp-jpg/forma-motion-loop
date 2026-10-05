@@ -1,0 +1,135 @@
+{
+  "repository": "https://github.com/google/fonts",
+  "commit": "9710da1eacb3be272583c3224dcb70f9da6eadbb",
+  "retrievedAt": "2026-10-04T23:56:50.462Z",
+  "license": "SIL Open Font License 1.1",
+  "files": [
+    {
+      "family": "Bodoni Moda",
+      "kind": "font",
+      "file": "BodoniModa-normal-variable.ttf",
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/9710da1eacb3be272583c3224dcb70f9da6eadbb/ofl/bodonimoda/BodoniModa%5Bopsz%2Cwght%5D.ttf",
+      "bytes": 162104,
+      "sha256": "550f5e34ee0a828d7941b1fe9bc58b34e5260d3f33a61532e6d0a0114e79a5cf"
+    },
+    {
+      "family": "Bodoni Moda",
+      "kind": "license",
+      "file": "BodoniModa-OFL.txt",
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/9710da1eacb3be272583c3224dcb70f9da6eadbb/ofl/bodonimoda/OFL.txt",
+      "bytes": 4400,
+      "sha256": "931dfe2e0cd3c9443295f5c1d754b8a8403bf060df50c1d5900267ade83d0046"
+    },
+    {
+      "family": "Bodoni Moda",
+      "kind": "metadata",
+      "file": "BodoniModa-METADATA.pb",
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/9710da1eacb3be272583c3224dcb70f9da6eadbb/ofl/bodonimoda/METADATA.pb",
+      "bytes": 1468,
+      "sha256": "f4ba29335a79d264135d7062fc1c79e8fa9a076719e99095416334e27aa00489"
+    },
+    {
+      "family": "Manrope",
+      "kind": "font",
+      "file": "Manrope-normal-variable.ttf",
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/9710da1eacb3be272583c3224dcb70f9da6eadbb/ofl/manrope/Manrope%5Bwght%5D.ttf",
+      "bytes": 164700,
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+    },
+    {
+      "family": "Manrope",
+      "kind": "license",
+      "file": "Manrope-OFL.txt",
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/9710da1eacb3be272583c3224dcb70f9da6eadbb/ofl/manrope/OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "family": "Manrope",
+      "kind": "metadata",
+      "file": "Manrope-METADATA.pb",
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/9710da1eacb3be272583c3224dcb70f9da6eadbb/ofl/manrope/METADATA.pb",
+      "bytes": 732,
+      "sha256": "fb204147a7c16d009d4fa53248b6075bc941d7adfa450a825bc5d4cef2f9ded9"
+    },
+    {
+      "family": "Aurea Bodoni Text",
+      "kind": "derived-font",
+      "file": "BodoniModa-500-opsz12.ttf",
+      "derivedFrom": "BodoniModa-normal-variable.ttf",
+      "sourceSHA256": "550f5e34ee0a828d7941b1fe9bc58b34e5260d3f33a61532e6d0a0114e79a5cf",
+      "bytes": 58840,
+      "sha256": "4d485d4c123995a63fe89f6800a3c016c9b4a5677fb2bcac47eecc30361781bd",
+      "license": "SIL Open Font License 1.1",
+      "licenseFile": "BodoniModa-OFL.txt",
+      "derivation": {
+        "tool": "fontTools.varLib.instancer.instantiateVariableFont",
+        "version": "4.60.1",
+        "axes": {
+          "wght": 500,
+          "opsz": 12
+        },
+        "static": true,
+        "optimize": true,
+        "internalFamily": "Aurea Bodoni Text",
+        "outlineEdits": "None; variable-font interpolation only",
+        "originalAxes": [
+          {
+            "tag": "wght",
+            "min": 400.0,
+            "default": 400.0,
+            "max": 900.0
+          },
+          {
+            "tag": "opsz",
+            "min": 6.0,
+            "default": 11.0,
+            "max": 96.0
+          }
+        ]
+      },
+      "generatedAt": "2026-10-05T00:19:19.875288+00:00"
+    }
+  ],
+  "families": [
+    {
+      "family": "Bodoni Moda",
+      "style": "normal",
+      "file": "BodoniModa-normal-variable.ttf",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900
+        },
+        {
+          "tag": "opsz",
+          "min": 6,
+          "default": 11,
+          "max": 96
+        }
+      ],
+      "usedWeights": [
+        500
+      ]
+    },
+    {
+      "family": "Manrope",
+      "style": "normal",
+      "file": "Manrope-normal-variable.ttf",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 800
+        }
+      ],
+      "usedWeights": [
+        500,
+        600
+      ]
+    }
+  ]
+}

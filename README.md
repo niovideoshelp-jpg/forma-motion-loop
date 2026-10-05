@@ -1,6 +1,24 @@
 # Forma — every frame
 
-## Latest edition: Lume+ with GSAP
+## Latest edition: AURÉA — occasion dresses
+
+**[AURÉA](AUREA.md)** is a fictional evening-dress boutique film with generated editorial photographs, Bodoni Moda and Manrope, a continuous GSAP camera, liquid hover and a prepared WhatsApp inquiry. Three dresses lead into a crop of the selected garment and its matching message thumbnail. The final monogram folds into the opening button.
+
+**22 seconds · 1080 × 1920 · 60 fps · 1,320 frames.** [Watch or download](docs/aurea/aurea-1080x1920-60.mp4). [Storyboard](docs/aurea/storyboard.png).
+
+Four reviewers covered art, garment integrity and commercial copy, motion, and audio. Source and encoded-video evidence, font/media provenance and reproduction commands are linked in [AUREA.md](AUREA.md). The brand and photographs are illustrative; no operational phone number or message sending is represented.
+
+```sh
+npm ci
+node scripts/aurea-audio.cjs
+node scripts/server.cjs 4187
+```
+
+Open `http://127.0.0.1:4187/aurea.html`, or select **Aurea** in Remotion Studio. The mixed WAV is generated locally and excluded from Git; the finished MP4 includes the soundtrack.
+
+![AURÉA storyboard](docs/aurea/storyboard.png)
+
+## Previous edition: Lume+ with GSAP
 
 **[Lume+ — refined edition](LUME-REFINED.md)** improves the continuous transitions with an opaque title carrier, a developing lesson illustration, a traveling progress mask and a chart that resolves into the shared brand symbol. Four reviewers covered motion, continuity, drawing and typography, and rhythm.
 

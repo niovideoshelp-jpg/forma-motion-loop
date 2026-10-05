@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "videoSha256": "6af92781a033615a523dff3b3686d14beab2ea662def588e621048d308555aa3",
+  "expected": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "frames": 1320,
+    "duration": 22
+  },
+  "actual": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "nominalFps": 60,
+    "frames": 1320,
+    "duration": 22,
+    "videoDuration": 22,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "sampleRate": 48000,
+    "channels": 2
+  }
+}

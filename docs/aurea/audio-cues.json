@@ -1,0 +1,306 @@
+{
+  "output": "public/assets/aurea-mix.wav",
+  "sha256": "156f5bcbdf53e419e4ac01a39d6855e20e0d079c5bbf2ac52b0bd834a100772c",
+  "duration": 22,
+  "sampleRate": 48000,
+  "channels": 2,
+  "samplesPerChannel": 1056000,
+  "bpm": 120,
+  "sourceBpm": 124,
+  "rate": 0.967741935483871,
+  "offset": 12.284451612903226,
+  "openingSeconds": 3.3,
+  "musicEq": "highpass=f=45:p=2,bass=g=-4:f=150:w=0.7,treble=g=-1.5:f=4000:w=0.7,lowpass=f=9500:p=2",
+  "musicGain": 0.52,
+  "cues": [
+    {
+      "name": "hover",
+      "meaning": "soft interface hover",
+      "source": "option-select",
+      "targetPeakSeconds": 0.35,
+      "measuredPeakSeconds": 0.35,
+      "deltaMs": 0,
+      "sourceFilteredPeakSeconds": 0.19258333333333333,
+      "gainLinear": 0.012,
+      "gainDb": -38.416375079047505,
+      "peakBeforeMasterDbfs": -36.725404090074456,
+      "startSeconds": 0.29,
+      "endSeconds": 0.48,
+      "filter": "highpass=f=180:p=2,lowpass=f=3800:p=2",
+      "finalStaticGainDb": 0.2400000000000002,
+      "finalEffectiveGainLinear": null,
+      "finalIsolatedPeakDbfs": null,
+      "gainNote": "Cue input gain is exact; dynamic master prevents an exact isolated output gain claim.",
+      "finalMixWindowPeakDbfs": -8.231788926409259
+    },
+    {
+      "name": "click",
+      "meaning": "opening selection",
+      "source": "select-click",
+      "targetPeakSeconds": 3.3,
+      "measuredPeakSeconds": 3.3,
+      "deltaMs": 0,
+      "sourceFilteredPeakSeconds": 0.06495833333333334,
+      "gainLinear": 0.037,
+      "gainDb": -28.6359655186601,
+      "peakBeforeMasterDbfs": -29.285072633054522,
+      "startSeconds": 3.24,
+      "endSeconds": 3.43,
+      "filter": "highpass=f=180:p=2,lowpass=f=3800:p=2",
+      "finalStaticGainDb": 0.2400000000000002,
+      "finalEffectiveGainLinear": null,
+      "finalIsolatedPeakDbfs": null,
+      "gainNote": "Cue input gain is exact; dynamic master prevents an exact isolated output gain claim.",
+      "finalMixWindowPeakDbfs": -1.7479374003988954
+    },
+    {
+      "name": "look-change",
+      "meaning": "dress change",
+      "source": "air-whoosh",
+      "targetPeakSeconds": 5.8,
+      "measuredPeakSeconds": 5.8,
+      "deltaMs": 0,
+      "sourceFilteredPeakSeconds": 0.2414375,
+      "gainLinear": 0.028,
+      "gainDb": -31.056839373155615,
+      "peakBeforeMasterDbfs": -29.438066594033288,
+      "startSeconds": 5.68,
+      "endSeconds": 6.03,
+      "filter": "highpass=f=260:p=2,lowpass=f=4800:p=2",
+      "finalStaticGainDb": 0.2400000000000002,
+      "finalEffectiveGainLinear": null,
+      "finalIsolatedPeakDbfs": null,
+      "gainNote": "Cue input gain is exact; dynamic master prevents an exact isolated output gain claim.",
+      "finalMixWindowPeakDbfs": -1.7820246809750084
+    },
+    {
+      "name": "selection",
+      "meaning": "detail selection",
+      "source": "select-click",
+      "targetPeakSeconds": 8.3,
+      "measuredPeakSeconds": 8.3,
+      "deltaMs": 0,
+      "sourceFilteredPeakSeconds": 0.06495833333333334,
+      "gainLinear": 0.028,
+      "gainDb": -31.056839373155615,
+      "peakBeforeMasterDbfs": -31.705946487550037,
+      "startSeconds": 8.24,
+      "endSeconds": 8.43,
+      "filter": "highpass=f=180:p=2,lowpass=f=3800:p=2",
+      "finalStaticGainDb": 0.2400000000000002,
+      "finalEffectiveGainLinear": null,
+      "finalIsolatedPeakDbfs": null,
+      "gainNote": "Cue input gain is exact; dynamic master prevents an exact isolated output gain claim.",
+      "finalMixWindowPeakDbfs": -1.76023764580246
+    },
+    {
+      "name": "detail",
+      "meaning": "fabric close-up",
+      "source": "air-whoosh",
+      "targetPeakSeconds": 9.3,
+      "measuredPeakSeconds": 9.3,
+      "deltaMs": 0,
+      "sourceFilteredPeakSeconds": 0.2414375,
+      "gainLinear": 0.017,
+      "gainDb": -35.391021572434525,
+      "peakBeforeMasterDbfs": -33.77224879331219,
+      "startSeconds": 9.18,
+      "endSeconds": 9.53,
+      "filter": "highpass=f=260:p=2,lowpass=f=4800:p=2",
+      "finalStaticGainDb": 0.2400000000000002,
+      "finalEffectiveGainLinear": null,
+      "finalIsolatedPeakDbfs": null,
+      "gainNote": "Cue input gain is exact; dynamic master prevents an exact isolated output gain claim.",
+      "finalMixWindowPeakDbfs": -1.7488022958293834
+    },
+    {
+      "name": "whatsapp",
+      "meaning": "contact CTA press; no message or order confirmation",
+      "source": "select-click",
+      "targetPeakSeconds": 12.3,
+      "measuredPeakSeconds": 12.3,
+      "deltaMs": 0,
+      "sourceFilteredPeakSeconds": 0.06495833333333334,
+      "gainLinear": 0.032,
+      "gainDb": -29.897000433601878,
+      "peakBeforeMasterDbfs": -30.5461075479963,
+      "startSeconds": 12.24,
+      "endSeconds": 12.43,
+      "filter": "highpass=f=180:p=2,lowpass=f=3800:p=2",
+      "finalStaticGainDb": 0.2400000000000002,
+      "finalEffectiveGainLinear": null,
+      "finalIsolatedPeakDbfs": null,
+      "gainNote": "Cue input gain is exact; dynamic master prevents an exact isolated output gain claim.",
+      "finalMixWindowPeakDbfs": -1.760176779628249
+    },
+    {
+      "name": "signature",
+      "meaning": "quiet brand signature; not a notification",
+      "source": "page-chime",
+      "targetPeakSeconds": 16.3,
+      "measuredPeakSeconds": 16.3,
+      "deltaMs": 0,
+      "sourceFilteredPeakSeconds": 0.37935416666666666,
+      "gainLinear": 0.015,
+      "gainDb": -36.47817481888638,
+      "peakBeforeMasterDbfs": -38.17129525754087,
+      "startSeconds": 16.24,
+      "endSeconds": 16.7,
+      "filter": "highpass=f=180:p=2,lowpass=f=5200:p=2",
+      "finalStaticGainDb": 0.2400000000000002,
+      "finalEffectiveGainLinear": null,
+      "finalIsolatedPeakDbfs": null,
+      "gainNote": "Cue input gain is exact; dynamic master prevents an exact isolated output gain claim.",
+      "finalMixWindowPeakDbfs": -1.7577044518562537
+    },
+    {
+      "name": "return",
+      "meaning": "return transition",
+      "source": "air-whoosh",
+      "targetPeakSeconds": 20.3,
+      "measuredPeakSeconds": 20.3,
+      "deltaMs": 0,
+      "sourceFilteredPeakSeconds": 0.2414375,
+      "gainLinear": 0.019,
+      "gainDb": -34.42492798094342,
+      "peakBeforeMasterDbfs": -32.80615520182109,
+      "startSeconds": 20.18,
+      "endSeconds": 20.53,
+      "filter": "highpass=f=260:p=2,lowpass=f=4800:p=2",
+      "finalStaticGainDb": 0.2400000000000002,
+      "finalEffectiveGainLinear": null,
+      "finalIsolatedPeakDbfs": null,
+      "gainNote": "Cue input gain is exact; dynamic master prevents an exact isolated output gain claim.",
+      "finalMixWindowPeakDbfs": -1.7575295137816795
+    }
+  ],
+  "musicalAttacks": [
+    {
+      "targetSeconds": 3.3,
+      "measuredAttackSeconds": 3.305,
+      "deltaMs": 5.0000000000003375,
+      "method": "Strongest 5 ms RMS rise in the EQ music within +/-40 ms; excludes SFX"
+    },
+    {
+      "targetSeconds": 5.8,
+      "measuredAttackSeconds": 5.8,
+      "deltaMs": 0,
+      "method": "Strongest 5 ms RMS rise in the EQ music within +/-40 ms; excludes SFX"
+    },
+    {
+      "targetSeconds": 8.3,
+      "measuredAttackSeconds": 8.2975,
+      "deltaMs": -2.500000000001279,
+      "method": "Strongest 5 ms RMS rise in the EQ music within +/-40 ms; excludes SFX"
+    },
+    {
+      "targetSeconds": 9.3,
+      "measuredAttackSeconds": 9.2975,
+      "deltaMs": -2.500000000001279,
+      "method": "Strongest 5 ms RMS rise in the EQ music within +/-40 ms; excludes SFX"
+    },
+    {
+      "targetSeconds": 12.3,
+      "measuredAttackSeconds": 12.2975,
+      "deltaMs": -2.500000000001279,
+      "method": "Strongest 5 ms RMS rise in the EQ music within +/-40 ms; excludes SFX"
+    },
+    {
+      "targetSeconds": 16.3,
+      "measuredAttackSeconds": 16.2975,
+      "deltaMs": -2.500000000001279,
+      "method": "Strongest 5 ms RMS rise in the EQ music within +/-40 ms; excludes SFX"
+    },
+    {
+      "targetSeconds": 20.3,
+      "measuredAttackSeconds": 20.3,
+      "deltaMs": 0,
+      "method": "Strongest 5 ms RMS rise in the EQ music within +/-40 ms; excludes SFX"
+    }
+  ],
+  "bandComparison": [
+    {
+      "band": "bass45to180Hz",
+      "beforeEqRmsDbfs": -14.037804803530914,
+      "afterEqRmsDbfs": -18.11626143921519,
+      "changeDb": -4.078456635684276,
+      "scope": "Same music segment, before automation or mastering"
+    },
+    {
+      "band": "upper4to10kHz",
+      "beforeEqRmsDbfs": -26.481831243261954,
+      "afterEqRmsDbfs": -29.45116156995165,
+      "changeDb": -2.969330326689697,
+      "scope": "Same music segment, before automation or mastering"
+    }
+  ],
+  "master": {
+    "method": "loudnorm on three repeated cycles, retained middle cycle, then constant gain",
+    "original": {
+      "input_i": "-17.91",
+      "input_tp": "-4.04",
+      "input_lra": "1.80",
+      "input_thresh": "-27.91",
+      "output_i": "-13.45",
+      "output_tp": "-1.00",
+      "output_lra": "1.80",
+      "output_thresh": "-23.45",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.55"
+    },
+    "beforeConstantGain": {
+      "input_i": "-14.24",
+      "input_tp": "-1.96",
+      "input_lra": "1.80",
+      "input_thresh": "-24.24",
+      "output_i": "-13.45",
+      "output_tp": "-1.00",
+      "output_lra": "2.00",
+      "output_thresh": "-23.45",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.55"
+    },
+    "constantGainDb": 0.2400000000000002,
+    "final": {
+      "input_i": "-14.00",
+      "input_tp": "-1.72",
+      "input_lra": "1.70",
+      "input_thresh": "-24.00",
+      "output_i": "-13.45",
+      "output_tp": "-1.00",
+      "output_lra": "2.00",
+      "output_thresh": "-23.45",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.55"
+    }
+  },
+  "seam": {
+    "method": "True 0.5-second pre-roll crossfade; 44 beats at 120 BPM",
+    "boundaryStep": [
+      0.0001214742660522461,
+      0.001248002052307129
+    ],
+    "boundaryStepDbfs": [
+      -78.31031432530283,
+      -58.075694009339074
+    ],
+    "localMaximumAdjacentStep": 0.003919363021850586,
+    "localRmsAdjacentStep": 0.0015287165544262855,
+    "boundaryWithinLocalMaximum": true
+  },
+  "levels": {
+    "introRmsDbfs": -19.88637415126992,
+    "bodyRmsDbfs": -15.109725050278595,
+    "sfxInputRmsDbfs": -54.573844294460855
+  },
+  "qa": {
+    "exactSampleCount": true,
+    "loudnessPassed": true,
+    "truePeakPassed": true,
+    "allEightCuePeaksAligned": true,
+    "cuePeakMeasurementScope": "Filtered and enveloped isolated effects before dynamic mastering; target placement is sample-exact",
+    "musicalAttacksWithin25ms": true,
+    "loopSampleStepPassed": true,
+    "subjectiveListeningPerformed": false
+  }
+}

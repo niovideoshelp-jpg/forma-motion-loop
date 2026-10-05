@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  />
+  <title>AURÉA — vestidos de festa</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #211725;
+      color: #fff8ee;
+      font: 14px system-ui;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+    main {
+      width: min(45vh, 94vw, 540px);
+      padding: 12px 0;
+    }
+    canvas {
+      width: 100%;
+      height: auto;
+      display: block;
+      box-shadow: 0 20px 70px #100c1755;
+    }
+    footer {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 16px 0;
+    }
+    input {
+      flex: 1;
+      min-width: 30px;
+      accent-color: #f4dfbf;
+    }
+    button {
+      border: 0;
+      border-radius: 30px;
+      background: #f4dfbf;
+      color: #291c30;
+      padding: 10px 16px;
+      cursor: pointer;
+    }
+    output {
+      white-space: nowrap;
+    }
+    small {
+      display: block;
+      text-align: center;
+      color: #b6a9b9;
+    }
+  </style>
+  <main>
+    <canvas
+      aria-label="AURÉA, coleção ilustrativa de vestidos de festa"
+    ></canvas>
+    <footer>
+      <button id="play">Reproduzir</button
+      ><input
+        id="scrub"
+        aria-label="Tempo do vídeo"
+        type="range"
+        min="0"
+        max="21.983333333"
+        step="0.0166666667"
+        value="0"
+      /><output id="time">0 / 22</output>
+    </footer>
+    <small>Marca conceito · Fotografias ilustrativas</small>
+  </main>
+  <script type="module">
+    import { loadAssets, createRenderer } from "./aurea.js";
+    const renderer = createRenderer(
+      document.querySelector("canvas"),
+      await loadAssets(),
+    );
+    window.seek = (t, displayTime = t) => {
+      document.querySelector("#scrub").value = t;
+      document.querySelector("#time").textContent = t.toFixed(2) + " / 22";
+      return renderer.seek(t, displayTime);
+    };
+    window.inspect = (t) => renderer.inspect(t);
+    window.seek(0);
+    window.ready = true;
+    let playing = false,
+      base = 0,
+      start = 0;
+    const audio = new Audio("./assets/aurea-mix.wav");
+    audio.loop = true;
+    document.querySelector("#play").onclick = () => {
+      playing = !playing;
+      document.querySelector("#play").textContent = playing
+        ? "Pausar"
+        : "Reproduzir";
+      if (playing) {
+        base = Number(document.querySelector("#scrub").value);
+        start = performance.now();
+        audio.currentTime = base;
+        audio.play().catch(() => {});
+        requestAnimationFrame(tick);
+      } else audio.pause();
+    };
+    document.querySelector("#scrub").oninput = (e) => {
+      window.seek(Number(e.target.value));
+      audio.currentTime = Number(e.target.value);
+      base = Number(e.target.value);
+      start = performance.now();
+    };
+    function tick(now) {
+      if (!playing) return;
+      const t = (base + (now - start) / 1000) % 22;
+      window.seek(t);
+      if (Math.abs(audio.currentTime - t) > 0.2) audio.currentTime = t;
+      requestAnimationFrame(tick);
+    }
+  </script>
+</html>
