@@ -1,6 +1,6 @@
-# AURÉA — composição centralizada e gestos com a mão
+# AURÉA — composição centralizada e mão fotográfica
 
-Filme de uma marca conceito de vestidos de festa: **22 segundos, 1080 × 1920, 60 fps, 1320 quadros**. Remotion, GSAP e um canvas determinístico. A edição atual atende à correção de centralizar o botão Ver coleção e o conteúdo, usando somente a mão, sem braço.
+Filme de uma marca conceito de vestidos de festa: **22 segundos, 1080 × 1920, 60 fps, 1320 quadros**. Remotion, GSAP e um canvas determinístico. A edição atual mantém o botão Ver coleção e o conteúdo centralizados e substitui a mão vetorial por uma fotografia gerada, sem braço.
 
 Fotos, títulos e ações principais compartilham o eixo **x = 540**. O detalhe usa um conjunto de duas imagens equilibrado dentro da mesma área central. A consulta fica em uma coluna; o parágrafo conserva alinhamento à esquerda dentro de seu painel centralizado. As fotografias são as mesmas das edições anteriores.
 
@@ -11,7 +11,7 @@ Fotos, títulos e ações principais compartilham o eixo **x = 540**. O detalhe 
 - Manrope 500–600: informações 40–44 px; mensagem 44 px, entrelinha 59 px; botões 44 px.
 - Fontes locais: instância Bodoni `wght=500, opsz=12` e Manrope variável, com licenças SIL OFL 1.1 e metadados preservados. [Proveniência das fontes](public/assets/aurea/fonts/provenance.json).
 - Fotografias ilustrativas de uma mesma modelo adulta: Noir longo preto, Lumière midi champanhe e Prune longo ameixa. [Proveniência das imagens](public/assets/aurea/images-provenance.json). Detalhe e miniaturas derivam da mesma fotografia Prune.
-- Mão vetorial original [touch-hand-only.svg](public/assets/aurea/touch-hand-only.svg): indicador, polegar, dedos flexionados e palma, sem extensão de punho ou antebraço. `viewBox="-44 -4 200 320"`; ponta em `0/0`. Base termina em y = 312. [Proveniência do desenho](docs/aurea/touch-hand-provenance.json).
+- Mão fotográfica [touch-hand-photo.png](public/assets/aurea/touch-hand-photo.png), criada com **imagegen integrado**: indicador, polegar, três dedos flexionados e base curta na dobra do punho, sem antebraço. Pele e unhas naturais, PNG nativo 1024 × 1536 com transparência preservada. A ponta medida em 338/82 é mapeada para 0/0; escala-base 312/1347 e altura aparente ≈262 px. Pressão e rotação acontecem ao redor da ponta. [Proveniência](docs/aurea/touch-hand-provenance.json), [prompts completos](docs/aurea/generated-hand-prompts.md), [comparação da mão](docs/aurea/hand-comparison.png).
 
 AURÉA é uma demonstração: nenhum telefone, QR, preço, estoque, desconto, disponibilidade afirmada ou promessa de entrega. A consulta é um **rascunho**, sem envio, resposta ou confirmação de pedido.
 
@@ -65,20 +65,20 @@ node scripts/aurea-produce.cjs --render
 node scripts/aurea-final-check.cjs
 ```
 
-Preview: `http://127.0.0.1:4187/aurea.html?edition=centered-hand`. A composição Remotion **Aurea** usa o mesmo motor e os mesmos ativos. Exportador Playwright com 4 subframes, 12 nas transferências rápidas e exposição de 0,42 quadro; texto avaliado no tempo central.
+Preview: `http://127.0.0.1:4187/aurea.html?edition=photo-hand`. A composição Remotion **Aurea** usa o mesmo motor e os mesmos ativos. Exportador Playwright com 4 subframes, 12 nas transferências rápidas e exposição de 0,42 quadro; texto avaliado no tempo central.
 
 ## Revisão e entrega
 
-[MP4 — edição centralizada](docs/aurea/aurea-centered-1080x1920-60.mp4) · [seis stills](docs/aurea/storyboard.png) · [transições](docs/aurea/transitions.png) · [quadros codificados](docs/aurea/encoded-contact.png) · [quadros críticos](docs/aurea/encoded-critical.png).
+[MP4 — mão fotográfica](docs/aurea/aurea-photohand-1080x1920-60.mp4) · [seis stills](docs/aurea/storyboard.png) · [transições](docs/aurea/transitions.png) · [quadros codificados](docs/aurea/encoded-contact.png) · [quadros críticos](docs/aurea/encoded-critical.png).
 
-Quatro revisões: [arte](docs/aurea/centered-art.md), [fotografia e gesto](docs/aurea/centered-photography.md), [movimento](docs/aurea/centered-motion.md), [áudio](docs/aurea/centered-audio.md). As edições anteriores permanecem no histórico: [primeira AURÉA](https://github.com/niovideoshelp-jpg/forma-motion-loop/tree/d75c044/docs/aurea) e [edição touch](https://github.com/niovideoshelp-jpg/forma-motion-loop/tree/a8b8536/docs/aurea).
+Quatro revisões: [arte](docs/aurea/generated-hand-art.md), [fotografia e gesto](docs/aurea/generated-hand-photography.md), [movimento](docs/aurea/generated-hand-motion.md), [áudio](docs/aurea/generated-hand-audio.md). As edições anteriores permanecem no histórico: [primeira AURÉA](https://github.com/niovideoshelp-jpg/forma-motion-loop/tree/d75c044/docs/aurea), [edição touch](https://github.com/niovideoshelp-jpg/forma-motion-loop/tree/a8b8536/docs/aurea) e [mão vetorial centralizada](https://github.com/niovideoshelp-jpg/forma-motion-loop/tree/ced1779/docs/aurea).
 
-Fonte congelada: `147735630fe5b98d71a55f01069afa617b6401b60c8457b518a0e06e6860631e`. Buscas frias, reversas e aleatórias passaram; seis quadros Remotion coincidiram com o motor; 113 amostras de aderência passaram. Quadros extremos da fonte são idênticos, também com motion blur. A varredura da fonte não apontou saltos isolados.
+Fonte congelada: `bc439b849f28e66ec4a80bf2d6bf1aa522cffaa5e1fbecccaabf8bcb12ef2dbd`. Buscas frias, reversas e aleatórias passaram; seis quadros Remotion coincidiram com o motor; 113 amostras de aderência passaram. Quadros extremos da fonte são idênticos, também com motion blur. A varredura da fonte não apontou saltos isolados.
 
-**Exportação validada:** H.264, 1080 × 1920, 60 fps, 1320 quadros, 22,000 s; AAC estéreo a 48 kHz. Áudio medido em −14,03 LUFS / −1,53 dBTP. A verificação independente encontrou correlação de 0,999801420 com o WAV e deslocamento zero na busca de ±48 amostras; as oito janelas de eventos passaram.
+**Exportação validada:** H.264, 1080 × 1920, 60 fps, 1320 quadros, 22,000 s; AAC estéreo a 48 kHz. Áudio medido em −14,03 LUFS / −1,53 dBTP. A nova verificação independente encontrou correlação de 0,999801420 com o WAV e deslocamento zero na busca de ±48 amostras; as oito janelas de eventos passaram.
 
-A varredura dos 1320 quadros decodificados não apontou saltos isolados. A diferença média entre os quadros extremos H.264 foi 0,100231 nível de canal, abaixo da tolerância de um nível. A fonte e seu loop com motion blur são exatos.
+A varredura dos 1320 quadros decodificados não apontou saltos isolados. A diferença média entre os quadros extremos H.264 foi 0,104190 nível de canal, abaixo da tolerância de um nível. A fonte e seu loop com motion blur são exatos.
 
-SHA-256 do MP4: `67ae42a12ccee00130531fd047acab65dc191223e5403cdab267398656f62113`. A cópia entregue em `docs/aurea/aurea-centered-1080x1920-60.mp4` corresponde byte a byte ao arquivo validado em `out/aurea`. Os MP4s anteriores permanecem preservados.
+SHA-256 do MP4: `3250c232073761ef47196478ff0a2f391ef20cf2e58edcb4352b617823e0c5f0`, 5.806.241 bytes. A cópia entregue em `docs/aurea/aurea-photohand-1080x1920-60.mp4` corresponde byte a byte ao arquivo validado em `out/aurea`. Os MP4s anteriores permanecem preservados.
 
 Evidências técnicas: [validação final](docs/aurea/final-check.json), [metadados](docs/aurea/media-metadata.json), [áudio](docs/aurea/loudness.json), [movimento](docs/aurea/motion-check.json), [paridade Remotion](docs/aurea/remotion-parity.json), [loop com motion blur](docs/aurea/weighted-loop.json), [fonte](docs/aurea/frame-scan.json), [MP4 decodificado](docs/aurea/encoded-scan.json). Verificar sempre a assinatura da fonte e o hash do vídeo. A varredura automática usa resolução reduzida e complementa a inspeção visual amostral; não representa leitura manual integral de todos os quadros.

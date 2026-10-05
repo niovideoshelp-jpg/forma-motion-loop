@@ -46,6 +46,8 @@ const LAYOUT = {
   greenCta: { x: 540, y: 1535, w: 900, h: 112 },
   detailPose: { x: 3168, y: 975, w: 336, h: 420 },
 };
+// Native PNG is preserved. Map its measured fingertip to the gesture origin.
+const HAND_SPRITE = { tipX: 338, tipY: 82, baseY: 1429, height: 312 };
 function loadScript(url) {
   return new Promise((resolve, reject) => {
     const el = document.createElement("script");
@@ -86,7 +88,7 @@ export async function loadAssets(base = "./assets/") {
           im.src =
             base +
             "aurea/" +
-            (name === "touchHand" ? "touch-hand-only.svg" : name + ".webp");
+            (name === "touchHand" ? "touch-hand-photo.png" : name + ".webp");
         }),
     ),
   );
@@ -458,11 +460,19 @@ export function createRenderer(canvas, assets) {
       c.rotate((p.rotation * Math.PI) / 180);
       const scale = 0.84 * (1 - 0.028 * p.press);
       c.scale(scale, scale);
-      c.shadowColor = "rgba(24,12,20,.13)";
-      c.shadowBlur = 13;
-      c.shadowOffsetX = 4;
-      c.shadowOffsetY = 9;
-      c.drawImage(assets.touchHand, -44, -4, 200, 320);
+      c.shadowColor = "rgba(24,12,20,.11)";
+      c.shadowBlur = 7;
+      c.shadowOffsetX = 3;
+      c.shadowOffsetY = 7;
+      const nativeScale =
+        HAND_SPRITE.height / (HAND_SPRITE.baseY - HAND_SPRITE.tipY);
+      c.drawImage(
+        assets.touchHand,
+        -HAND_SPRITE.tipX * nativeScale,
+        -HAND_SPRITE.tipY * nativeScale,
+        assets.touchHand.naturalWidth * nativeScale,
+        assets.touchHand.naturalHeight * nativeScale,
+      );
       c.restore();
       if (p.contact && p.press > 0) {
         c.save();

@@ -1,7 +1,7 @@
 {
   "passed": true,
   "source": {
-    "sha256": "147735630fe5b98d71a55f01069afa617b6401b60c8457b518a0e06e6860631e",
+    "sha256": "bc439b849f28e66ec4a80bf2d6bf1aa522cffaa5e1fbecccaabf8bcb12ef2dbd",
     "sources": {
       "public/assets/aurea/fonts/BodoniModa-500-opsz12.ttf": "4d485d4c123995a63fe89f6800a3c016c9b4a5677fb2bcac47eecc30361781bd",
       "public/assets/aurea/fonts/BodoniModa-METADATA.pb": "f4ba29335a79d264135d7062fc1c79e8fa9a076719e99095416334e27aa00489",
@@ -17,14 +17,15 @@
       "public/assets/aurea/prune.webp": "bc875c7c551b973a570a8682f4064348e12aa2a136d2101f3ebfa635fa38a17a",
       "public/assets/aurea/touch-hand-long.svg": "b3272abcc55b3201335e47ccbf98a979f918fa8493a93cd5ce63ae0123b08c95",
       "public/assets/aurea/touch-hand-only.svg": "c3c485d7401d4676e21bf531720ff43cb648daa862a1306722cc099cbe1ead3c",
+      "public/assets/aurea/touch-hand-photo.png": "128bdc46fa2f2589a46bcf2a7672d76ded1593aa5aaca171b612f056db726eff",
       "public/assets/aurea/touch-hand.svg": "7e965ce710207c3683ff0e4e6f5c66a80a8648dddeb54a9ab860b80052450dcc",
       "public/aurea-motion.js": "73030a273e0400f9d68fafdd86034eed1d1fb48c10c94fc5fe8d9b30b8ce81a4",
       "public/aurea.html": "dafea7232fd3757ccaa67f6661431ef24695e0f10e2a0fa51a6111dd8126a612",
-      "public/aurea.js": "57e7476f97bdf95b445514931ef8544a257b2f782ab26882a88751f6f7ada319",
+      "public/aurea.js": "2c86478af94c963a0a5eefeec420ec2fd717b2229611a8700709ec2b377e322d",
       "src/Root.tsx": "2a64c30a30d1412861b1c13e2fb2d37c629e097f180ce343de99a3fe3163015a"
     }
   },
-  "videoSha256": "67ae42a12ccee00130531fd047acab65dc191223e5403cdab267398656f62113",
+  "videoSha256": "3250c232073761ef47196478ff0a2f391ef20cf2e58edcb4352b617823e0c5f0",
   "metadataPass": true,
   "loudnessPass": true,
   "decodedScanPass": true,
@@ -46,31 +47,31 @@
       "valid": true,
       "passed": true,
       "sourceMatches": true,
-      "sha256": "45a049b5c9d3f9526480728a3965bc18f3a0f6f0d6600c9852476c728e041bc8"
+      "sha256": "fd05199dce1bc02a814b55a965f3d65d96cb15797e16e193d176b749fae595a8"
     },
     "motion-check.json": {
       "valid": true,
       "passed": true,
       "sourceMatches": true,
-      "sha256": "380b7e854b1e314f5fa348be83ef8b21f6c538f9d7be4e3d0dda4a13fc85da81"
+      "sha256": "4719adc08180062c0d0181981e2acbf68da0492d8b8839fd6ef7a76613a3f4b1"
     },
     "frame-scan.json": {
       "valid": true,
       "passed": true,
       "sourceMatches": true,
-      "sha256": "900243b20cc4610fd243b934ee4c53971afe3baa942daa53fea1ab3be6248ecb"
+      "sha256": "70dcaf85f4faf1de660b31da4958f84e4cf7d35a4c74c1bba2451cae0c531167"
     },
     "remotion-parity.json": {
       "valid": true,
       "passed": true,
       "sourceMatches": true,
-      "sha256": "6e63fa124577872dc8a9f17b3d08f89c88c4d9b3d9ab791c3c01d1eb8a682792"
+      "sha256": "1643d39a6b30ac9709cdf5ed559c3238a9669848223c130cb32d9d3dfa92779f"
     },
     "weighted-loop.json": {
       "valid": true,
       "passed": true,
       "sourceMatches": true,
-      "sha256": "525078888f593f40c37da63fa9f874a79bd320201aa32a23f5934570a15627df"
+      "sha256": "63c62d5eefa64e231f1dfe71c9138f8fbea7412c58871eb17191057353cafe55"
     }
   },
   "output": "out/aurea/aurea-1080x1920-60.mp4",

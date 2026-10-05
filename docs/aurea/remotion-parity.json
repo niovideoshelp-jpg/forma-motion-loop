@@ -1,7 +1,7 @@
 {
   "passed": true,
   "source": {
-    "sha256": "147735630fe5b98d71a55f01069afa617b6401b60c8457b518a0e06e6860631e",
+    "sha256": "bc439b849f28e66ec4a80bf2d6bf1aa522cffaa5e1fbecccaabf8bcb12ef2dbd",
     "sources": {
       "public/assets/aurea/fonts/BodoniModa-500-opsz12.ttf": "4d485d4c123995a63fe89f6800a3c016c9b4a5677fb2bcac47eecc30361781bd",
       "public/assets/aurea/fonts/BodoniModa-METADATA.pb": "f4ba29335a79d264135d7062fc1c79e8fa9a076719e99095416334e27aa00489",
@@ -17,10 +17,11 @@
       "public/assets/aurea/prune.webp": "bc875c7c551b973a570a8682f4064348e12aa2a136d2101f3ebfa635fa38a17a",
       "public/assets/aurea/touch-hand-long.svg": "b3272abcc55b3201335e47ccbf98a979f918fa8493a93cd5ce63ae0123b08c95",
       "public/assets/aurea/touch-hand-only.svg": "c3c485d7401d4676e21bf531720ff43cb648daa862a1306722cc099cbe1ead3c",
+      "public/assets/aurea/touch-hand-photo.png": "128bdc46fa2f2589a46bcf2a7672d76ded1593aa5aaca171b612f056db726eff",
       "public/assets/aurea/touch-hand.svg": "7e965ce710207c3683ff0e4e6f5c66a80a8648dddeb54a9ab860b80052450dcc",
       "public/aurea-motion.js": "73030a273e0400f9d68fafdd86034eed1d1fb48c10c94fc5fe8d9b30b8ce81a4",
       "public/aurea.html": "dafea7232fd3757ccaa67f6661431ef24695e0f10e2a0fa51a6111dd8126a612",
-      "public/aurea.js": "57e7476f97bdf95b445514931ef8544a257b2f782ab26882a88751f6f7ada319",
+      "public/aurea.js": "2c86478af94c963a0a5eefeec420ec2fd717b2229611a8700709ec2b377e322d",
       "src/Root.tsx": "2a64c30a30d1412861b1c13e2fb2d37c629e097f180ce343de99a3fe3163015a"
     }
   },

@@ -2,9 +2,9 @@
 
 ## Latest edition: AURÉA — occasion dresses
 
-**[AURÉA — centered edition](AUREA.md)** is a fictional evening-dress boutique film with centered photographs, titles and buttons, Bodoni Moda and Manrope, and a continuous GSAP camera. An original hand-only vector touches the liquid button and swipes the photographs; its fingertip stays attached until release. The selected dress leads into its fabric crop and a centered WhatsApp draft. The signature underline becomes the centered opening button to close the loop.
+**[AURÉA — photographic hand edition](AUREA.md)** is a fictional evening-dress boutique film with centered photographs, titles and buttons, Bodoni Moda and Manrope, and a continuous GSAP camera. A photographic hand generated with builtin imagegen touches the liquid button and swipes the photographs; its measured fingertip stays attached until release. The hand has no forearm. The selected dress leads into its fabric crop and a centered WhatsApp draft. The signature underline becomes the centered opening button to close the loop.
 
-**22 seconds · 1080 × 1920 · 60 fps · 1,320 frames.** [Watch or download](docs/aurea/aurea-centered-1080x1920-60.mp4). [Storyboard](docs/aurea/storyboard.png). [Before/after](docs/aurea/refinement-comparison.png).
+**22 seconds · 1080 × 1920 · 60 fps · 1,320 frames.** [Watch or download](docs/aurea/aurea-photohand-1080x1920-60.mp4). [Storyboard](docs/aurea/storyboard.png). [Hand before/after](docs/aurea/hand-comparison.png). [Generation prompts](docs/aurea/generated-hand-prompts.md).
 
 Four reviewers covered art, garment integrity and commercial copy, motion, and audio. Source and encoded-video evidence, font/media provenance and reproduction commands are linked in [AUREA.md](AUREA.md). The brand and photographs are illustrative; no operational phone number or message sending is represented.
 

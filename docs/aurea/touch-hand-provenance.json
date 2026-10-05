@@ -1,6 +1,6 @@
 {
-  "type": "Original vector artwork",
-  "author": "AUREA production, astra_illustrations",
+  "type": "Generated photography and archived original vector artwork",
+  "author": "AUREA production; builtin imagegen for the active photographic hand",
   "thirdPartyAssets": false,
   "contactAnchor": [
     0,
@@ -39,10 +39,31 @@
       "palmTerminationY": 312,
       "containsForearm": false,
       "containsLongWrist": false
+    },
+    {
+      "file": "public/assets/aurea/touch-hand-photo.png",
+      "sha256": "128bdc46fa2f2589a46bcf2a7672d76ded1593aa5aaca171b612f056db726eff",
+      "generated": true,
+      "tool": "builtin imagegen",
+      "date": "2026-10-05",
+      "nativeSize": [1024, 1536],
+      "hasAlpha": true,
+      "nativePixelsUnmodified": true,
+      "containsForearm": false,
+      "shortBaseAtWristCrease": true,
+      "nativeContactAnchor": [338, 82],
+      "canvasContactAnchor": [0, 0],
+      "nativeScale": "312 / 1347",
+      "dominantAlpha": 253,
+      "maximumAlpha": 254,
+      "dominantSilhouetteBoundsAlpha128": [171, 82, 856, 1429],
+      "prompts": "docs/aurea/generated-hand-prompts.md",
+      "anatomyReview": "docs/aurea/generated-hand-photography.md",
+      "compositeReview": "docs/aurea/generated-hand-art.md"
     }
   ],
-  "treatment": "Original warm-toned vector hand. Current authorized variant ends immediately after the palm; no arm or extended wrist. Earlier hand and forearm assets are preserved but are not the active variant.",
-  "activeVariant": "public/assets/aurea/touch-hand-only.svg",
+  "treatment": "The active variant is generated editorial hand photography with genuine transparency, copied without pixel edits. Only the hand and a short base at the wrist crease are visible; no forearm. The canvas supplies affine positioning and a subtle shadow. Earlier vector hand and forearm assets are preserved but inactive.",
+  "activeVariant": "public/assets/aurea/touch-hand-photo.png",
   "viewBoxHandOnly": [
     -44,
     -4,
